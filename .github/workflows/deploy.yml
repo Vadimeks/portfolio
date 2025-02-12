@@ -2,7 +2,7 @@ name: Build and deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [main] # Замяні 'main' на сваю галіну, калі патрэбна
 
 jobs:
   build-and-deploy:
@@ -19,5 +19,6 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages
-          folder: dist
+          branch: gh-pages # Галіна для разгортвання
+          folder: dist # Тэчка, якая змяшчае сабраны праект
+          token: ${{ secrets.GH_TOKEN }} # Выкарыстанне створанага токена
