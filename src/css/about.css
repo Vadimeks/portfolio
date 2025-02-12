@@ -1,0 +1,84 @@
+.about-section {
+  padding: 96px 0;
+}
+.about-list {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 72px;
+}
+.about-items .thumb {
+  display: none;
+}
+.header-three {
+  font-weight: 700;
+  font-size: 36px;
+  color: #2e2f42;
+  letter-spacing: 0.02em;
+  line-height: 1.11;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #434455;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+@media screen and (min-width: 768px) {
+  .about-section {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 96px 16px;
+  }
+  .about-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 72px 24px;
+    justify-content: center;
+  }
+  .about-items {
+    width: calc((100% - 24px) / 2);
+    display: flex;
+    flex-direction: column;
+  }
+  .header-three {
+    text-align: left;
+  }
+}
+@media screen and (min-width: 1158px) {
+  .about-section {
+    max-width: 1158px;
+    padding: 120px 15px;
+  }
+  .about-list {
+    gap: 24px;
+  }
+  .about-items {
+    width: calc((100% - 72px) / 4);
+  }
+  .about-items .thumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #8e8f99;
+    border-radius: 4px;
+    max-width: 264px;
+    height: 112px;
+    background-color: #f4f4fd;
+    margin-bottom: 8px;
+  }
+  .header-three {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+  .text {
+    font-weight: 400;
+    letter-spacing: 0.005em; /*Щоб текст вліз в 3 рядкі заміст 0,02ем*/
+    line-height: 1.5;
+  }
+}

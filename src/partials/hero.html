@@ -1,0 +1,70 @@
+<section class="hero-section">
+    <div class="container">
+        <h1 class="header-one">Effective Solutions for Your Business</h1>
+        <button type="button" class="button" data-modal-open>Order Service</button>
+    </div>
+</section>
+<div class="backdrop" data-modal>
+    <div class="modal container">
+        <button class="modal-close" type="button" data-modal-close>
+            <svg width="8" height="8" class="close-btn">
+                <use href="./images/icons.svg#icon-close">
+                </use>
+            </svg>
+        </button>
+        <p class="modal-title">Leave your contacts and we will call you back</p>
+        <form class="modal-form" name="issue_report_form" autocomplete="off">
+
+            <div class="form-field">
+                <label class="form-label" for="user-name">Name</label>
+                <div class="input-wrapper">
+                    <input class="form-input" name="user-name" id="user-name" type="text" autofocus required />
+                    <svg class="form-icon" width="18" height="24">
+                        <use href="./images/icons.svg#icon-user"></use>
+                    </svg>
+                </div>
+            </div>
+            <div class="form-field">
+                <label class="form-label" for="phone">Phone</label>
+                <div class="input-wrapper">
+                    <input class="form-input" name="phone" id="phone" type="tel" required />
+                    <svg class="form-icon" width="18" height="24">
+                        <use href="./images/icons.svg#icon-tel"></use>
+                    </svg>
+                </div>
+            </div>
+            <div class="form-field">
+                <label class="form-label" for="email">Email</label>
+                <div class="input-wrapper">
+                    <input class="form-input" name="email" id="email" type="email" required />
+                    <svg class="form-icon" width="18" height="24">
+                        <use href="./images/icons.svg#icon-email"></use>
+                    </svg>
+                </div>
+            </div>
+            <div class="form-field textarea-div">
+                <label class="form-label" for="user-comment">Comment</label>
+                <textarea class="form-textarea" name="user-comment" id="user-comment"
+                    placeholder="Text input"></textarea>
+            </div>
+            <div class="form-field checkbox">
+
+                <input class="form-checkbox visually-hidden" type="checkbox" name="user-privacy" id="user-privacy"
+                    required value="true" />
+                <label class="form-label" for="user-privacy">
+                    <span class="custom-icon">
+                        <svg class="form-icon-check" width="10" height="8">
+                            <use href="./images/icons.svg#icon-checkbox"></use>
+                        </svg>
+                    </span>
+                    I accept the terms and conditions of the
+                    <a class="check-link" href="#" target="_blank"> Privacy Policy</a>
+                </label>
+
+            </div>
+            <button type="submit" class="button form-button" id="submitBtn" disabled>
+                <span class="text-btn">Send</span>
+            </button>
+        </form>
+    </div>
+</div>
