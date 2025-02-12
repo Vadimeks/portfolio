@@ -1,7 +1,6 @@
 .team-section {
   background-color: #f4f4fd;
-  padding: 96px 0px;
-  margin: 0 auto;
+  padding: 96px 0;
 }
 .header-two {
   font-weight: 700;
@@ -18,7 +17,7 @@
   flex-direction: column; /*прибрати для деск*/
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 72px;
 }
 .team-items {
   background-color: #ffffff;
@@ -82,7 +81,7 @@
 }
 @media screen and (min-width: 768px) {
   .team-section {
-    padding: 96px 0;
+    padding: 96px 16px;
   }
   .team-list {
     flex-direction: row;
@@ -97,9 +96,15 @@
     flex-direction: column;
   }
 }
-
 @media screen and (min-width: 1158px) {
+  .team-section {
+    padding: 120px 0;
+  }
+  .team-list {
+    flex-wrap: nowrap;
+    gap: 24px;
+  }
   .team-items {
-    width: calc((100% - 72px) / 4); /* Для 4 элементаў у радку */
+    width: calc((100% - 72px) / 4);
   }
 }

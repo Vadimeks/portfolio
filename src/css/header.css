@@ -5,6 +5,7 @@
 }
 .container.header-container {
   display: flex;
+
   align-items: center;
   justify-content: space-between;
 }
@@ -12,7 +13,6 @@
 .nav-address {
   display: none;
 }
-
 .logo {
   font-family: 'Raleway', sans-serif;
   font-size: 18px;
@@ -255,16 +255,12 @@
   gap: 24px;
 }
 .mobile-menu-address {
-  margin-bottom: auto;
+  margin-bottom: 48px;
 }
-.mobile-menu-social .social-icons {
-  display: flex;
-  justify-content: space-between;
-}
-.social-icons {
+.mobile-menu-container .social-icons {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   gap: 24px;
 }
 .icons {

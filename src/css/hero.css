@@ -3,7 +3,7 @@
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../img/hero-img/Dark-bg-mob-min.jpg);
+    url(../images/hero-img/dark-bg-desc-min.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -69,7 +69,7 @@
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
-      url(../img/hero-img/Dark-bg-mob@2x-min.jpg);
+      url(../images/hero-img/Dark-bg-mob@2x-min.jpg);
     background-repeat: no-repeat;
   }
 }
@@ -79,7 +79,7 @@
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
-      url(../img/hero-img/Dark-bg-tab-min.jpg);
+      url(../images/hero-img/Dark-bg-tab-min.jpg);
     background-repeat: no-repeat;
   }
   @media (min-device-pixel-ratio: 2),
@@ -90,7 +90,7 @@
           rgba(46, 47, 66, 0.7),
           rgba(46, 47, 66, 0.7)
         ),
-        url(../img/hero-img/Dark-bg-tab@2x-min.jpg);
+        url(../images/hero-img/Dark-bg-tab@2x-min.jpg);
       background-repeat: no-repeat;
     }
   }
@@ -101,7 +101,7 @@
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
-      url(../img/hero-img/dark-bg-desc-min.jpg);
+      url(../images/hero-img/dark-bg-desc-min.jpg);
     background-repeat: no-repeat;
   }
   @media (min-device-pixel-ratio: 2),
@@ -112,7 +112,7 @@
           rgba(46, 47, 66, 0.7),
           rgba(46, 47, 66, 0.7)
         ),
-        url(../img/hero-img/dark-bg-desc@2x-min.jpg);
+        url(../images/hero-img/dark-bg-desc@2x-min.jpg);
       background-repeat: no-repeat;
     }
   }

@@ -29,7 +29,6 @@
 }
 @media screen and (min-width: 768px) {
   .about-section {
-    max-width: 768px;
     margin: 0 auto;
     padding: 96px 16px;
   }
@@ -51,7 +50,6 @@
 }
 @media screen and (min-width: 1158px) {
   .about-section {
-    max-width: 1158px;
     padding: 120px 15px;
   }
   .about-list {
@@ -78,7 +76,7 @@
   }
   .text {
     font-weight: 400;
-    letter-spacing: 0.005em; /*Щоб текст вліз в 3 рядкі заміст 0,02ем*/
+    letter-spacing: 0.02em;
     line-height: 1.5;
   }
 }
