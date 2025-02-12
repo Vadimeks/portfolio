@@ -5,11 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "rollup index.html --output.dir dist",
+    "build": "vite build --base=/goit-team-project/",
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@rollup/plugin-html": "^2.0.0",
     "glob": "^11.0.0",
     "postcss": "^8.4.41",
     "postcss-sort-media-queries": "^5.2.0",
