@@ -50,3 +50,22 @@ button {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+:root {
+  --hover-green: #359032;
+  --main-green: #11662b;
+  --iris: #4d5ae5;
+  --ocean: #404bbf;
+  --navy-blue: #2e2f42;
+  --green: #31d0aa;
+  --slate: #434455;
+  --light-slate: #8e8f99;
+  --cornflower: #e7e9fc;
+  --cloud: #f4f4fd;
+  --navy-blue-modal: rgba(46, 47, 66, 0.4);
+  --grey: rgba(46, 47, 66, 0.7);
+  --black: #000;
+  --white: #fff;
+  --dairy: #fcfcfc;
+  --font-family: 'Roboto', sans-serif;
+  --second-family: 'Raleway', sans-serif;
+}
