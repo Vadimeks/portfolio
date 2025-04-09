@@ -1,0 +1,119 @@
+
+     /* Avdertisement section */
+  
+     .section-advertisement {
+       background-color: #fbfbfb;
+       padding: 0;
+       margin: 0 auto;
+       width: 100%;
+     }
+    
+    .advertisement-container {
+     margin: 0 auto;
+     padding: 80px 16px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: column;
+      max-width: 288px;
+    }
+    .advertisement-text {
+      color: #141414;
+      font-weight: 600;
+      font-size: 42px;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      max-width: 288px;
+    }
+    .advertisement-text-span {
+      font-weight: 600;
+      /* font-size: 48px; */
+      font-size: 42px;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      border-radius: 12px;
+      background-color: #576f35;
+      color: #fbfbfb;
+      max-width: 288px;
+    }
+  @media screen and (min-width: 375px) {
+    .advertisement-container {
+      padding: 80px 20px;
+       max-width: 375px;
+     }
+     .advertisement-text {
+      font-size: 48px;
+      max-width: 335px;
+    }
+    .advertisement-text-span {
+      font-size: 48px;
+      max-width: 335px;
+    }
+  }
+     @media screen and (min-width: 768px) {
+       .section-advertisement {
+        margin: 0 auto;
+         max-width: 100%;
+       }
+  
+       .advertisement-container {
+         max-width: 768px;
+         margin: 0 auto;         
+          padding: 100px 32px;
+       }
+       .section-advertisement {
+        padding: 0;
+       }
+  
+      
+       .advertisement-text {
+         font-size: 64px;
+         line-height: 1;
+         max-width: 704px;
+       }
+  
+       .advertisement-text-span {
+         font-size: 64px;
+         line-height: 1;
+         max-width: 675px;
+       }
+     }
+  
+     @media screen and (min-width: 1280px) {
+       .section-advertisement {
+        padding: 0;
+       }
+  
+       .advertisement-container {
+        padding: 100px;
+        max-width: 1280px;
+                width: 100%;
+          margin: 0 auto; 
+       }
+  .adv-content {
+    display: flex;
+    flex-direction: row;
+    display: inline;
+  }
+       .advertisement-text {
+         font-size: 76px;
+         display: inline;
+         letter-spacing: -0.015em;
+         max-width: 1080px;
+       }
+  
+       .advertisement-text-span {
+         display: inline;
+         margin-bottom: 0;
+         font-size: 76px;
+         max-width: 808px;
+         letter-spacing: -0.015em;
+       }
+  
+       .desktop-brake {
+         display: block;
+         max-width: 1080px;
+       }
+     }
