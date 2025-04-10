@@ -30,8 +30,8 @@
 }
 
 .hed-logo-icon {
-  width: 168px;
-  height: 16px;
+  width: 80px;
+  height: 64px;
 }
 
 .nav-list,
@@ -63,7 +63,8 @@
   }
   .hed-logo-icon {
     width: 216px;
-    height: 20px;
+    
+  height: 64px;
   }
   .burger-icon {
     width: 40px;
