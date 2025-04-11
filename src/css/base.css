@@ -5,14 +5,14 @@ html {
 :root {
   --primary-color: #000;
   --secondary-color: #fff;
-  --accent-color: #00a86b;
+  --accent-color: #66cc99;
   --background-color: #fff;
   --text-color: #141414;
   --button-color: #00a86b;
   --button-text-color: #fff;
   --menu-background-color: #000;
   --menu-text-color: #fff;
-  --highlight-color: #d4e157;
+  --highlight-color: #008055;
 }
 
 body {
