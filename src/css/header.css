@@ -1,15 +1,15 @@
 /* Header */
 .header-section {
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   padding-top: 0;
   padding-bottom: 0;
   position: absolute;
+  z-index: 1000;
   top: 32px;
   left: 0;
   width: 100%;
-  z-index: 1000;
   transition: all 0.3s ease-in-out;
   background: rgba(0, 168, 107, 0.5);
 }
@@ -29,7 +29,14 @@
   padding: 0 16px;
 }
 
-.hed-logo-icon {
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header-logo {
   width: 80px;
   height: 64px;
 }
@@ -40,7 +47,7 @@
 }
 
 .burger-btn {
-  background-color: transparent;
+
   border: none;
   padding: 0;
 
@@ -50,6 +57,7 @@
   display: block;
   width: 32px;
   height: 32px;
+  background-color: transparent;
 }
 
 @media only screen and (min-width: 375px) {
@@ -66,8 +74,8 @@
   }
 
   .hed-logo-icon {
-    width: 216px;
-    height: 80px;
+    width: 80px;
+    height: 64px;
   }
 
   .burger-icon {
@@ -90,17 +98,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-
-  .header-logo {
-    margin-right: 340px;
+    width: 100%;
+    gap: 20px;
   }
 
   .nav-list {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-right: 20px;
+    gap: 20px;
   }
 
   .nav-link {
@@ -113,7 +118,7 @@
     border: 1px solid var(--button-color);
     border-radius: 12px;
     padding: 12px;
-    width: auto;
+    width: 100px;
   }
 
   .header-btn {

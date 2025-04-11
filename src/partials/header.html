@@ -3,7 +3,6 @@
     <nav class="header-nav">
       <a class="header-logo" href="./index.html">
         <svg class="hed-logo-icon">
-
           <use href="/img/sprite.svg#icon-logo"></use>
         </svg>
       </a>
@@ -22,12 +21,13 @@
         </li>
       </ul>
       <button class="header-btn" type="button" data-modal-open aria-label="Open write me modal">Write me</button>
+      <button class="burger-btn" type="button" data-menu-open aria-label="Open mobile menu">
+        <svg class="burger-icon" aria-hidden="true">
+          <use href="/src/img/sprite.svg#icon-burger"></use>
+        </svg>
+      </button>
     </nav>
-    <button class="burger-btn" type="button" data-menu-open aria-label="Open mobile menu" is-open>
-      <svg class="burger-icon" aria-hidden="true">
-        <use href="/img/sprite.svg#icon-burger"></use>
-      </svg>
-    </button>
+
     <load src="/partials/mobile-menu.html" />
     <load src="/partials/modal.html" />
   </div>
