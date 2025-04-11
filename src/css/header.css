@@ -9,16 +9,19 @@
   top: 32px;
   left: 0;
   width: 100%;
-  z-index: 1000; /* Вышэй за мабільнае меню */
+  z-index: 1000;
+  /* Вышэй за мабільнае меню */
   transition: all 0.3s ease-in-out;
-  background: rgba(87, 111, 53, 0.9); /* Фон для мабільных */
+  background: #fff;
+  /* Фон для мабільных */
 }
 
 .header-section.fixed {
   position: fixed;
   top: 0;
   background: rgba(87, 111, 53, 0.95);
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Лёгкі цень */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  /* Лёгкі цень */
 }
 
 .header-container {
@@ -26,7 +29,7 @@
   justify-content: space-between;
   align-items: center;
   width: 320px;
-    padding: 0 16px;
+  padding: 0 16px;
 }
 
 .hed-logo-icon {
@@ -50,42 +53,51 @@
   width: 32px;
   height: 32px;
 }
+
 @media only screen and (min-width: 375px) {
   .header-container {
     width: 375px;
     padding: 0 20px;
   }
 }
+
 @media only screen and (min-width: 768px) {
   .header-container {
     width: 768px;
     padding: 0 32px;
   }
+
   .hed-logo-icon {
     width: 216px;
     height: 80px;
   }
+
   .burger-icon {
     width: 40px;
     height: 40px;
   }
 }
+
 @media only screen and (min-width: 1280px) {
   .header-container {
     width: 1280px;
     padding: 0 100px;
   }
+
   .burger-btn {
     display: none;
   }
+
   .header-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+
   .header-logo {
     margin-right: 340px;
   }
+
   .nav-list {
     display: flex;
     align-items: center;
@@ -103,9 +115,11 @@
     border: 1px solid #fbfbfb;
     border-radius: 12px;
     padding: 12px;
-    width: auto; /* Каб пункт не сціскаўся */
+    width: auto;
+    /* Каб пункт не сціскаўся */
   }
-  .header-btn{
+
+  .header-btn {
     display: block;
     border-radius: 30px;
     padding: 16px 32px;
@@ -123,14 +137,16 @@
     color: #fbfbfb;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
+
   .burger-btn:hover,
   .burger-btn:focus {
     background-color: #d4bfc4;
   }
-  
+
   .header-section {
     background: transparent;
   }
+
   .header-section.fixed {
     background: rgba(87, 111, 53, 0.5);
   }
@@ -139,21 +155,25 @@
 .nav-list .nav-link {
   transition: transform 0.3s ease, color 0.3s ease;
 }
+
 .nav-list .nav-link:hover {
   transform: scale(1.05);
   background-color: #D4BFC4;
   color: #7A3145;
   border: none;
 }
+
 .nav-list .nav-link:focus {
   background-color: #FBFBFB;
   color: #7A3145;
   border: none;
 }
+
 .header-btn:hover {
   background-color: #D4BFC4;
   color: #7A3145;
 }
+
 .header-btn:focus {
   background-color: #FBFBFB;
   color: #7A3145;

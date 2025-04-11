@@ -15,17 +15,17 @@ p:last-child {
 ul {
   margin: 0;
   padding: 0;
-  list-style: none;
+  list-style-type: none;
 }
 
-a {
+a,
+button {
   color: currentColor;
   text-decoration: none;
-}
-
-button {
+  font-style: normal;
   cursor: pointer;
 }
+
 
 img {
   display: block;

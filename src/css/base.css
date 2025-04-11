@@ -1,41 +1,25 @@
 html {
   scroll-behavior: smooth;
 }
+
+:root {
+  --primary-color: #000;
+  --secondary-color: #fff;
+  --accent-color: #00a86b;
+  --background-color: #fff;
+  --text-color: #141414;
+  --button-color: #00a86b;
+  --button-text-color: #fff;
+  --menu-background-color: #000;
+  --menu-text-color: #fff;
+  --highlight-color: #d4e157;
+}
+
 body {
   font-family: 'Inter Tight', sans-serif;
-  background-color: #576f35;
-  color: #141414;
+  background-color: var(--background-color);
+  color: var(--text-color);
   font-style: normal;
-}
-
-a,
-button {
-  text-decoration: none;
-  font-style: normal;
-  cursor: pointer;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin: 0;
-}
-
-ul,
-ol {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
 }
 
 .visually-hidden {
