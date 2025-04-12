@@ -14,7 +14,7 @@
 }
 
 .mobile-menu {
-  background: rgba(0, 168, 107, 0.5);
+  background: var(--background-color);
   position: absolute;
   top: 0;
   right: 0;
@@ -36,7 +36,7 @@
 .menu-close-btn {
   padding: 0;
   border: none;
-  background-color: var(--color1);
+  background-color: var(--background-color);
   width: 32px;
   height: 32px;
   position: absolute;
@@ -45,9 +45,8 @@
 }
 
 .menu-close-icon {
-  fill: var(--color1);
-  width: 32px;
-  height: 32px;
+  width: 16px;
+  height: 16px;
 }
 
 .menu-nav {
@@ -68,7 +67,7 @@
   height: 44px;
   border-radius: 12px;
   border: 1px solid var(--highlight-color);
-  background-color: transparent;
+  background-color: var(--button-color);
   color: var(--text-color);
   font-size: 14px;
   font-weight: 500;
@@ -83,18 +82,20 @@
 }
 
 .list-info-btn {
-  background-color: #FBFBFB;
-  color: #7A3145;
-  border: none;
+  background-color: var(--button-color);
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  font-weight: 700;
 }
 
-.menu-shop-btn {
+.menu-writeme-btn {
   width: 175px;
   height: 52px;
   border: none;
   border-radius: 30px;
-  background-color: #7a3145;
-  color: #FBFBFB;
+  background-color: var(--button-color);
+  color: var(--text-color);
+  border: 2px solid var(--highlight-color);
   display: block;
   margin: 0 auto;
   font-family: 'Inter Tight', sans-serif;
@@ -109,7 +110,7 @@
 
 @media only screen and (min-width: 768px) {
   .menu-backdrop {
-    background-color: rgba(20, 20, 20, 0.4);
+    background-color: rgba(20, 20, 20, 0.9);
   }
 
   .mobile-menu {
@@ -119,13 +120,13 @@
   .menu-close-btn {
     top: 42px;
     right: 42px;
-    width: 40px;
-    height: 40px;
+    width: 16px;
+    height: 16px;
   }
 
   .menu-close-icon {
-    width: 40px;
-    height: 40px;
+    width: 16px;
+    height: 16px;
   }
 
   .btn-list-item {
