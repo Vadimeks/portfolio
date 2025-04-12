@@ -1,5 +1,5 @@
 .backdrop {
-  background-color: rgba(87, 111, 53, 0.8);
+  background-color: rgba(0, 168, 107, 0.8);
   position: fixed;
   top: 0;
   left: 0;
@@ -10,11 +10,13 @@
   pointer-events: none;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 0.4), visibility 250ms cubic-bezier(0.4, 0, 0.2, 0.4);
 }
+
 .backdrop.is-open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
 }
+
 .modal-menu {
   background-color: #FBFBFB;
   padding: 40px 20px;
@@ -28,15 +30,16 @@
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
   transition: transform 250ms cubic-bezier(0.4, 0.2, 0.4);
 }
+
 .close {
-  width: 24px;
-  height: 24px;
-  background-color: #576F35;
+  width: 16px;
+  height: 16px;
+  background-color: var(--background-color);
   border: none;
   border-radius: 50px;
-  fill: #FBFBFB;
+  fill: var(--primary-color);
   position: absolute;
-  top: 10px;
+  top: 16px;
   right: 20px;
   display: flex;
   cursor: pointer;
@@ -45,40 +48,20 @@
   padding: 0;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .close:hover,
 .close:focus {
-  background-color: #69873F;
   transform: scale(1.1);
 }
-.modal-form-btn {
-  display: block;
-  align-items: center;
-  justify-content: center;
-  font-family: inherit;
-  background: #7A3145;
-  border-radius: 30px;
-  padding: 16px 48px;
-  width: 248px;
-  height: 52px;
+
+.order-form-title {
+  margin-bottom: 24px;
+  text-align: center;
   font-weight: 600;
-  font-size: 18px;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
-  color: #FBFBFB;
-  border: none;
-  cursor: not-allowed;
-  background-color: #D4BFC4;
+  font-size: 20px;
+  padding-top: 12px;
 }
-.modal-form-btn.active {
-  cursor: pointer;
-  background-color: #7A3145;
-}
-.modal-form-btn:hover,
-.modal-form-btn:focus {
-  background-color: #D4BFC4;
-  color: #7A3145;
-}
+
 .modal-input {
   font-size: 14px;
   line-height: 1.4;
@@ -90,19 +73,24 @@
   margin-bottom: 16px;
   outline: none;
 }
+
 .modal-input::placeholder {
   font-family: inherit;
-  color: #141414;
+  color: var(--text-color);
 }
+
 .modal-inputinput:focus {
-  border-color: #7A3145;
+  border-color: var(--highlight-color);
 }
+
 .modal-input:not(:placeholder-shown):invalid {
   border-color: #E74A3B;
 }
+
 .modal-input:not(:placeholder-shown):valid {
   border-color: #3CBC81;
 }
+
 .modal-textarea {
   font-weight: 500;
   font-size: 14px;
@@ -110,36 +98,76 @@
   border: 1px solid #858585;
   border-radius: 15px;
   width: 248px;
-  height: 96px;
+  height: 200px;
   padding: 16px 14px;
   margin-bottom: 20px;
   outline: none;
   resize: none;
 }
+
 .modal-textarea:focus {
   border-color: #7A3145;
 }
+
 .modal-textarea::placeholder {
   font-family: inherit;
   color: #141414;
 }
+
+.modal-form-btn {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  background: var(--button-color);
+  border-radius: 30px;
+  padding: 16px 48px;
+  width: 248px;
+  height: 52px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--text-color);
+  border: 2px solid var(--highlight-color);
+  cursor: not-allowed;
+  background-color: var(--background-color);
+}
+
+.modal-form-btn.active {
+  cursor: pointer;
+  background-color: var(--accent-color);
+}
+
+.modal-form-btn:hover,
+.modal-form-btn:focus {
+  background-color: var(--highlight-color);
+  color: var(--background-color);
+}
+
 @media only screen and (min-width: 375px) {
   .modal-menu {
     width: 335px;
   }
+
   .modal-input {
     width: 295px;
   }
+
   .modal-textarea {
     width: 295px;
   }
+
   .modal-form-btn {
     min-width: 295px;
   }
+
   .modal-form-btn {
     width: 248px;
   }
 }
+
 @media only screen and (min-width: 768px) {
   .modal-menu {
     width: 640px;
@@ -147,9 +175,11 @@
     padding: 72px 100px;
     margin-bottom: 32px;
   }
+
   .modal {
     margin: 0 auto;
   }
+
   .modal-input {
     font-size: 16px;
     line-height: 1.25;
@@ -157,6 +187,7 @@
     height: 52px;
     padding: 16px 14px;
   }
+
   .modal-textarea {
     font-weight: 500;
     font-size: 14px;
@@ -165,6 +196,7 @@
     border-radius: 15px;
     width: 440px;
   }
+
   .modal-form-btn {
     min-width: 440px;
   }

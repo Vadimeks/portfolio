@@ -3,11 +3,11 @@
     openModalBtn: document.querySelector('[data-menu-open]'),
     closeModalBtn: document.querySelector('[data-menu-close]'),
     modal: document.querySelector('[data-menu]'),
-    shopNowBtn: document.querySelector('.menu-shop-btn'),
+    writeMeBtn: document.querySelector('.menu-writeme-btn'),
     modalWindow: document.querySelector('[data-modal]'),
     menuButtons: document.querySelectorAll('.btn-list-item'), // Кнопкі меню
     header: document.querySelector('.header-section'), // Хедэр
-    sideMenu: document.querySelector('.menu-backdrop')
+    sideMenu: document.querySelector('.menu-backdrop'),
   };
 
   if (refs.openModalBtn && refs.closeModalBtn && refs.modal) {
@@ -15,8 +15,8 @@
     refs.closeModalBtn.addEventListener('click', toggleModal);
   }
 
-  if (refs.shopNowBtn && refs.modalWindow) {
-    refs.shopNowBtn.addEventListener('click', () => {
+  if (refs.writeMeBtn && refs.modalWindow) {
+    refs.writeMeBtn.addEventListener('click', () => {
       refs.modal.classList.remove('is-open');
       refs.modalWindow.classList.add('is-open');
       refs.modalWindow.style.zIndex = '300';
@@ -30,19 +30,19 @@
   // Дадаем падзею на кнопкі ў меню
   refs.menuButtons.forEach(button => {
     button.addEventListener('click', function () {
-      const targetId = button.getAttribute("data-scroll");
+      const targetId = button.getAttribute('data-scroll');
       if (targetId) {
         document.querySelector(targetId).scrollIntoView({
-          behavior: "smooth"
+          behavior: 'smooth',
         });
       }
-      refs.modal.classList.remove('is-open'); // Закрываем меню
+      refs.modal.classList.remove('is-open');
     });
   });
 
   // Фіксацыя хедера пры скроле
   if (!refs.header) {
-    console.error("⚠ Хедэр-секцыя не знойдзена! Правер клас у HTML.");
+    console.error('⚠ Хедэр-секцыя не знойдзена! Правер клас у HTML.');
     return;
   }
 
