@@ -1,6 +1,6 @@
 .section-hero {
   position: relative;
-  background-color: #576f35;
+  background-color: rgba(102, 204, 153, 1);
   margin: 0 auto;
   width: 100%;
   padding: 0;
@@ -19,10 +19,10 @@
 .hero-title {
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 52px;
+  font-size: 32px;
   line-height: 1;
   letter-spacing: -0.01em;
-  color: #fbfbfb;
+  color: var(--text-color);
   margin-bottom: 20px;
 }
 
@@ -32,16 +32,15 @@
 }
 
 .hero-descr {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 14px;
   line-height: 1.42857;
-  color: #fbfbfb;
+  color: var(--text-color);
 }
 
 .hero-image {
   background-image: url(/img/hero/hero-mob-pic.jpg);
-  width: 100%;
-  height: 300px;
+  height: 824px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -58,44 +57,51 @@
 /* ---- HERO FOR SMALL PHONES ---- */
 
 @media only screen and (min-width: 320px) {
-  
+
   .hero-image {
     min-width: 320px;
-    height: 256px;
+    height: 700px;
   }
+
   .hero-title {
     font-size: 46px;
   }
+
   .hero-text {
     padding: 100px 16px 0 16px;
     margin-bottom: 40px;
     width: 320px;
   }
 }
+
 @media only screen and (min-width: 375px) {
- 
+
   .hero-image {
     width: 375px;
-    height: 256px;
+    height: 700px;
   }
+
   .hero-title {
     font-size: 46px;
   }
+
   .hero-text {
     padding: 100px 20px 0 20px;
     margin-bottom: 40px;
     width: 375px;
   }
 }
+
 /* ---- HERO FOR TABLETS ----*/
 
 @media only screen and (min-width: 768px) {
-  
+
   .hero-text {
     width: 768px;
-      padding: 120px 32px 0 32px;
+    padding: 120px 32px 0 32px;
     margin-bottom: 52px;
   }
+
   .hero-title {
     font-size: 76px;
     margin-bottom: 24px;
@@ -109,7 +115,7 @@
 
   .hero-image {
     background-image: url(/img/hero/hero-tab-min.jpg);
-    height: 536px;
+    height: 900px;
     width: 768px;
   }
 
@@ -129,7 +135,7 @@
     overflow: hidden;
     align-items: center;
     justify-content: center;
-   padding-left: 100px;
+    padding-left: 100px;
     margin: auto;
     flex-direction: row;
     gap: 38px;
@@ -143,15 +149,15 @@
     padding: 232px 0px 0px 0px;
     margin-bottom: 40px;
     width: 504px;
-display: flex;
-flex-direction: column;
-justify-content: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
   }
 
   .hero-title {
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 76px;
+    font-size: 52px;
     margin-bottom: 128px;
     width: 504px;
   }
@@ -165,7 +171,7 @@ justify-content: left;
   .hero-image {
     background-image: url(/img/hero/hero-pc-min.jpg);
     width: 640px;
-    height: 796px;
+    height: 824px;
   }
 
   @media (min-resolution: 192dpi) {
