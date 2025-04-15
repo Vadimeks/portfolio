@@ -7,52 +7,19 @@
 }
 
 .hero-container {
-  padding: 0;
+  padding-top: 100px;
+  padding-bottom: 40px;
   display: flex;
   flex-direction: column;
   width: 100%;
   overflow: hidden;
   align-items: center;
   justify-content: center;
-}
 
-.hero-text {
-  padding: 40px 16px;
-  margin-bottom: 40px;
-  background-color: var(--accent-color);
 }
 
 .hero-title {
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 1;
-  letter-spacing: -0.01em;
-  color: var(--text-color);
   margin-bottom: 20px;
-}
-
-.hero-descr {
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 1.43;
-  color: var(--text-color);
-}
-
-
-.hero-image {
-  background-color: #f9f9f9;
-  width: 100%;
-  overflow: hidden;
-  padding: 0 16px 40px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--accent-color);
-}
-
-.content-image {
-  border-radius: 30px;
 }
 
 /* ---- HERO FOR SMALL PHONES ---- */
@@ -60,36 +27,69 @@
 @media only screen and (min-width: 320px) {
 
   .hero-image {
-    min-width: 320px;
-    height: 100%;
+    max-width: 374px;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
   }
 
   .hero-title {
-    font-size: 46px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: var(--text-color);
+    margin-bottom: 20px;
   }
 
   .hero-text {
-    padding: 100px 16px 0 16px;
-    margin-bottom: 40px;
-    width: 320px;
+    max-width: 374px;
+    background-color: var(--accent-color);
+    padding-bottom: 20px;
+    ;
+  }
+
+  .hero-descr {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.43;
+    color: var(--text-color);
+  }
+
+  .content-image {
+    border-radius: 30px;
   }
 }
 
 @media only screen and (min-width: 375px) {
 
   .hero-image {
-    width: 375px;
-    height: 700px;
+    max-width: 600px;
+    height: auto;
+
   }
 
   .hero-title {
     font-size: 46px;
+    max-width: 600px;
+    margin-bottom: 40px;
+  }
+
+  .hero-descr {
+    max-width: 600px;
+  }
+
+  .hero-pic {
+    max-width: 600px;
   }
 
   .hero-text {
-    padding: 100px 20px 0 20px;
-    margin-bottom: 40px;
-    width: 375px;
+    max-width: 600px;
+    padding-top: 20px;
   }
 }
 
@@ -98,26 +98,31 @@
 @media only screen and (min-width: 768px) {
 
   .hero-text {
-    width: 768px;
-    padding: 120px 32px 0 32px;
-    margin-bottom: 52px;
+    max-width: 900px;
+    height: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 
   .hero-title {
     font-size: 76px;
-    margin-bottom: 24px;
+    margin-bottom: 30px;
+    max-width: 900px;
   }
 
   .hero-descr {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.25;
-    max-width: 603px;
+    max-width: 900px;
   }
 
   .hero-image {
+    height: auto;
+    max-width: 900px;
+  }
 
-    height: 900px;
-    width: 768px;
+  .hero-pic {
+    max-width: 900px;
   }
 }
 
