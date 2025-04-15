@@ -7,15 +7,13 @@
 }
 
 .hero-container {
-  padding-top: 100px;
-  padding-bottom: 40px;
+  padding: 100px 16px 40px 16px;
   display: flex;
   flex-direction: column;
   width: 100%;
   overflow: hidden;
   align-items: center;
   justify-content: center;
-
 }
 
 .hero-title {
@@ -66,6 +64,9 @@
 }
 
 @media only screen and (min-width: 375px) {
+  .hero-container {
+    padding: 100px 30px 40px 30px;
+  }
 
   .hero-image {
     max-width: 600px;
@@ -96,6 +97,9 @@
 /* ---- HERO FOR TABLETS ----*/
 
 @media only screen and (min-width: 768px) {
+  .hero-container {
+    padding: 100px 60px 40px 60px;
+  }
 
   .hero-text {
     max-width: 900px;
@@ -128,50 +132,43 @@
 
 /* ---- HERO FOR PC's ---- */
 @media only screen and (min-width: 1280px) {
-  .hero-container {
-    padding: 0;
-    display: flex;
-    width: 100%;
-    overflow: hidden;
-    align-items: center;
-    justify-content: center;
-    padding-left: 100px;
-    margin: auto;
-    flex-direction: row;
-    gap: 38px;
-  }
-
   .section-hero {
     max-width: 1280px;
   }
 
+  .hero-container {
+    margin: auto;
+    flex-direction: row;
+    padding: 100px 100px 40px 100px;
+    gap: 40px;
+  }
+
   .hero-text {
-    padding: 232px 0px 0px 0px;
-    margin-bottom: 40px;
-    width: 504px;
+    padding: 120px 0 80px 0;
+    max-width: 640px;
     display: flex;
+    align-items: flex-start;
     flex-direction: column;
-    justify-content: left;
+    justify-content: space-between;
   }
 
   .hero-title {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 52px;
-    margin-bottom: 128px;
-    width: 504px;
+    margin-bottom: 180px;
+    max-width: 640px;
   }
 
   .hero-descr {
     font-size: 16px;
     line-height: 1.25;
-    width: 504px;
+    max-width: 640px;
   }
 
   .hero-image {
-
-    width: 640px;
-    height: 824px;
+    max-width: 640px;
+    height: auto;
   }
 
 }
