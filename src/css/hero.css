@@ -139,36 +139,43 @@
   .hero-container {
     margin: auto;
     flex-direction: row;
-    padding: 100px 100px 40px 100px;
+    padding: 110px 100px 40px 100px;
     gap: 40px;
   }
 
   .hero-text {
-    padding: 120px 0 80px 0;
     max-width: 640px;
+    padding: 0;
     display: flex;
-    align-items: flex-start;
     flex-direction: column;
     justify-content: space-between;
+
   }
 
   .hero-title {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 52px;
-    margin-bottom: 180px;
     max-width: 640px;
+    min-height: 280px;
+    margin: 0;
   }
 
   .hero-descr {
     font-size: 16px;
     line-height: 1.25;
     max-width: 640px;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
   }
 
   .hero-image {
     max-width: 640px;
     height: auto;
+    padding: 0;
   }
 
 }
