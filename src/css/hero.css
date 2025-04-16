@@ -139,7 +139,7 @@
   .hero-container {
     margin: auto;
     flex-direction: row;
-    padding: 110px 100px 40px 100px;
+    padding: 130px 100px 40px 100px;
     gap: 40px;
   }
 
