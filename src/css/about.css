@@ -1,217 +1,216 @@
-.section-reviews {
-  background-color: #fbfbfb;
-  padding: 0;
+.order-section {
   width: 100%;
+  padding: 0;
+  margin: 0 auto;
 }
-.reviews-container {
-  padding: 80px 0;
+/* Section Image  */
+.image-container {
+  background-color: #7a3145;
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content-image {
+  border-radius: 30px;
+}
+/* /Section Image  */
+
+/*  Section-Content */
+.content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  background: #576f35;
+  padding: 80px 16px;
 }
-.reviews-title {
-  text-transform: uppercase;
+.content-title {
+  max-width: 335px;
   font-weight: 600;
-  font-size: 46px;
-  line-height: 1.08;
+  font-size: 28px;
+  line-height: 1;
   letter-spacing: -0.01em;
-  color: #141414;
+  text-transform: uppercase;
+  color: #fbfbfb;
   margin-bottom: 20px;
-  width: 288px;
-}
-.reviews-accent {
-  color: #576f35;
-}
-.reviews-text {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.4;
-  color: #141414;
-  margin-bottom: 40px;
-  text-align: left;
-  width: 288px;
 }
 
-.reviews-list {
-  display: flex;
-  justify-content: space-between; /* Можно оставить для распределения */
-  flex-wrap: wrap;
-  gap: 24px; /* Отступы между элементами */
-  padding: 0;
+.highlight {
+  color: #d4bfc4;
 }
 
-.reviews-item {
-  max-width: 288px;
-  border-radius: 24px;
-  padding: 20px 16px;
-  text-align: center;
-  box-sizing: border-box;
-  border: 1px solid #d4bfc4;
-}
-
-.reviews-item:nth-child(n + 2) {
-  display: none;
-}
-
-.reviews-card {
-  border-radius: 72px;
-  margin-bottom: 24px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.title-customer {
-  margin-bottom: 8px;
-  text-align: center; /* Для текста внутри h3 */
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 111%;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
-  color: #141414;
-}
-
-.text-customer {
+.content-description {
+  max-width: 335px;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.42857;
-  text-align: center;
-  color: #858585;
-  max-width: 288px;
+  color: #fbfbfb;
+  margin-bottom: 40px;
 }
-.row {
-  width: 288px;
-  margin-bottom: 30px;
-  padding: 0 ;
- }
-/* Mobile (375) */
-@media only screen and (min-width: 375px) {
-  .container.reviews-container {
-    width: 375px;
+/*  /Section-Content */
+
+/* Order-steps */
+.steps-list {
+  list-style: none;
+  counter-reset: step-counter;
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 335px;
+  min-height: 84px;
+  gap: 20px;
+}
+
+.steps-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: #fbfbfb;
+  border-radius: 15px;
+  padding: 12px 27px 12px 24px;
+  min-height: 84px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.42;
+  color: #858585;
+}
+.middle {
+  padding: 12px 59px 12px 24px;
+  min-height: 76px;
+}
+.steps-item-text {
+  padding-left: 76px;
+  min-width: 208px;
+}
+
+.steps-item-highlight {
+  font-weight: 700;
+  color: #141414;
+}
+
+.steps-item::before {
+  content: counter(step-counter);
+  counter-increment: step-counter;
+  position: absolute;
+  left: 29px; /* адступ ад левага краю 24px */
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.11111;
+  color: #fbfbfb;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  border-radius: 100%;
+  background-color: #7a3145;
+  outline: 5px solid #d4bfc4;
+}
+/* /Order-steps */
+@media screen and (min-width: 375px) {
+  .order-section {
+    max-width: 767px;
+  }
+  .image-container {
+    padding: 40px 20px;
+  }
+  .content {
     padding: 80px 20px;
   }
-  .reviews-title {
-    font-size: 48px;
-    width: 335px;
-  }
-  .reviews-text {
-    width: 335px;
-  }
- .row {
-  width: 335px;
-  margin-bottom: 40px;
-  padding-right: 151px ;
- }
- .reviews-item {
-  max-width: 335px;}
 }
+@media screen and (min-width: 768px) {
+  .order-section {
+    max-width: 1279px;
+  }
+  .image-container {
+    padding: 100px 64px;
+  }
 
-/* Tablet (768px) */
-@media only screen and (min-width: 768px) {
-  .container.reviews-container {
-    width: 100%;
-    max-width: 768px;
-    padding: 100px 32px;
-    margin: 0 auto;
+  /* Section-Content */
+  .content {
+    padding: 100px 164px;
   }
-  .reviews-list {
-    gap: 24px;
-    max-width: 704px; /* Фиксируем ширину элемента */
-  }
-  .reviews-title {
-    font-size: 64px;
-    line-height: 1;
+  .content-title {
+    max-width: 440px;
+    min-height: 96px;
+    font-size: 32px;
     margin-bottom: 24px;
-    width: 553px;
-    
   }
-
-  .reviews-text {
+  .content-description {
+    max-width: 440px;
     font-size: 16px;
     line-height: 1.25;
     margin-bottom: 52px;
-    width: 553px;
+  }
+  /* /Section-Content */
+
+  /* Order-steps */
+  .steps-list {
+    max-width: 440px;
+    gap: 24px;
+    align-items: stretch;
   }
 
-  .reviews-item:nth-child(1),
-  .reviews-item:nth-child(2) {
-    display: block; /* Показываем первые два пункта */
+  .steps-item {
+    min-height: 76px;
+    padding-right: 23px;
   }
-  .reviews-item:nth-child(n + 3) {
-    display: none;
-  }
-  .text-customer {
+
+  .steps-item-text {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.25;
-    max-width: 303px;
+    min-height: 40px;
   }
-  .reviews-item {
-    max-width: 344px;
+  .steps-item.middle .steps-item-text {
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
-  .container.reviews-container {
-        display: flex;
-        flex-direction: column;
-  }
-  .row {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
-    margin-bottom: 52px;
-    padding-right: 151px;
-    width: 704px;
-  }
+  /* /Order-steps */
 }
 
-
-/* Desktop (1280px) */
-@media only screen and (min-width: 1280px) {
-  .section-reviews {
-    padding: 0;
-  }
-  .container.reviews-container {
-    max-width: 1080px;
-        padding: 100px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-  }
-  .row {
+@media screen and (min-width: 1280px) {
+  .order {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
-    margin-bottom: 52px;
-    padding-right: 527px;
-    width: 1080px;
+    flex-direction: row;
+    max-width: 1280px;
+    margin: 0 auto;
   }
-  
-  .reviews-list {
-    max-width: 1080px;
-    gap: 24px;
-    flex-wrap: nowrap; /* Без переноса */
-  }
-  .reviews-item:nth-child(n + 2) {
-    display: block;
-  }
-  .reviews-item:nth-child(n + 3) {
-    display: block; /*Переопределяем правило скрытия для элементов с 3-го и далее*/
-  }
-  .reviews-title {
-    font-size: 64px;
-    line-height: 1;
-    margin-bottom: 24px;
-    width: 553px;
-    
-  }
-  .reviews-item {
-    width: 344px;
-  }
-  .reviews-text {
+
+  /* Section-Content */
+  .content-description {
+    margin-bottom: 104px;
     font-size: 16px;
     line-height: 1.25;
-    margin-bottom: 52px;
-    width: 553px;
-    
   }
+  .content-title {
+    min-height: 76px;
+    font-size: 32px;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+  }
+  .image-container,
+  .content {
+    width: 640px;
+    height: 760px;
+    margin: 0;
+    padding: 100px;
+  }
+  /* /Section-Content */
+
+  /* Order-steps */
+  .steps-item {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 22px;
+    padding-left: 24px;
+  }
+  /*/Order-steps */
 }
