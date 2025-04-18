@@ -63,6 +63,10 @@
   height: 40px;
 }
 
+.social-list {
+  display: none;
+}
+
 @media only screen and (min-width: 320px) {
   .header-container {
     max-width: 374px;
@@ -70,6 +74,10 @@
 
   .header-nav {
     max-width: 374px;
+  }
+
+  .social-list {
+    display: none;
   }
 }
 
@@ -81,6 +89,10 @@
 
   .header-nav {
     max-width: 600px;
+  }
+
+  .social-list {
+    display: none;
   }
 }
 
@@ -109,13 +121,17 @@
     width: 60px;
     height: 48px;
   }
+
+  .social-list {
+    display: none;
+  }
+
 }
 
 @media only screen and (min-width: 1280px) {
   .header-container {
     max-width: 1280px;
     padding: 0 100px;
-
   }
 
   .burger-btn {
@@ -147,6 +163,12 @@
     border-radius: 12px;
     padding: 12px;
     width: 100px;
+  }
+
+  .social-list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
   }
 
   .header-btn {

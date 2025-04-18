@@ -22,9 +22,9 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   min-height: 380px;
-
-
 }
 
 .is-open {
@@ -107,6 +107,13 @@
   transition: transform 0.2s ease-in-out;
   margin-bottom: 52px;
 }
+
+.social-list-mob {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
 
 @media only screen and (min-width: 768px) {
   .menu-backdrop {
