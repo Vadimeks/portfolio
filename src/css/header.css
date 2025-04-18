@@ -171,24 +171,7 @@
     gap: 20px;
   }
 
-  .header-btn {
-    display: block;
-    border-radius: 30px;
-    padding: 16px 32px;
-    min-width: 163px;
-    height: 52px;
-    background: var(--button-color);
-    border: none;
-    font-family: inherit;
-    text-align: center;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 1.1;
-    letter-spacing: -0.01em;
-    text-transform: uppercase;
-    color: var(--text-color);
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
+
 
   .burger-btn:hover,
   .burger-btn:focus {
@@ -220,10 +203,4 @@
   background-color: var(--highlight-color);
   color: var(--button-text-color);
   border: none;
-}
-
-.header-btn:hover,
-.header-btn:focus {
-  background-color: var(--highlight-color);
-  color: var(--button-text-color);
 }
