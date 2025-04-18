@@ -3,21 +3,25 @@
   <div class="order">
     <!-- Section Image -->
     <div class="image-container">
-      <picture>
-        <!-- <source media="(min-width: 1280px)" srcset="
-            /img/about/h-it-w-desk.jpg    1x,
-            /img/about//h-it-w-desk@2x.jpg 2x
+      <div class="hero-image">
+        <picture class="hero-pic">
+          <source media="(min-width: 1280px)" srcset="
+            /img/hero/hero-pc-min.jpg    1x,
+            /img/hero/hero-pc@2x-min.jpg  2x
           ">
-        <source media="(min-width: 768px)" srcset="
-            /img/about//h-it-w-tab.jpg    1x,
-            /img/about//h-it-w-tab@2x.jpg  2x
-          ">
-        <source media="(max-width: 768px)" srcset="
-            /img/about//h-it-w-mob.jpg     1x,
-            /img/about//h-it-w-mob@2x.jpg  2x
-          "> -->
-        <img class="content-image" src="/img/about/h-it-w-desk.jpg " alt="Woman preparing vegetables">
-      </picture>
+          <source media="(min-width: 768px) and (max-width: 1279px)" srcset="
+
+/img/hero/hero-tab.jpg 1x,
+/img/hero/hero-tab@2x.jpg 2x">
+          <source media="(max-width: 767px)" srcset="
+          /img/hero/hero-tab-min.jpg 1x,
+/img/hero/hero-tab@2x-min.jpg 2x">
+          <source media="(max-width: 374px)" srcset="
+                                /img/hero/hero-mob-min.jpg 1x, 
+                    /img/hero/hero-mob@2x-min.jpg 2x">
+          <img class="content-image" src="/src/img/hero/hero-pc-min.jpg" alt="Men with laptop& running man">
+        </picture>
+      </div>
     </div>
     <!-- Section Image -->
 
