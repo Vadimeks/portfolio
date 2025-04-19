@@ -1,5 +1,5 @@
+/*Hero section*/
 .section-hero {
-  position: relative;
   margin: 0 auto;
   width: 100%;
   padding: 0;
@@ -16,6 +16,13 @@
   justify-content: center;
 }
 
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .hero-title {
   text-transform: uppercase;
   font-weight: 600;
@@ -28,6 +35,13 @@
 
 .hero-descr-list {
   margin-bottom: 30px;
+}
+
+.hero-descr {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.43;
+  color: var(--text-color);
 }
 
 .hero-btn {
@@ -54,26 +68,11 @@
   color: var(--button-text-color);
 }
 
-.hero-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 /* ---- HERO FOR SMALL PHONES ---- */
-
 @media only screen and (min-width: 320px) {
-  .hero-text {
-    max-width: 374px;
-    background-color: var(--background-color);
-  }
 
-  .hero-descr {
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 1.43;
-    color: var(--text-color);
+  .hero-text {
+    max-width: 340px;
   }
 
   .hero-descr-list {
@@ -90,80 +89,72 @@
 }
 
 @media only screen and (min-width: 375px) {
+
   .hero-container {
-    padding: 100px 30px 40px 30px;
+    padding: 140px 30px 40px 30px;
   }
 
   .hero-text {
     width: 100%;
-    max-width: 600px;
+    max-width: 580px;
+
   }
 
   .hero-title {
     font-size: 38px;
-    max-width: 600px;
+    max-width: 582px;
     margin-bottom: 40px;
+
   }
 
-  .hero-text-descr {
-    max-width: 767px;
-  }
-
-  .hero-btn {
+  .hero-descr-list {
     width: 100%;
-    max-width: 320px;
-    height: 60px;
-    border-radius: 30px;
   }
-
 }
 
 /* ---- HERO FOR TABLETS ----*/
-
 @media only screen and (min-width: 768px) {
   .section-hero {
     max-width: 1279px;
   }
 
   .hero-container {
-    padding: 160px 32px 80px 32px;
+    padding: 160px 40px 80px 40px;
   }
 
   .hero-text {
     width: 100%;
-    max-width: 1016px;
     height: auto;
-
+    max-width: 900px;
+    position: relative;
   }
 
   .hero-title {
     font-size: 48px;
-    margin-bottom: 120px;
-    max-width: 1016px;
+    margin-bottom: 80px;
+    max-width: 900px;
+  }
+
+  .hero-descr-list {
+    margin-bottom: 0;
   }
 
   .hero-descr {
-    font-size: 16px;
-    line-height: 1.25;
-
-  }
-
-  .hero-text-descr {
-    position: relative;
-    max-width: 1016px;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 700;
   }
 
   .hero-btn {
-    width: 112px;
-    height: 112px;
+    width: 140px;
+    height: 140px;
     border-radius: 0;
     border-top-left-radius: 150px;
     position: absolute;
     right: 0;
     bottom: 0;
-    font-size: 14px;
+    padding: 40px 10px 10px 40px;
   }
-
 }
 
 /* ---- HERO FOR PC's ---- */
@@ -173,41 +164,40 @@
   }
 
   .hero-container {
-    padding: 240px 100px 140px 100px;
+    padding: 240px 100px 80px 100px;
   }
 
   .hero-text {
     max-width: 1280px;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
+    height: auto;
   }
 
   .hero-title {
     max-width: 1280px;
-    text-transform: uppercase;
     font-weight: 600;
     font-size: 68px;
-    padding: 0;
     margin-bottom: 100px;
+  }
+
+  .hero-descr-list {
+    margin-bottom: 0;
   }
 
   .hero-descr {
     font-size: 16px;
-    font-weight: 700;
     line-height: 1.7;
-    padding: 0;
-    max-width: 900px;
+    font-weight: 700;
   }
 
   .hero-btn {
     width: 200px;
     height: 200px;
     border-radius: 0;
-    border-top-left-radius: 150px;
+    border-top-left-radius: 180px;
     position: absolute;
     right: 0;
     bottom: 0;
+    padding: 40px 10px 10px 40px;
   }
 
 }
