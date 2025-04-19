@@ -33,6 +33,10 @@
   margin-bottom: 30px;
 }
 
+.hero-accent {
+  color: var(--highlight-color);
+}
+
 .hero-descr-list {
   margin-bottom: 30px;
 }
