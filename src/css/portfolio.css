@@ -131,7 +131,6 @@
   .portfolio-list {
     gap: 24px;
     max-width: 704px;
-    /* Фиксируем ширину элемента */
   }
 
   .portfolio-title {
@@ -152,7 +151,6 @@
   .portfolio-item:nth-child(1),
   .portfolio-item:nth-child(2) {
     display: block;
-    /* Показываем первые два пункта */
   }
 
   .portfolio-item:nth-child(n + 3) {
@@ -193,27 +191,24 @@
   }
 
   .container.portfolio-container {
-    max-width: 1080px;
-    padding: 100px;
+    max-width: 1280px;
+    padding: 60px 100px;
     width: 100%;
     display: flex;
     flex-direction: column;
   }
 
-  .row {
+  .portfolio-content {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     margin-bottom: 52px;
     padding-right: 527px;
-    width: 1080px;
   }
 
   .portfolio-list {
-    max-width: 1080px;
+    max-width: 1280px;
     gap: 24px;
     flex-wrap: nowrap;
-    /* Без переноса */
   }
 
   .portfolio-item:nth-child(n + 2) {
@@ -222,19 +217,18 @@
 
   .portfolio-item:nth-child(n + 3) {
     display: block;
-    /*Переопределяем правило скрытия для элементов с 3-го и далее*/
   }
 
   .portfolio-title {
     font-size: 64px;
     line-height: 1;
     margin-bottom: 24px;
-    width: 553px;
+    width: 100%;
 
   }
 
   .portfolio-item {
-    width: 344px;
+    max-width: 344px;
   }
 
   .portfolio-text {
