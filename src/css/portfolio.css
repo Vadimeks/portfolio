@@ -1,10 +1,10 @@
-.section-reviews {
+.section-portfolio {
   background-color: #fbfbfb;
   padding: 0;
   width: 100%;
 }
 
-.reviews-container {
+.portfolio-container {
   padding: 80px 0;
   display: flex;
   flex-direction: column;
@@ -12,7 +12,7 @@
   align-items: center;
 }
 
-.reviews-title {
+.portfolio-title {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 46px;
@@ -23,11 +23,11 @@
   width: 288px;
 }
 
-.reviews-accent {
-  color: #576f35;
+.portfolio-accent {
+  color: var(--highlight-color);
 }
 
-.reviews-text {
+.portfolio-text {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.4;
@@ -37,17 +37,15 @@
   width: 288px;
 }
 
-.reviews-list {
+.portfolio-list {
   display: flex;
   justify-content: space-between;
-  /* Можно оставить для распределения */
   flex-wrap: wrap;
   gap: 24px;
-  /* Отступы между элементами */
   padding: 0;
 }
 
-.reviews-item {
+.portfolio-item {
   max-width: 288px;
   border-radius: 24px;
   padding: 20px 16px;
@@ -56,11 +54,11 @@
   border: 1px solid #d4bfc4;
 }
 
-.reviews-item:nth-child(n + 2) {
+.portfolio-item:nth-child(n + 2) {
   display: none;
 }
 
-.reviews-card {
+.portfolio-card {
   border-radius: 72px;
   margin-bottom: 24px;
   margin-left: auto;
@@ -96,17 +94,17 @@
 
 /* Mobile (375) */
 @media only screen and (min-width: 375px) {
-  .container.reviews-container {
+  .container.portfolio-container {
     width: 375px;
     padding: 80px 20px;
   }
 
-  .reviews-title {
+  .portfolio-title {
     font-size: 48px;
     width: 335px;
   }
 
-  .reviews-text {
+  .portfolio-text {
     width: 335px;
   }
 
@@ -116,27 +114,27 @@
     padding-right: 151px;
   }
 
-  .reviews-item {
+  .portfolio-item {
     max-width: 335px;
   }
 }
 
 /* Tablet (768px) */
 @media only screen and (min-width: 768px) {
-  .container.reviews-container {
+  .container.portfolio-container {
     width: 100%;
     max-width: 768px;
     padding: 100px 32px;
     margin: 0 auto;
   }
 
-  .reviews-list {
+  .portfolio-list {
     gap: 24px;
     max-width: 704px;
     /* Фиксируем ширину элемента */
   }
 
-  .reviews-title {
+  .portfolio-title {
     font-size: 64px;
     line-height: 1;
     margin-bottom: 24px;
@@ -144,20 +142,20 @@
 
   }
 
-  .reviews-text {
+  .portfolio-text {
     font-size: 16px;
     line-height: 1.25;
     margin-bottom: 52px;
     width: 553px;
   }
 
-  .reviews-item:nth-child(1),
-  .reviews-item:nth-child(2) {
+  .portfolio-item:nth-child(1),
+  .portfolio-item:nth-child(2) {
     display: block;
     /* Показываем первые два пункта */
   }
 
-  .reviews-item:nth-child(n + 3) {
+  .portfolio-item:nth-child(n + 3) {
     display: none;
   }
 
@@ -168,11 +166,11 @@
     max-width: 303px;
   }
 
-  .reviews-item {
+  .portfolio-item {
     max-width: 344px;
   }
 
-  .container.reviews-container {
+  .container.portfolio-container {
     display: flex;
     flex-direction: column;
   }
@@ -190,11 +188,11 @@
 
 /* Desktop (1280px) */
 @media only screen and (min-width: 1280px) {
-  .section-reviews {
+  .section-portfolio {
     padding: 0;
   }
 
-  .container.reviews-container {
+  .container.portfolio-container {
     max-width: 1080px;
     padding: 100px;
     width: 100%;
@@ -211,23 +209,23 @@
     width: 1080px;
   }
 
-  .reviews-list {
+  .portfolio-list {
     max-width: 1080px;
     gap: 24px;
     flex-wrap: nowrap;
     /* Без переноса */
   }
 
-  .reviews-item:nth-child(n + 2) {
+  .portfolio-item:nth-child(n + 2) {
     display: block;
   }
 
-  .reviews-item:nth-child(n + 3) {
+  .portfolio-item:nth-child(n + 3) {
     display: block;
     /*Переопределяем правило скрытия для элементов с 3-го и далее*/
   }
 
-  .reviews-title {
+  .portfolio-title {
     font-size: 64px;
     line-height: 1;
     margin-bottom: 24px;
@@ -235,11 +233,11 @@
 
   }
 
-  .reviews-item {
+  .portfolio-item {
     width: 344px;
   }
 
-  .reviews-text {
+  .portfolio-text {
     font-size: 16px;
     line-height: 1.25;
     margin-bottom: 52px;
