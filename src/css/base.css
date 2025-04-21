@@ -14,6 +14,7 @@ html {
   --menu-text-color: #fff;
   --highlight-color: #008055;
   --color1: #000;
+  --light-accent: rgba(130, 245, 190, 0.5);
 }
 
 body {
