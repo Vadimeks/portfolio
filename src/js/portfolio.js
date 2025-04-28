@@ -1,87 +1,113 @@
-document.addEventListener('DOMContentLoaded', adjustCardHeights);
-window.addEventListener('resize', adjustCardHeights);
+import * as basicLightbox from 'basiclightbox';
+import 'basiclightbox/dist/basicLightbox.min.css';
 
-function adjustCardHeights() {
-  const portfolioCards = document.querySelectorAll('.portfolio-card');
+const projects = [
+  {
+    title: 'Adaptive Web Project Organic Vegetables',
+    descriptionFront: 'Organic Vegetables',
+    imageUrl: './img/portfolio/project-1-tab.jpg',
+    largeImageUrl: './img/portfolio/project-1@2x-tab.jpg',
+    descriptionBack:
+      'This is a modern web project designed to present organic vegetables through an adaptive web interface, ensuring a seamless experience for users on different devices. The first team project developed as part of our HTML & CSS course.',
+    liveDemoUrl: 'https://vadimeks.github.io/devdreamers-project-01/',
+  },
+  {
+    title: 'Adaptive Web Project WebStudio',
+    descriptionFront: 'WebStudio',
+    imageUrl: './img/portfolio/project-2-mob.jpg',
+    largeImageUrl: './img/portfolio/project-2@2x-tab.jpg',
+    descriptionBack:
+      'This is a project completed based on homework assignments during the HTML/CSS block for the Web Studio, which focuses on education and application development.',
+    liveDemoUrl: 'https://vadimeks.github.io/goit-markup-hw-06/',
+  },
+  {
+    title: 'Adaptive Web Project Portfolio',
+    descriptionFront: 'Portfolio',
+    imageUrl: './img/portfolio/project-3-min.jpg',
+    largeImageUrl: './img/portfolio/project-3_large.jpg',
+    descriptionBack:
+      "This is my own project, which I did completely independently in parallel with my studies - for showcasing my work, as well as for reinforcing the skills I've acquired.",
+    liveDemoUrl: 'https://vadimeks.github.io/portfolio/',
+  },
+  // Додайте сюди об'єкти для інших проєктів, якщо вони є
+];
 
-  portfolioCards.forEach(card => {
-    const front = card.querySelector('.card-front');
-    const back = card.querySelector('.card-back');
+const portfolioList = document.querySelector('.portfolio-list');
 
-    if (front && back) {
-      const frontHeight = front.offsetHeight;
-      const backHeight = back.offsetHeight;
-      const maxHeight = Math.min(frontHeight, backHeight);
-
-      card.style.height = `${maxHeight}px`;
-    } else if (front) {
-      card.style.height = `${front.offsetHeight}px`;
-    } else if (back) {
-      card.style.height = `${back.offsetHeight}px`;
-    } else {
-      card.style.height = 'auto';
-    }
-  });
+function createProjectCard(project) {
+  return `
+    <li class="portfolio-item">
+      <div class="portfolio-card">
+        <div class="card-front">
+          <h3 class="title-project">${project.title}</h3>
+          <picture class="portfolio-pic">
+            <img class="content-image" src="${project.imageUrl}" alt="${
+    project.title
+  }" data-large-src="${project.largeImageUrl}">
+          </picture>
+        </div>
+        <div class="card-back">
+          <h3 class="title-project">${project.title}</h3>
+          <p class="text-project">${project.descriptionBack}</p>
+          ${
+            project.liveDemoUrl
+              ? `<a href="${project.liveDemoUrl}" target="_blank" class="accent-link">Live Demo</a>`
+              : ''
+          }
+        </div>
+      </div>
+    </li>
+  `;
 }
-document.addEventListener(
-  'DOMContentLoaded',
-  adjustCarouselButtonVerticalPosition
-);
-window.addEventListener('resize', adjustCarouselButtonVerticalPosition);
 
-function adjustCarouselButtonVerticalPosition() {
-  const carouselContainer = document.querySelector('.carousel-container');
-  const prevButton = document.querySelector('.prev-button');
-  const nextButton = document.querySelector('.next-button');
+function renderProjects(projectsArray) {
+  const projectsHTML = projectsArray
+    .map(project => createProjectCard(project))
+    .join('');
+  portfolioList.innerHTML = projectsHTML;
+}
 
-  if (carouselContainer && prevButton && nextButton) {
-    const containerHeight = carouselContainer.offsetHeight;
-    const buttonHeight = prevButton.offsetHeight; // Висота обох кнопок має бути однаковою
+// Викликаємо функцію рендерингу, передаючи їй масив projects
+renderProjects(projects);
 
-    const verticalCenter = (containerHeight - buttonHeight) / 2;
+portfolioList.addEventListener('click', event => {
+  const clickedElement = event.target;
 
-    prevButton.style.top = `${verticalCenter}px`;
-    nextButton.style.top = `${verticalCenter}px`;
+  // Перевіряємо, чи клік був на заголовку проєкту (перевертання картки)
+  if (clickedElement.classList.contains('title-project')) {
+    const portfolioCard = clickedElement.closest('.portfolio-card');
+    if (portfolioCard) {
+      portfolioCard.classList.toggle('flipped');
+    }
   }
-}
-// Код для функціональності каруселі
-document.addEventListener('DOMContentLoaded', initializeCarousel);
 
-function initializeCarousel() {
-  const carouselTrack = document.querySelector('.carousel-track');
-  const prevButton = document.querySelector('.prev-button');
-  const nextButton = document.querySelector('.next-button');
-  const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-  if (carouselTrack && prevButton && nextButton && portfolioItems.length > 0) {
-    let currentIndex = 0;
-    const itemWidth = portfolioItems[0].offsetWidth + 24; // Враховуємо margin-right
-
-    function scrollToItem(index) {
-      carouselTrack.style.transform = `translateX(-${index * itemWidth}px)`;
-      currentIndex = index;
-      updateButtonsVisibility();
+  // Перевіряємо, чи клік був на описі проєкту (перевертання картки)
+  if (clickedElement.classList.contains('text-project')) {
+    const portfolioCard = clickedElement.closest('.portfolio-card');
+    if (portfolioCard) {
+      portfolioCard.classList.toggle('flipped');
     }
-
-    function updateButtonsVisibility() {
-      prevButton.style.display = currentIndex === 0 ? 'none' : 'block';
-      nextButton.style.display =
-        currentIndex === portfolioItems.length - 1 ? 'none' : 'block';
-    }
-
-    prevButton.addEventListener('click', () => {
-      if (currentIndex > 0) {
-        scrollToItem(currentIndex - 1);
-      }
-    });
-
-    nextButton.addEventListener('click', () => {
-      if (currentIndex < portfolioItems.length - 1) {
-        scrollToItem(currentIndex + 1);
-      }
-    });
-
-    // Початкове відображення кнопок
-    updateButtonsVisibility();
   }
-}
+
+  // Перевіряємо, чи клік був на зображенні (відкриття модального вікна)
+  if (clickedElement.classList.contains('content-image')) {
+    const largeImageUrl = clickedElement.dataset.largeSrc;
+    const altText = clickedElement.alt;
+
+    if (largeImageUrl) {
+      const instance = basicLightbox.create(
+        `<img src="${largeImageUrl}" alt="${altText}">`,
+        {
+          onShow: instance => {
+            document.addEventListener('keydown', event => {
+              if (event.key === 'Escape') {
+                instance.close();
+              }
+            });
+          },
+        }
+      );
+      instance.show();
+    }
+  }
+});
