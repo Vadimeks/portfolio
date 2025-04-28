@@ -5,7 +5,7 @@ const projects = [
   {
     title: 'Adaptive Web Project Organic Vegetables',
     descriptionFront: 'Organic Vegetables',
-    imageUrl: './img/portfolio/project-1-tab.jpg',
+    imageUrl: './img/portfolio/project-1@2x-mob.jpg',
     largeImageUrl: './img/portfolio/project-1@2x-tab.jpg',
     descriptionBack:
       'This is a modern web project designed to present organic vegetables through an adaptive web interface, ensuring a seamless experience for users on different devices. The first team project developed as part of our HTML & CSS course.',
@@ -14,7 +14,7 @@ const projects = [
   {
     title: 'Adaptive Web Project WebStudio',
     descriptionFront: 'WebStudio',
-    imageUrl: './img/portfolio/project-2-mob.jpg',
+    imageUrl: './img/portfolio/project-2@2x-mob.jpg',
     largeImageUrl: './img/portfolio/project-2@2x-tab.jpg',
     descriptionBack:
       'This is a project completed based on homework assignments during the HTML/CSS block for the Web Studio, which focuses on education and application development.',
@@ -23,8 +23,8 @@ const projects = [
   {
     title: 'Adaptive Web Project Portfolio',
     descriptionFront: 'Portfolio',
-    imageUrl: './img/portfolio/project-3-min.jpg',
-    largeImageUrl: './img/portfolio/project-3_large.jpg',
+    imageUrl: './img/portfolio/project-3@2x-mob.jpg',
+    largeImageUrl: './img/portfolio/project-3@2x-tab.jpg',
     descriptionBack:
       "This is my own project, which I did completely independently in parallel with my studies - for showcasing my work, as well as for reinforcing the skills I've acquired.",
     liveDemoUrl: 'https://vadimeks.github.io/portfolio/',
