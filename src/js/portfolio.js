@@ -1,5 +1,5 @@
-import * as basicLightbox from 'basiclightbox';
-import 'basiclightbox/dist/basicLightbox.min.css';
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const projects = [
   {
@@ -29,33 +29,36 @@ const projects = [
       "This is my own project, which I did completely independently in parallel with my studies - for showcasing my work, as well as for reinforcing the skills I've acquired.",
     liveDemoUrl: 'https://vadimeks.github.io/portfolio/',
   },
-  // Додайте сюди об'єкти для інших проєктів, якщо вони є
+  // Дадайце сюды аб'екты для іншых праектаў, калі яны ёсць
 ];
 
 const portfolioList = document.querySelector('.portfolio-list');
+const prevButton = document.querySelector('.prev-button');
+const nextButton = document.querySelector('.next-button');
+const carouselContainer = document.querySelector('.carousel-container');
 
 function createProjectCard(project) {
   return `
     <li class="portfolio-item">
-      <div class="portfolio-card">
-        <div class="card-front">
-          <h3 class="title-project">${project.title}</h3>
-          <picture class="portfolio-pic">
-            <img class="content-image" src="${project.imageUrl}" alt="${
+      <a class="portfolio-link" href="${project.largeImageUrl}" data-caption="${
     project.title
-  }" data-large-src="${project.largeImageUrl}">
-          </picture>
-        </div>
-        <div class="card-back">
-          <h3 class="title-project">${project.title}</h3>
-          <p class="text-project">${project.descriptionBack}</p>
+  }: ${project.descriptionBack}">
+        <div class="portfolio-card">
+          <div class="card-front">
+            <h3 class="title-project">${project.title}</h3>
+            <picture class="portfolio-pic">
+              <img class="content-image" src="${project.imageUrl}" alt="${
+    project.title
+  }">
+            </picture>
+          </div>
           ${
             project.liveDemoUrl
-              ? `<a href="${project.liveDemoUrl}" target="_blank" class="accent-link">Live Demo</a>`
+              ? `<div class="project-link-container"><a href="${project.liveDemoUrl}" target="_blank" class="accent-link">Live Demo</a></div>`
               : ''
           }
         </div>
-      </div>
+      </a>
     </li>
   `;
 }
@@ -67,47 +70,82 @@ function renderProjects(projectsArray) {
   portfolioList.innerHTML = projectsHTML;
 }
 
-// Викликаємо функцію рендерингу, передаючи їй масив projects
 renderProjects(projects);
 
-portfolioList.addEventListener('click', event => {
-  const clickedElement = event.target;
-
-  // Перевіряємо, чи клік був на заголовку проєкту (перевертання картки)
-  if (clickedElement.classList.contains('title-project')) {
-    const portfolioCard = clickedElement.closest('.portfolio-card');
-    if (portfolioCard) {
-      portfolioCard.classList.toggle('flipped');
-    }
-  }
-
-  // Перевіряємо, чи клік був на описі проєкту (перевертання картки)
-  if (clickedElement.classList.contains('text-project')) {
-    const portfolioCard = clickedElement.closest('.portfolio-card');
-    if (portfolioCard) {
-      portfolioCard.classList.toggle('flipped');
-    }
-  }
-
-  // Перевіряємо, чи клік був на зображенні (відкриття модального вікна)
-  if (clickedElement.classList.contains('content-image')) {
-    const largeImageUrl = clickedElement.dataset.largeSrc;
-    const altText = clickedElement.alt;
-
-    if (largeImageUrl) {
-      const instance = basicLightbox.create(
-        `<img src="${largeImageUrl}" alt="${altText}">`,
-        {
-          onShow: instance => {
-            document.addEventListener('keydown', event => {
-              if (event.key === 'Escape') {
-                instance.close();
-              }
-            });
-          },
-        }
-      );
-      instance.show();
-    }
-  }
+// Ініцыялізацыя SimpleLightbox
+const lightbox = new SimpleLightbox('.portfolio-list a', {
+  captionsData: 'data-caption',
+  captionDelay: 250,
 });
+
+// Карусель
+let currentIndex = 0;
+let itemWidth;
+
+function updateCarousel() {
+  itemWidth = portfolioList.offsetWidth / getItemsToShow();
+  portfolioList.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+}
+
+function getItemsToShow() {
+  if (window.innerWidth < 768) {
+    return 1; // Паказваць па адным на мабільных (можна змяніць на 2, калі хочаце)
+  } else if (window.innerWidth < 1280) {
+    return 2;
+  } else {
+    return 3;
+  }
+}
+
+function scrollTo(direction) {
+  const itemsToShow = getItemsToShow();
+  currentIndex += direction;
+  const totalPages = Math.ceil(projects.length / itemsToShow);
+
+  if (currentIndex < 0) {
+    currentIndex = totalPages - 1;
+  } else if (currentIndex >= totalPages) {
+    currentIndex = 0;
+  }
+  updateCarousel();
+}
+
+// Ініцыялізацыя каруселі
+updateCarousel();
+window.addEventListener('resize', updateCarousel);
+
+prevButton.addEventListener('click', () => scrollTo(-1));
+nextButton.addEventListener('click', () => scrollTo(1));
+
+// Свайпы
+let touchStartX = null;
+let touchEndX = null;
+
+portfolioList.addEventListener('touchstart', event => {
+  touchStartX = event.changedTouches[0].clientX;
+});
+
+portfolioList.addEventListener('touchend', event => {
+  touchEndX = event.changedTouches[0].clientX;
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const swipeThreshold = 50;
+  if (touchStartX - touchEndX > swipeThreshold) {
+    scrollTo(1);
+  }
+  if (touchEndX - touchStartX > swipeThreshold) {
+    scrollTo(-1);
+  }
+  touchStartX = null;
+  touchEndX = null;
+}
+
+function toggleCarouselButtons() {
+  prevButton.style.display = 'block';
+  nextButton.style.display = 'block';
+}
+
+toggleCarouselButtons();
+window.addEventListener('resize', toggleCarouselButtons);
