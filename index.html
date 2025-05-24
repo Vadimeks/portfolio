@@ -13,7 +13,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
   <script type="module" crossorigin src="/portfolio/index.js"></script>
-  <link rel="stylesheet" crossorigin href="/portfolio/assets/index-CecZcOuY.css">
+  <link rel="modulepreload" crossorigin href="/portfolio/assets/vendor-g6-w1428.js">
+  <link rel="stylesheet" crossorigin href="/portfolio/assets/vendor-AL2zCFOW.css">
+  <link rel="stylesheet" crossorigin href="/portfolio/assets/index-gZiLH9zg.css">
 </head>
 
 <body>
@@ -184,121 +186,16 @@
 
       <p class="portfolio-text">
         Projects completed during my studies - a team project (done independently) and homework assignments. The level
-        is
-        beginner, as the learning process is not yet complete (<a href="https://goit.global/ua/" target="_blank"
+        is beginner, as the learning process is not yet complete (<a href="https://goit.global/ua/" target="_blank"
           rel="noopener noreferrer"><span class="accent-link">GOIT Full Stack JS course</span></a>)
       </p>
     </div>
-    <div class="carousel-container">
-      <ul class="portfolio-list carousel-track">
-        <li class="portfolio-item">
-          <div class="portfolio-card">
-            <div class="card-front">
-              <h3 class="title-project">Adaptive Web Project <br>
-                <a href="https://vadimeks.github.io/devdreamers-project-01/" target="_blank"><span
-                    class="accent-link">Organic
-                    Vegetables</span></a>
-              </h3>
-              <picture class="portfolio-pic">
-
-                <source media="(min-width: 768px)" srcset="/portfolio/assets/project-1-tab-PKkCjxuf.jpg 1x, /portfolio/assets/project-1@2x-tab-DYH3KivU.jpg 2x">
-                <source media="(max-width: 767px)" srcset="/portfolio/assets/project-1-mob-Dp1MrQ_9.jpg 1x, /portfolio/assets/project-1@2x-mob-CyNSOClp.jpg 2x">
-
-                <img class="content-image" src="/src/img/portfolio/project-1-min.jpg" alt="Project-1 GreenHarvest">
-              </picture>
-            </div>
-            <div class="card-back">
-              <h3 class="title-project">Adaptive Web Project <br>
-                <a href="https://vadimeks.github.io/devdreamers-project-01/"><span class="accent-link">Organic
-                    Vegetables</span></a>
-              </h3>
-              <button class="project1-modal" type="button" data-modal-open aria-label="Open write me modal">See project
-                into frame</button>
-              <p class="text-project">
-                This is a modern web project designed to present organic vegetables
-                through an adaptive web interface, ensuring a seamless
-                experience for users on different devices. The first team project developed as part of our HTML &
-                CSS course.
-              </p>
-            </div>
-          </div>
-        </li>
-        <li class="portfolio-item">
-          <div class="portfolio-card">
-            <div class="card-front">
-              <h3 class="title-project">Adaptive Web Project <br>
-                <a href="https://vadimeks.github.io/goit-markup-hw-06/" target="_blank"><span
-                    class="accent-link">WebStudio</span></a>
-              </h3>
-              <picture class="portfolio-pic">
-
-                <source media="(min-width: 768px)" srcset="/portfolio/assets/project-2-tab-D5UoKWum.jpg 1x, /portfolio/assets/project-2@2x-tab-BCcQ1hGN.jpg 2x">
-                <source media="(max-width: 767px)" srcset="/portfolio/assets/project-2-mob-BWkhpvv3.jpg 1x, /portfolio/assets/project-2@2x-mob-Lp8b7QFA.jpg 2x">
-
-                <img class="content-image" src="/src/img/portfolio/project-2-min.jpg" alt="Project-1 GreenHarvest">
-              </picture>
-            </div>
-            <div class="card-back">
-              <h3 class="title-project">Adaptive Web Project <br>
-                <a href="https://vadimeks.github.io/goit-markup-hw-06/" target="_blank"><span
-                    class="accent-link">WebStudio</span></a>
-              </h3>
-              <button class="project2-modal" type="button" data-modal-open aria-label="Open write me modal">See project
-                into frame</button>
-              <p class="text-project">
-                This is a project completed based on homework assignments during the HTML/CSS block for the Web Studio,
-                which
-                focuses on
-                education and application development.
-              </p>
-            </div>
-          </div>
-        </li>
-        <li class="portfolio-item">
-          <div class="portfolio-card">
-            <div class="card-front">
-              <h3 class="title-project">Adaptive Web Project <br>
-                <a href="https://vadimeks.github.io/portfolio/"><span class="accent-link">Portfolio</span></a>
-              </h3>
-              <picture class="portfolio-pic">
-
-                <source media="(min-width: 768px)" srcset="/portfolio/assets/project-3-tab-Fly2K_nU.jpg 1x, /portfolio/assets/project-3@2x-tab-Dbp7YkG5.jpg 2x">
-                <source media="(max-width: 767px)" srcset="/portfolio/assets/project-3-mob-BVorcddR.jpg 1x, /portfolio/assets/project-3@2x-mob-DHKT9D35.jpg 2x">
-
-                <img class="content-image" src="/src/img/portfolio/project-3-min.jpg" alt="Project-1 GreenHarvest">
-              </picture>
-            </div>
-            <div class="card-back">
-              <h3 class="title-project">Adaptive Web Project <br>
-                <a href="https://vadimeks.github.io/portfolio/"><span class="accent-link">Portfolio</span></a>
-              </h3>
-              <button class="project3-modal" type="button" data-modal-open aria-label="Open write me modal">See project
-                into frame</button>
-              <p class="text-project">
-                This is my own project, which I did completely independently in parallel with my studies - for
-                showcasing my
-                work, as
-                well as for reinforcing the skills I've acquired.
-              </p>
-            </div>
-          </div>
-        </li>
+    <div class="portfolio-gallery-wrapper">
+      <ul class="portfolio-list">
       </ul>
-      <button class="carousel-button prev-button" aria-label="Previous project">
-        <svg class="carousel-icon" width="24" height="24">
-          <use href="/portfolio/assets/sprite-DI6Uh8eg.svg#icon-circle-left"></use>
-        </svg>
-      </button>
-      <button class="carousel-button next-button" aria-label="Next project">
-        <svg class="carousel-icon" width="24" height="24">
-          <use href="/portfolio/assets/sprite-DI6Uh8eg.svg#icon-circle-right"></use>
-        </svg>
-      </button>
+      <button type="button" class="see-more-button">See more</button>
     </div>
-
-
   </div>
-
 </section>
     <section class="section-advertisement">
   <div class="container advertisement-container">
@@ -320,8 +217,8 @@
       <div class="hero-image">
         <picture class="hero-pic">
           <source media="(min-width: 1280px)" srcset="/portfolio/assets/hero-pc-min-CteZjsFT.jpg 1x, /portfolio/assets/hero-pc@2x-min-BSeEdw_4.jpg 2x">
-          <source media="(min-width: 768px) and (max-width: 1279px)" srcset="/portfolio/assets/hero-tab-lCLMFtHq.jpg 1x, 2x">
-          <source media="(max-width: 767px)" srcset="/portfolio/assets/hero-tab-min-C1jCA2yD.jpg 1x, 2x">
+          <source media="(min-width: 768px) and (max-width: 1279px)" srcset="/portfolio/assets/hero-tab-lCLMFtHq.jpg 1x, /portfolio/assets/hero-tab@2x-DcSl8zJw.jpg 2x">
+          <source media="(max-width: 767px)" srcset="/portfolio/assets/hero-tab-min-C1jCA2yD.jpg 1x, /portfolio/assets/hero-tab@2x-min-B2GMy7HT.jpg 2x">
           <source media="(max-width: 374px)" srcset="/portfolio/assets/hero-mob-min-gYVafY7a.jpg 1x, /portfolio/assets/hero-mob@2x-min-Czuv2lCB.jpg 2x">
           <img class="content-image" src="/src/img/hero/hero-pc-min.jpg" alt="Men with laptop& running man">
         </picture>
