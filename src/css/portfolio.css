@@ -2,7 +2,6 @@
 .section-portfolio {
   padding: 48px 0;
   width: 100%;
-
 }
 
 .portfolio-container {
@@ -12,13 +11,17 @@
   padding: 0 16px;
   height: auto;
   width: 100%;
-
+  /* Дададзена шырыня 100% для кантэйнера */
 }
 
 .portfolio-content {
   margin-bottom: 32px;
   width: 100%;
+  /* Дададзена шырыня 100% */
   max-width: 900px;
+  /* Захавана максімальная шырыня */
+  text-align: center;
+  /* Захавана цэнтраванне па змаўчанні */
 }
 
 .portfolio-title {
@@ -45,6 +48,8 @@
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
+  /* Захавана цэнтраванне па змаўчанні */
 }
 
 .accent-link {
@@ -285,28 +290,36 @@
 
   .portfolio-content {
     margin-bottom: 52px;
-
     max-width: 1280px;
+    /* Зменена з 900px на 1280px */
   }
 
   .portfolio-title {
     font-size: 68px;
+    /* Зменена з 48px на 68px */
     max-width: 1080px;
     text-align: left;
+    /* Зменена з center на left */
   }
 
   .portfolio-text {
     max-width: 1080px;
     text-align: left;
+    /* Зменена з center на left */
     font-weight: 700;
+    /* Зменена з 500 на 700 */
     line-height: 1.7;
+    /* Зменена з 1.5 на 1.7 */
     font-size: 16px;
+    /* Захавана 16px */
   }
 
   .portfolio-list {
     grid-template-columns: repeat(2, 1fr);
+    /* ЗМЕНА ТУТ: 2 калонкі для дэсктопа */
     gap: 24px;
     max-width: 100%;
+    /* Сетка будзе займаць усю даступную шырыню */
   }
 
   .portfolio-item {
