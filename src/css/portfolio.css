@@ -1,32 +1,33 @@
 /* Portfolio section */
 .section-portfolio {
-  padding: 0;
+  padding: 48px 0;
   width: 100%;
 }
 
 .portfolio-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   padding: 0 16px;
   height: auto;
+  width: 100%;
 }
 
 .portfolio-content {
   margin-bottom: 32px;
-  text-align: left;
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
 }
 
 .portfolio-title {
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 32px;
+  font-size: 28px;
   line-height: 1.1;
   letter-spacing: -0.01em;
   color: var(--text-color);
   margin-bottom: 16px;
-  width: 100%;
   padding: 0;
 }
 
@@ -36,241 +37,209 @@
 
 .portfolio-text {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.5;
-  color: var(--text-color);
-  text-align: left;
+  color: var(--text-text-color);
   width: 100%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .accent-link {
-  background-color: var(--accent-color);
+  color: var(--highlight-color);
 }
 
-.carousel-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.portfolio-list {
-  display: flex;
-  gap: 24px;
-  padding: 0 26px;
-  height: auto;
-  margin: 0;
-  transition: transform 0.3s ease-in-out;
-  background-color: var(--background-color);
-}
-
-.portfolio-item {
-  flex-shrink: 0;
-  width: 100%;
-  border-radius: 30px;
-  box-sizing: border-box;
-  border: none;
-  margin-right: 24px;
-}
-
-.portfolio-item:last-child {
-  margin-right: 0;
-}
-
-.portfolio-card {
-  position: relative;
-  width: 100%;
-  perspective: 1000px;
-  border-radius: 30px;
-  transform-style: preserve-3d;
-  transition: transform 0.6s ease-in-out;
-  min-height: 228px;
-}
-
-.card-front,
-.card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 30px;
-  box-sizing: border-box;
+/* Новы абгортачны дыў для галерэі і кнопкі */
+.portfolio-gallery-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  justify-content: center;
-}
-
-.card-front {
-  transform: rotateY(0deg);
-  z-index: 2;
-  background-color: transparent;
-  height: auto;
-  padding: 12px 8px;
-}
-
-.card-back {
-  background-color: transparent;
-  color: var(--text-color);
-  transform: rotateY(180deg);
-  padding: 12px 8px;
-}
-
-.portfolio-card:hover {
-  transform: rotateY(180deg);
-}
-
-.title-project {
-  margin-bottom: 8px;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
-}
-
-.project1-modal,
-.project2-modal,
-.project3-modal {
-  margin-bottom: 8px;
-  height: 20px;
-  border-radius: 8px;
-  background: var(--button-color);
-  border: none;
-  font-family: inherit;
-  text-align: center;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
-  color: var(--text-color);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.project1-modal:hover,
-.project2-modal:hover,
-.project3-modal:hover,
-.project1-modal:focus,
-.project2-modal:focus,
-.project3-modal:focus {
-  background-color: var(--highlight-color);
-  color: var(--button-text-color);
-}
-
-.text-project {
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.43;
   width: 100%;
-  margin-bottom: auto;
+}
+
+.portfolio-list {
+  display: grid;
+  /* Выкарыстоўваем Grid для сеткі */
+  grid-template-columns: 1fr;
+  /* Па змаўчанні: 1 калонка на мабільных */
+  gap: 20px;
+  /* Адступ паміж элементамі */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 100%;
+}
+
+.portfolio-item {
+  width: 100%;
+  /* Карткі займаюць усю даступную шырыню калонкі */
+  border-radius: 30px;
+  box-sizing: border-box;
+  border: none;
+}
+
+/* Спасылка, якая абгортвае выяву для SimpleLightbox */
+.portfolio-image-link {
+  display: block;
+  text-decoration: none;
+  line-height: 0;
+  /* Выдаляем лішні прабел пад выявай */
+}
+
+/* Стылі для карткі праекта */
+.portfolio-card {
+  width: 100%;
+  /* height: 100%; */
+  /* ВЫДАЛІЦЬ ГЭТА: Картка будзе адаптавацца па вышыні да змесціва */
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Цень для карткі */
+  background-color: var(--card-bg-color, #fff);
+  /* Фон карткі, можна задаць у :root */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  /* Анімацыя пры навядзенні */
+}
+
+.portfolio-card:hover,
+.portfolio-card:focus-within {
+  /* focus-within для даступнасці */
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .portfolio-pic {
   display: block;
   width: 100%;
-  height: auto;
+  height: 200px;
+  /* ЗМЕНА ТУТ: Фіксаваная вышыня для кантэйнера выявы */
   border-radius: 0;
+  overflow: hidden;
 }
 
 .content-image {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  /* ЗМЕНА ТУТ: Выява запаўняе ўсю вышыню свайго бацькоўскага элемента */
   border-radius: 0;
   object-fit: cover;
+  /* Забяспечвае, што выява цалкам пакрывае вобласць, абрэзаючы лішняе */
+  border: 1px solid var(--accent-color);
+  /* Рамка вакол выявы */
+  transition: transform 0.3s ease-in-out;
 }
 
-.carousel-button {
-  position: absolute;
-  background: transparent;
-  fill: var(--highlight-color);
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1.5rem;
+.portfolio-card:hover .content-image,
+.portfolio-card:focus-within .content-image {
+  transform: scale(1.02);
+}
+
+/* Стылі для блока з інфармацыяй праектa */
+.portfolio-info-block {
+  padding: 16px;
+  /* Унутраны водступ для інфармацыі */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
+  /* Каб блок займаў усю даступную вышыню */
+  justify-content: space-between;
+  /* Размяшчэнне змесціва па вертыкалі */
+}
+
+.title-project {
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
   color: var(--text-color);
-  opacity: 1;
-  transition: opacity 0.3s ease;
-  padding: 0;
-  z-index: 10;
+}
+
+.text-project {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-text-color);
+  margin-bottom: 15px;
+  /* Адступ ад кнопак */
+}
+
+/* Стылі для кнопак Live Demo / GitHub */
+.project-links {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+  /* Прыціскае кнопкі да нізу блока */
+  justify-content: center;
+  /* Цэнтруем кнопкі */
+  width: 100%;
+  /* Займае ўсю шырыню */
+}
+
+.project-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  border: 1px solid var(--highlight-color);
+  /* Колер рамкі для кнопак */
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--highlight-color);
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.project-button:hover,
+.project-button:focus {
+  background-color: var(--highlight-color);
+  color: var(--text-color-dark, #fff);
+  /* Зменіце на колер тэксту для кнопкі пры навядзенні */
+  border-color: var(--highlight-color);
+}
+
+/* Стылі для кнопкі "See more" */
+.see-more-button {
   display: block;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 28px;
+  border-radius: 12px;
+  border: 1px solid rgba(78, 117, 255, 0.5);
+  /* Каляровая рамка */
+  background-color: transparent;
+  color: var(--highlight-color);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 40px;
+  /* Адступ ад галерэі */
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-.carousel-button:hover {
-  opacity: 1;
+.see-more-button:hover,
+.see-more-button:focus {
+  background-color: var(--highlight-color);
+  color: var(--text-color-dark, #fff);
+  border-color: var(--highlight-color);
 }
 
-.prev-button {
-  left: 0px;
-  top: 110px;
-}
-
-.next-button {
-  right: 0px;
-  top: 110px;
-}
-
-@media screen and (min-width: 320px) {
-
-  .portfolio-card {
-    min-height: 264px;
-  }
-
-  .prev-button,
-  .next-button {
-    top: 130px;
-  }
-
-  .title-project {
-    margin-bottom: 12px;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 1.3;
-    letter-spacing: -0.01em;
-  }
-
-  .text-project {
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 1.43;
-    width: 100%;
-    margin-bottom: auto;
-  }
-}
-
-@media screen and (min-width: 375px) {
-
-  .portfolio-container {
-    padding: 0 20px;
-  }
-
-  .portfolio-content {
-    max-width: 580px;
-  }
-
-  .carousel-container {
-    max-width: 460px;
-    padding-bottom: 24px;
-  }
-
-  .portfolio-card {
-    min-height: 340px;
-  }
-
-  .prev-button,
-  .next-button {
-    top: 160px;
-  }
-
-  .project1-modal,
-  .project2-modal,
-  .project3-modal {
-    height: 30px;
-  }
+/* Клас для хавання элементаў */
+.is-hidden {
+  display: none;
 }
 
 /* Tablet (min-width 768px) */
@@ -281,84 +250,118 @@
 
   .portfolio-content {
     margin-bottom: 40px;
-    text-align: left;
-    max-width: 900px;
+    text-align: center;
+    max-width: 700px;
   }
 
   .portfolio-title {
-    font-size: 46px;
+    font-size: 36px;
   }
 
   .portfolio-text {
-    text-align: left;
+    font-size: 16px;
   }
 
   .portfolio-list {
-    display: flex;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 калонкі для планшэтаў */
     gap: 24px;
-  }
-
-  .carousel-container {
-    flex-direction: row;
-    width: 100%;
-    max-width: 900px;
-    align-items: center;
-    min-width: 720px;
-  }
-
-  .carousel-track {
-    max-width: 900px;
-    min-width: 720px;
-  }
-
-  .portfolio-item:last-child {
-    display: none;
-  }
-
-  .card-front,
-  .card-back {
-    max-width: 440px;
-    top: 0;
+    /* Адступ паміж элементамі */
   }
 
   .portfolio-item {
-    flex-shrink: 0.9;
-    width: 100%;
-    border-radius: 30px;
-    box-sizing: border-box;
-    border: none;
-    margin-right: 0;
+    width: auto;
+    /* Аўтаматычная шырыня ў Grid */
   }
 }
 
-/* Desctop (min-width 1280px) */
+/* Desktop (min-width 1280px) */
 @media screen and (min-width: 1280px) {
   .portfolio-container {
     padding: 0 100px;
     max-width: 1280px;
+    /* Зададзены максімальны памер кантэйнера */
   }
 
   .portfolio-content {
     margin-bottom: 52px;
+    max-width: 1280px;
   }
 
   .portfolio-title {
-    font-size: 64px;
+    font-size: 68px;
+    max-width: 1080px;
+    text-align: left;
+  }
+
+  .portfolio-text {
+    max-width: 1080px;
+    text-align: left;
+    font-weight: 700;
+    line-height: 1.7;
+    font-size: 16px;
   }
 
   .portfolio-list {
-    display: flex;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 калонкі для дэсктопа */
     gap: 24px;
-    max-width: 900px;
+    max-width: 100%;
+    /* Сетка будзе займаць усю даступную шырыню */
   }
 
   .portfolio-item {
-    min-width: 340px;
-    margin-right: 0;
+    width: auto;
   }
+}
 
-  .carousel-button {
-    left: 100px;
-    right: 100px;
-  }
+/* SimpleLightbox styles */
+.sl-overlay {
+  background: rgba(46, 47, 66, 0.8) !important;
+}
+
+.sl-wrapper {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1050 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.sl-close {
+  right: 20px !important;
+  top: 20px !important;
+  height: 32px !important;
+  width: 32px !important;
+  line-height: 32px !important;
+  color: rgba(255, 255, 255, 1) !important;
+  font-size: 32px !important;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.sl-close:hover,
+.sl-close:focus {
+  opacity: 1;
+}
+
+.sl-prev,
+.sl-next {
+  top: auto !important;
+  bottom: auto !important;
+  height: 48px !important;
+  width: 48px !important;
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  font-size: 2rem !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
 }
