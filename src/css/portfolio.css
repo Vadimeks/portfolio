@@ -1,13 +1,12 @@
 /* Portfolio section */
 .section-portfolio {
-  padding: 0;
+  padding: 48px 0;
   width: 100%;
 }
 
 .portfolio-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   padding: 0 16px;
   height: auto;
@@ -15,18 +14,17 @@
 
 .portfolio-content {
   margin-bottom: 32px;
-  text-align: left;
+  text-align: center;
 }
 
 .portfolio-title {
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 32px;
+  font-size: 28px;
   line-height: 1.1;
   letter-spacing: -0.01em;
   color: var(--text-color);
   margin-bottom: 16px;
-  width: 100%;
   padding: 0;
 }
 
@@ -36,15 +34,18 @@
 
 .portfolio-text {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.5;
-  color: var(--text-color);
-  text-align: left;
+  color: var(--text-text-color);
+  text-align: center;
   width: 100%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .accent-link {
-  background-color: var(--accent-color);
+  color: var(--highlight-color);
 }
 
 .carousel-container {
@@ -55,47 +56,50 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .portfolio-list {
   display: flex;
   gap: 24px;
-  padding: 0 26px;
+  padding: 0 16px;
   height: auto;
   margin: 0;
   transition: transform 0.3s ease-in-out;
-  background-color: var(--background-color);
+  list-style: none;
 }
 
 .portfolio-item {
   flex-shrink: 0;
-  width: 100%;
   border-radius: 30px;
   box-sizing: border-box;
   border: none;
-  margin-right: 24px;
+  width: calc(100% - 32px);
 }
 
-.portfolio-item:last-child {
-  margin-right: 0;
+.portfolio-link {
+  display: block;
+  text-decoration: none;
 }
 
+/* Стили для карточки проекта */
 .portfolio-card {
   position: relative;
   width: 100%;
-  perspective: 1000px;
   border-radius: 30px;
-  transform-style: preserve-3d;
-  transition: transform 0.6s ease-in-out;
-  min-height: 228px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.card-front,
-.card-back {
-  position: absolute;
+.portfolio-card:hover,
+.portfolio-card:focus {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-front {
   width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
+  height: auto;
   border-radius: 30px;
   box-sizing: border-box;
   display: flex;
@@ -103,70 +107,17 @@
   align-items: center;
   text-align: center;
   justify-content: center;
-}
-
-.card-front {
-  transform: rotateY(0deg);
+  padding: 12px 8px;
+  background-color: transparent;
   z-index: 2;
-  background-color: transparent;
-  height: auto;
-  padding: 12px 8px;
-}
-
-.card-back {
-  background-color: transparent;
-  color: var(--text-color);
-  transform: rotateY(180deg);
-  padding: 12px 8px;
-}
-
-.portfolio-card:hover {
-  transform: rotateY(180deg);
 }
 
 .title-project {
   margin-bottom: 8px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.3;
   letter-spacing: -0.01em;
-}
-
-.project1-modal,
-.project2-modal,
-.project3-modal {
-  margin-bottom: 8px;
-  height: 20px;
-  border-radius: 8px;
-  background: var(--button-color);
-  border: none;
-  font-family: inherit;
-  text-align: center;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
-  color: var(--text-color);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.project1-modal:hover,
-.project2-modal:hover,
-.project3-modal:hover,
-.project1-modal:focus,
-.project2-modal:focus,
-.project3-modal:focus {
-  background-color: var(--highlight-color);
-  color: var(--button-text-color);
-}
-
-.text-project {
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.43;
-  width: 100%;
-  margin-bottom: auto;
 }
 
 .portfolio-pic {
@@ -174,6 +125,8 @@
   width: 100%;
   height: auto;
   border-radius: 0;
+  overflow: hidden;
+  margin-bottom: 12px;
 }
 
 .content-image {
@@ -182,95 +135,49 @@
   height: auto;
   border-radius: 0;
   object-fit: cover;
+  border: 1px solid var(--accent-color);
+  transition: transform 0.3s ease-in-out;
+}
+
+.portfolio-card:hover .content-image,
+.portfolio-card:focus .content-image {
+  transform: scale(1.02);
+}
+
+.project-link-container {
+  margin-top: 12px;
+}
+
+.project1-modal,
+.project2-modal,
+.project3-modal {
+  display: none;
+}
+
+.text-project {
+  display: none;
 }
 
 .carousel-button {
   position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   background: transparent;
-  fill: var(--highlight-color);
   border: none;
-  border-radius: 50%;
   cursor: pointer;
-  font-size: 1.5rem;
-  color: var(--text-color);
-  opacity: 1;
-  transition: opacity 0.3s ease;
-  padding: 0;
+  font-size: 2rem;
+  color: var(--highlight-color);
   z-index: 10;
-  display: block;
-}
-
-.carousel-button:hover {
-  opacity: 1;
+  display: none;
+  /* Скрываем по умолчанию */
 }
 
 .prev-button {
-  left: 0px;
-  top: 110px;
+  left: 10px;
 }
 
 .next-button {
-  right: 0px;
-  top: 110px;
-}
-
-@media screen and (min-width: 320px) {
-
-  .portfolio-card {
-    min-height: 264px;
-  }
-
-  .prev-button,
-  .next-button {
-    top: 130px;
-  }
-
-  .title-project {
-    margin-bottom: 12px;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 1.3;
-    letter-spacing: -0.01em;
-  }
-
-  .text-project {
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 1.43;
-    width: 100%;
-    margin-bottom: auto;
-  }
-}
-
-@media screen and (min-width: 375px) {
-
-  .portfolio-container {
-    padding: 0 20px;
-  }
-
-  .portfolio-content {
-    max-width: 580px;
-  }
-
-  .carousel-container {
-    max-width: 460px;
-    padding-bottom: 24px;
-  }
-
-  .portfolio-card {
-    min-height: 340px;
-  }
-
-  .prev-button,
-  .next-button {
-    top: 160px;
-  }
-
-  .project1-modal,
-  .project2-modal,
-  .project3-modal {
-    height: 30px;
-  }
+  right: 10px;
 }
 
 /* Tablet (min-width 768px) */
@@ -281,53 +188,35 @@
 
   .portfolio-content {
     margin-bottom: 40px;
-    text-align: left;
-    max-width: 900px;
+    text-align: center;
+    max-width: 700px;
   }
 
   .portfolio-title {
-    font-size: 46px;
+    font-size: 36px;
   }
 
   .portfolio-text {
-    text-align: left;
-  }
-
-  .portfolio-list {
-    display: flex;
-    gap: 24px;
+    font-size: 16px;
   }
 
   .carousel-container {
-    flex-direction: row;
-    width: 100%;
-    max-width: 900px;
-    align-items: center;
-    min-width: 720px;
+    max-width: 700px;
   }
 
-  .carousel-track {
-    max-width: 900px;
-    min-width: 720px;
-  }
-
-  .portfolio-item:last-child {
-    display: none;
-  }
-
-  .card-front,
-  .card-back {
-    max-width: 440px;
-    top: 0;
+  .portfolio-list {
+    padding: 0;
+    justify-content: flex-start;
+    width: calc(2 * (100% - 32px) / 2 + 24px);
   }
 
   .portfolio-item {
-    flex-shrink: 0.9;
-    width: 100%;
-    border-radius: 30px;
-    box-sizing: border-box;
-    border: none;
-    margin-right: 0;
+    width: calc((100% - 24px) / 2);
+  }
+
+  .carousel-button {
+    display: block;
+    /* Показываем кнопки на планшетах */
   }
 }
 
@@ -340,25 +229,95 @@
 
   .portfolio-content {
     margin-bottom: 52px;
+    text-align: center;
+    max-width: 900px;
   }
 
   .portfolio-title {
-    font-size: 64px;
+    font-size: 48px;
+  }
+
+  .carousel-container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
   }
 
   .portfolio-list {
     display: flex;
     gap: 24px;
-    max-width: 900px;
+    width: 1200px;
+    padding: 0;
+    margin: 0 auto;
+    justify-content: flex-start;
   }
 
   .portfolio-item {
-    min-width: 340px;
-    margin-right: 0;
+    width: calc(33.333% - 16px);
   }
 
   .carousel-button {
-    left: 100px;
-    right: 100px;
+    display: block;
+    /* Показываем кнопки на десктопах */
   }
+
+  .prev-button {
+    left: 10px;
+  }
+
+  .next-button {
+    right: 10px;
+  }
+}
+
+/* SimpleLightbox styles (если вы не подключаете через CDN) */
+.sl-overlay {
+  background: rgba(46, 47, 66, 0.8) !important;
+}
+
+.sl-wrapper {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1050 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.sl-close {
+  right: 20px !important;
+  top: 20px !important;
+  height: 32px !important;
+  width: 32px !important;
+  line-height: 32px !important;
+  color: rgba(255, 255, 255, 1) !important;
+  font-size: 32px !important;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.sl-close:hover,
+.sl-close:focus {
+  opacity: 1;
+}
+
+.sl-prev,
+.sl-next {
+  top: auto !important;
+  bottom: auto !important;
+  height: 48px !important;
+  width: 48px !important;
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  font-size: 2rem !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
 }
