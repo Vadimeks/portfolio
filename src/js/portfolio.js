@@ -1,6 +1,9 @@
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
+import SimpleLightbox from 'simplelightbox'; // Імпартуем бібліятэку SimpleLightbox
+import 'simplelightbox/dist/simple-lightbox.min.css'; // Імпартуем стылі SimpleLightbox
 
+// Дадзеныя праектаў - ваш спіс
+// Кожны аб'ект праекта змяшчае шляхі да выяў для розных памераў экрана
+// і для SimpleLightbox, а таксама інфармацыю для апісання.
 const projects = [
   {
     title: 'Adaptive Web Project Organic Vegetables', // Поўны загаловак праекта
@@ -12,8 +15,9 @@ const projects = [
     imageUrlDesktop: './img/portfolio/project-1-desk.jpg', // Дэсктопная выява (1x)
     imageUrlDesktopRetina: './img/portfolio/project-1@2x-desk.jpg', // Дэсктопная выява (2x)
     largeImageUrl: './img/portfolio/project-1-large.jpg', // Вялікая выява для SimpleLightbox
+    // Апісанне праекта
     description:
-      'This is a modern web project designed to present organic vegetables through an adaptive web interface, ensuring a seamless experience for users on different devices. The first team project developed as part of our HTML & CSS course.', // Апісанне для адваротнага боку карткі
+      'This is a modern web project designed to present organic vegetables through an adaptive web interface, ensuring a seamless experience for users on different devices. The first team project developed as part of our HTML & CSS course.',
     liveDemoUrl: 'https://vadimeks.github.io/devdreamers-project-01/', // Спасылка на жывое дэма
     githubUrl: 'https://github.com/vadimeks/devdreamers-project-01', // Спасылка на GitHub (апцыянальна)
   },
@@ -124,17 +128,26 @@ const projects = [
   },
 ];
 
+// Атрымліваем спасылку на спіс партфоліо, куды будуць дадавацца праекты
 const portfolioList = document.querySelector('.portfolio-list');
+// Атрымліваем спасылку на кнопку "See more"
 const seeMoreButton = document.querySelector('.see-more-button');
+
+// Зменная для захоўвання экзэмпляра SimpleLightbox
 let lightboxInstance = null;
 
+/**
+ * Стварае HTML-разметку для адной карткі праекта.
+ * @param {object} project - Аб'ект з дадзенымі праекта.
+ * @returns {string} - Радок HTML-разметкі для карткі праекта.
+ */
 function createProjectCard(project) {
   return `
     <li class="portfolio-item">
       <div class="portfolio-card">
         <a class="portfolio-image-link" href="${
           project.largeImageUrl
-        }" data-caption="${project.title}: ${project.descriptionBack}">
+        }" data-caption="${project.title}: ${project.description}">
           <picture class="portfolio-pic">
             <source media="(min-width: 1280px)" 
                     srcset="${project.imageUrlDesktop} 1x, ${
@@ -155,11 +168,9 @@ function createProjectCard(project) {
         </a>
         
         <div class="portfolio-info-block">
-          <h3 class="title-project">${
-            project.title
-          }</h3> <p class="text-project">${
-    project.descriptionBack
-  }</p> <div class="project-links">
+          <h3 class="title-project">${project.title}</h3> 
+          <p class="text-project">${project.description}</p> 
+          <div class="project-links">
             ${
               project.liveDemoUrl
                 ? `<a href="${project.liveDemoUrl}" target="_blank" rel="noopener noreferrer" class="project-button live-demo-btn">Live Demo</a>`
@@ -177,5 +188,99 @@ function createProjectCard(project) {
   `;
 }
 
-// Заўвага: На гэтым кроку функцыі рэндэрынгу і логіка кнопкі "See more"
-// яшчэ не дададзены. Яны будуць дададзены на наступных кроках.
+/**
+ * Вызначае колькасць праектаў для пачатковага адлюстравання
+ * у залежнасці ад шырыні экрана.
+ * @returns {number} - Колькасць праектаў для паказу.
+ */
+function getInitialProjectsCount() {
+  const width = window.innerWidth;
+  if (width < 768) {
+    // Мабільныя прылады
+    return 2;
+  } else {
+    // Планшэты і дэсктопы
+    return 4;
+  }
+}
+
+/**
+ * Рэндэрыць праекты ў галерэю партфоліо.
+ * Кіруе бачнасцю кнопкі "See more" і ініцыялізуе SimpleLightbox.
+ */
+function renderProjects() {
+  const initialCount = getInitialProjectsCount(); // Атрымліваем колькасць праектаў для паказу
+
+  // Выбіраем, якія праекты рэндэрыць:
+  // Калі кнопка "See more" не схавана (г.зн. паказаны толькі першапачатковыя),
+  // то рэндэрым толькі частку праектаў.
+  // Калі кнопка "See more" схавана (г.зн. усе праекты ўжо паказаны),
+  // то рэндэрым усе праекты.
+  const projectsToRender = seeMoreButton.classList.contains('is-hidden')
+    ? projects
+    : projects.slice(0, initialCount);
+
+  // Генеруем HTML-разметку для выбраных праектаў
+  const projectsHTML = projectsToRender.map(createProjectCard).join('');
+  portfolioList.innerHTML = projectsHTML; // Устаўляем разметку ў DOM
+
+  // Кіраванне бачнасцю кнопкі "See more"
+  if (
+    projects.length > initialCount &&
+    !seeMoreButton.classList.contains('is-hidden')
+  ) {
+    // Паказваем кнопку, калі агульная колькасць праектаў большая за пачатковую
+    // і кнопка яшчэ не была схавана (г.зн. не ўсе праекты паказаны)
+    seeMoreButton.classList.remove('is-hidden');
+  } else if (projects.length <= initialCount) {
+    // Хаваем кнопку, калі ўсіх праектаў менш або роўна пачатковай колькасці
+    seeMoreButton.classList.add('is-hidden');
+  }
+  // Калі кнопка ўжо схавана (усе праекты паказаны), яна застаецца схаванай
+
+  // Ініцыялізацыя або абнаўленне SimpleLightbox
+  // Заўсёды знішчаем стары экзэмпляр перад стварэннем новага,
+  // каб SimpleLightbox правільна працаваў з новымі/абнаўлёнымі элементамі.
+  if (lightboxInstance) {
+    lightboxInstance.destroy();
+  }
+  lightboxInstance = new SimpleLightbox(
+    '.portfolio-list a.portfolio-image-link',
+    {
+      // Зменены селектар
+      captionsData: 'data-caption', // Выкарыстоўваем data-caption для подпісу
+      captionDelay: 250,
+    }
+  );
+}
+
+// ============================================================================
+// Апрацоўшчык падзей для кнопкі "See more"
+// ============================================================================
+seeMoreButton.addEventListener('click', () => {
+  portfolioList.innerHTML = projects.map(createProjectCard).join(''); // Паказваем усе праекты
+  seeMoreButton.classList.add('is-hidden'); // Хаваем кнопку "See more"
+
+  // Абнаўляем SimpleLightbox пасля дадання ўсіх праектаў
+  if (lightboxInstance) {
+    lightboxInstance.destroy();
+  }
+  lightboxInstance = new SimpleLightbox(
+    '.portfolio-list a.portfolio-image-link',
+    {
+      // Зменены селектар
+      captionsData: 'data-caption',
+      captionDelay: 250,
+    }
+  );
+});
+
+// ============================================================================
+// Першапачатковы рэндэрынг праектаў пры загрузцы старонкі
+// ============================================================================
+renderProjects();
+
+// ============================================================================
+// Перарэндэрынг пры змене памеру акна (для адаптыўнасці)
+// ============================================================================
+window.addEventListener('resize', renderProjects);
