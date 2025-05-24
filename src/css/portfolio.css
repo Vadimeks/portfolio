@@ -2,6 +2,7 @@
 .section-portfolio {
   padding: 48px 0;
   width: 100%;
+
 }
 
 .portfolio-container {
@@ -10,11 +11,14 @@
   align-items: center;
   padding: 0 16px;
   height: auto;
+  width: 100%;
+
 }
 
 .portfolio-content {
   margin-bottom: 32px;
-  text-align: center;
+  width: 100%;
+  max-width: 900px;
 }
 
 .portfolio-title {
@@ -37,7 +41,6 @@
   font-size: 14px;
   line-height: 1.5;
   color: var(--text-text-color);
-  text-align: center;
   width: 100%;
   max-width: 500px;
   margin-left: auto;
@@ -48,68 +51,106 @@
   color: var(--highlight-color);
 }
 
-.carousel-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: auto;
+/* Новы абгортачны дыў для галерэі і кнопкі */
+.portfolio-gallery-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .portfolio-list {
-  display: flex;
-  gap: 24px;
-  padding: 0 16px;
-  height: auto;
+  display: grid;
+  /* Выкарыстоўваем Grid для сеткі */
+  grid-template-columns: 1fr;
+  /* Па змаўчанні: 1 калонка на мабільных */
+  gap: 20px;
+  /* Адступ паміж элементамі */
+  padding: 0;
   margin: 0;
-  transition: transform 0.3s ease-in-out;
   list-style: none;
+  width: 100%;
 }
 
 .portfolio-item {
-  flex-shrink: 0;
+  width: 100%;
+  /* Карткі займаюць усю даступную шырыню калонкі */
   border-radius: 30px;
   box-sizing: border-box;
   border: none;
-  width: calc(100% - 32px);
 }
 
-.portfolio-link {
+/* Спасылка, якая абгортвае выяву для SimpleLightbox */
+.portfolio-image-link {
   display: block;
   text-decoration: none;
+  line-height: 0;
+  /* Выдаляем лішні прабел пад выявай */
 }
 
-/* Стили для карточки проекта */
+/* Стылі для карткі праекта */
 .portfolio-card {
-  position: relative;
   width: 100%;
+  height: 100%;
+  /* Важна для аднаковай вышыні картак */
   border-radius: 30px;
   overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Цень для карткі */
+  background-color: var(--card-bg-color, #fff);
+  /* Фон карткі, можна задаць у :root */
+  display: flex;
+  flex-direction: column;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  /* Анімацыя пры навядзенні */
 }
 
 .portfolio-card:hover,
-.portfolio-card:focus {
+.portfolio-card:focus-within {
+  /* focus-within для даступнасці */
   transform: scale(1.03);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-.card-front {
+.portfolio-pic {
+  display: block;
   width: 100%;
   height: auto;
-  border-radius: 30px;
-  box-sizing: border-box;
+  /* Вышыня будзе адаптыўнай */
+  border-radius: 0;
+  /* Калі патрэбны закругленні, задайце тут */
+  overflow: hidden;
+}
+
+.content-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  /* Калі патрэбны закругленні, задайце тут */
+  object-fit: cover;
+  border: 1px solid var(--accent-color);
+  /* Рамка вакол выявы */
+  transition: transform 0.3s ease-in-out;
+}
+
+.portfolio-card:hover .content-image,
+.portfolio-card:focus-within .content-image {
+  transform: scale(1.02);
+}
+
+/* Стылі для блока з інфармацыяй праектa */
+.portfolio-info-block {
+  padding: 16px;
+  /* Унутраны водступ для інфармацыі */
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  justify-content: center;
-  padding: 12px 8px;
-  background-color: transparent;
-  z-index: 2;
+  flex-grow: 1;
+  /* Каб блок займаў усю даступную вышыню */
+  justify-content: space-between;
+  /* Размяшчэнне змесціва па вертыкалі */
 }
 
 .title-project {
@@ -118,66 +159,87 @@
   font-size: 16px;
   line-height: 1.3;
   letter-spacing: -0.01em;
-}
-
-.portfolio-pic {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 0;
-  overflow: hidden;
-  margin-bottom: 12px;
-}
-
-.content-image {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 0;
-  object-fit: cover;
-  border: 1px solid var(--accent-color);
-  transition: transform 0.3s ease-in-out;
-}
-
-.portfolio-card:hover .content-image,
-.portfolio-card:focus .content-image {
-  transform: scale(1.02);
-}
-
-.project-link-container {
-  margin-top: 12px;
-}
-
-.project1-modal,
-.project2-modal,
-.project3-modal {
-  display: none;
+  color: var(--text-color);
 }
 
 .text-project {
-  display: none;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-text-color);
+  margin-bottom: 15px;
+  /* Адступ ад кнопак */
 }
 
-.carousel-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 2rem;
+/* Стылі для кнопак Live Demo / GitHub */
+.project-links {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+  /* Прыціскае кнопкі да нізу блока */
+  justify-content: center;
+  /* Цэнтруем кнопкі */
+  width: 100%;
+  /* Займае ўсю шырыню */
+}
+
+.project-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  border: 1px solid var(--highlight-color);
+  /* Колер рамкі для кнопак */
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5;
   color: var(--highlight-color);
-  z-index: 10;
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.project-button:hover,
+.project-button:focus {
+  background-color: var(--highlight-color);
+  color: var(--text-color-dark, #fff);
+  /* Зменіце на колер тэксту для кнопкі пры навядзенні */
+  border-color: var(--highlight-color);
+}
+
+/* Стылі для кнопкі "See more" */
+.see-more-button {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 28px;
+  border-radius: 12px;
+  border: 1px solid rgba(78, 117, 255, 0.5);
+  /* Каляровая рамка */
+  background-color: transparent;
+  color: var(--highlight-color);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 40px;
+  /* Адступ ад галерэі */
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.see-more-button:hover,
+.see-more-button:focus {
+  background-color: var(--highlight-color);
+  color: var(--text-color-dark, #fff);
+  border-color: var(--highlight-color);
+}
+
+/* Клас для хавання элементаў */
+.is-hidden {
   display: none;
-  /* Скрываем по умолчанию */
-}
-
-.prev-button {
-  left: 10px;
-}
-
-.next-button {
-  right: 10px;
 }
 
 /* Tablet (min-width 768px) */
@@ -200,78 +262,59 @@
     font-size: 16px;
   }
 
-  .carousel-container {
-    max-width: 700px;
-  }
-
   .portfolio-list {
-    padding: 0;
-    justify-content: flex-start;
-    width: calc(2 * (100% - 32px) / 2 + 24px);
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 калонкі для планшэтаў */
+    gap: 24px;
+    /* Адступ паміж элементамі */
   }
 
   .portfolio-item {
-    width: calc((100% - 24px) / 2);
-  }
-
-  .carousel-button {
-    display: block;
-    /* Показываем кнопки на планшетах */
+    width: auto;
+    /* Аўтаматычная шырыня ў Grid */
   }
 }
 
-/* Desctop (min-width 1280px) */
+/* Desktop (min-width 1280px) */
 @media screen and (min-width: 1280px) {
   .portfolio-container {
     padding: 0 100px;
     max-width: 1280px;
+    /* Зададзены максімальны памер кантэйнера */
   }
 
   .portfolio-content {
     margin-bottom: 52px;
-    text-align: center;
-    max-width: 900px;
+
+    max-width: 1280px;
   }
 
   .portfolio-title {
-    font-size: 48px;
+    font-size: 68px;
+    max-width: 1080px;
+    text-align: left;
   }
 
-  .carousel-container {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
+  .portfolio-text {
+    max-width: 1080px;
+    text-align: left;
+    font-weight: 700;
+    line-height: 1.7;
+    font-size: 16px;
   }
 
   .portfolio-list {
-    display: flex;
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
-    width: 1200px;
-    padding: 0;
-    margin: 0 auto;
-    justify-content: flex-start;
+    max-width: 100%;
   }
 
   .portfolio-item {
-    width: calc(33.333% - 16px);
-  }
-
-  .carousel-button {
-    display: block;
-    /* Показываем кнопки на десктопах */
-  }
-
-  .prev-button {
-    left: 10px;
-  }
-
-  .next-button {
-    right: 10px;
+    width: auto;
   }
 }
 
-/* SimpleLightbox styles (если вы не подключаете через CDN) */
+/* SimpleLightbox styles */
 .sl-overlay {
   background: rgba(46, 47, 66, 0.8) !important;
 }
