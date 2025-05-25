@@ -1,25 +1,125 @@
 /*CV-section styles*/
-/* Базавы стыль для скрыцця элементаў */
-.is-hidden {
-  display: none;
+
+
+.cv-header {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--text-color);
+  margin-bottom: 16px;
+  padding: 0;
+}
+
+.cv-firstraw {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Стылі для кнопак пераключэння мовы */
 .language-switcher {
-  margin-bottom: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .lang-button {
   padding: 10px 15px;
   margin-right: 10px;
-  border: 1px solid #ccc;
-  background-color: #f0f0f0;
+  border: 1px solid var(--button-color);
+  background-color: var(--secondary-color);
   cursor: pointer;
   border-radius: 5px;
 }
 
 .lang-button.active {
-  background-color: #007bff;
-  color: white;
-  border-color: #007bff;
+  background-color: var(--button-color);
+  color: var(--secondary-color);
+  border-color: var(--button-color);
 }
+
+/**/
+.cv-span {
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  background-color: var(--accent-color);
+}
+
+.cv-firstraw .cv-item-header {
+  max-width: 130px;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.cv-item-header {
+  margin-bottom: 12px;
+}
+
+.cv-item p {
+  margin-bottom: 12px;
+}
+
+.cv-item p:last-child {
+  margin-bottom: 28px;
+}
+
+.cv-item h4 {
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.cv-experience-item {
+  margin-bottom: 12px;
+}
+
+.cv-experience-item:last-child {
+  margin-bottom: 20px;
+}
+
+.cv-relevantedu-item {
+  margin-bottom: 12px;
+}
+
+.cv-relevantedu-item:last-child {
+  margin-bottom: 20px;
+}
+
+.cv-edu-item h4 {
+  margin-bottom: 20px;
+}
+
+.cv-hardskills-list {
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.cv-softskills-list {
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.cv-languages-list {
+  margin-bottom: 20px;
+}
+
+.cv-languages-item {
+  margin-bottom: 12px;
+}
+
+
+
+@media only screen and (min-width: 320px) {}
+
+@media only screen and (min-width: 375px) and (max-width: 767px) {}
+
+@media only screen and (min-width: 768px) {}
+
+@media only screen and (min-width: 1280px) {}
