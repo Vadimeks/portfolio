@@ -312,6 +312,7 @@
     max-width: 1279px;
   }
 
+  .portfolio-content,
   .portfolio-title,
   .portfolio-text,
   .portfolio-gallery-wrapper {
@@ -348,10 +349,12 @@
 
   .portfolio-list {
     grid-template-columns: repeat(2, 1fr);
-    /* 2 калонкі для дэсктопа */
     gap: 24px;
     max-width: 100%;
-    /* Сетка будзе займаць усю даступную шырыню */
+  }
+
+  .portfolio-gallery-wrapper {
+    max-width: 1080px;
   }
 
   .portfolio-item {
