@@ -1,13 +1,11 @@
 /*Hero section*/
 .section-hero {
   margin: 0 auto;
-  width: 100%;
-  padding: 0;
-  background-color: var(--background-color);
 }
 
 .hero-container {
-  padding: 140px 16px 40px 16px;
+  padding-top: 140px;
+  padding-bottom: 40px;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -94,14 +92,9 @@
 
 @media only screen and (min-width: 375px) {
 
-  .hero-container {
-    padding: 140px 30px 40px 30px;
-  }
-
   .hero-text {
     width: 100%;
     max-width: 580px;
-
   }
 
   .hero-title {
@@ -123,7 +116,8 @@
   }
 
   .hero-container {
-    padding: 160px 40px 80px 40px;
+    padding-top: 160px;
+    padding-bottom: 80px;
   }
 
   .hero-text {
@@ -168,7 +162,7 @@
   }
 
   .hero-container {
-    padding: 240px 100px 80px 100px;
+    padding-top: 240px;
   }
 
   .hero-text {
