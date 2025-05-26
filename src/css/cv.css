@@ -114,7 +114,56 @@
   margin-bottom: 12px;
 }
 
+/* Стылі для згортваемага змесціва */
+.cv-content {
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  max-height: 1000px;
+  /* Дастаткова вялікае значэнне для адкрытага стану */
+  opacity: 1;
+}
 
+.cv-content.is-collapsed {
+  /* ЗМЕНЕНА: is-hidden -> is-collapsed */
+  max-height: 0;
+  /* Схоўваем змесціва, згортваючы вышыню */
+  opacity: 0;
+  /* Робім празрыстым */
+}
+
+/* Стылі для загалоўкаў аккардэона (кнопак) */
+.cv-accordion-header {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 0;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 0.5em;
+}
+
+/* Стылі для стрэлкі */
+.accordion-icon {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #333;
+  /* Стварае стрэлку ўніз па змаўчанні */
+  transition: transform 0.3s ease-out;
+}
+
+/* Паварот стрэлкі, калі раздзел адкрыты */
+.cv-accordion-header.is-active .accordion-icon {
+  transform: rotate(180deg);
+  /* Паварочваем на 180 градусаў, каб паказаць уверх */
+}
+
+/* Апошні загаловак у спісе cv-list не павінен мець ніжнюю мяжу, калі ён сам з'яўляецца cv-item */
+.cv-list>.cv-item:last-child>.cv-accordion-header {
+  border-bottom: none;
+}
 
 @media only screen and (min-width: 320px) {}
 
