@@ -91,68 +91,46 @@
 /* Стылі для самой кнопкі-пераключальніка (круглай асновы) */
 .portfolio-toggle-button {
   display: flex;
-  /* Выкарыстоўваем flexbox, каб адцэнтраваць стрэлку */
   justify-content: center;
-  /* Цэнтруе стрэлку па гарызанталі */
   align-items: center;
-  /* Цэнтруе стрэлку па вертыкалі */
-  width: 48px;
-  /* Шырыня кнопкі-круга */
-  height: 48px;
-  /* Вышыня кнопкі-круга */
+  width: 40px;
+  height: 40px;
+  border: none;
   border-radius: 50%;
-  /* Робіць кнопку круглай */
-  border: 1px solid rgba(78, 117, 255, 0.5);
-  /* Рамка кнопкі */
-  background-color: transparent;
-  /* Празрысты фон */
+  background-color: var(--button-color);
   cursor: pointer;
-  /* Паказвае, што элемент клікабельны */
-  margin: 40px auto 0;
-  /* Адступ зверху і аўтаматычнае цэнтраванне па гарызанталі */
+  margin-top: 8px;
   transition: background-color 0.3s ease, border-color 0.3s ease;
-  /* Плыўны пераход пры навядзенні */
 }
 
 /* Эфекты пры навядзенні/фокусе на кнопку */
 .portfolio-toggle-button:hover,
 .portfolio-toggle-button:focus {
   background-color: var(--highlight-color);
-  /* Змяняе фон пры навядзенні/фокусе */
-  border-color: var(--highlight-color);
-  /* Змяняе колер рамкі */
 }
 
 /* Стылі для самой стрэлкі (іконкі ўнутры кнопкі) */
 .portfolio-toggle-icon {
   display: inline-block;
   width: 0;
-  /* Шырыня трохвугольніка */
   height: 0;
-  /* Вышыня трохвугольніка */
   border-left: 8px solid transparent;
-  /* Левая частка трохвугольніка */
   border-right: 8px solid transparent;
-  /* Правая частка трохвугольніка */
-  border-top: 8px solid var(--highlight-color);
-  /* Ніжняя частка трохвугольніка (накіравана ўніз) */
+  border-top: 8px solid var(--secondary-color);
   transition: transform 0.3s ease-out, border-top-color 0.3s ease;
-  /* Плыўны пераход для павароту і колеру */
+
 }
 
 /* Змена колеру стрэлкі пры навядзенні/фокусе на кнопку */
 .portfolio-toggle-button:hover .portfolio-toggle-icon,
 .portfolio-toggle-button:focus .portfolio-toggle-icon {
-  border-top-color: var(--text-color-dark, #fff);
-  /* Змяняе колер стрэлкі на белы (ці іншы) */
+  border-top-color: var(--secondary-color);
 }
 
 /* Паварот стрэлкі, калі кнопка актыўная (г.зн. паказвае ўверх) */
 .portfolio-toggle-button.is-active .portfolio-toggle-icon {
   transform: rotate(180deg);
-  /* Паварочвае стрэлку на 180 градусаў */
-  border-top-color: var(--text-color-dark, #fff);
-  /* Захоўвае колер стрэлкі пры актыўным стане */
+  border-top-color: var(--secondary-color);
 }
 
 /* Спасылка, якая абгортвае выяву для SimpleLightbox */
@@ -287,35 +265,6 @@
   background-color: var(--highlight-color);
   color: var(--text-color-dark, #fff);
   /* Зменіце на колер тэксту для кнопкі пры навядзенні */
-  border-color: var(--highlight-color);
-}
-
-/* Стылі для кнопкі "See more" */
-.see-more-button {
-  display: block;
-  justify-content: center;
-  align-items: center;
-  padding: 14px 28px;
-  border-radius: 12px;
-  border: 1px solid rgba(78, 117, 255, 0.5);
-  /* Каляровая рамка */
-  background-color: transparent;
-  color: var(--highlight-color);
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 1.28;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
-  cursor: pointer;
-  margin-top: 40px;
-  /* Адступ ад галерэі */
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
-.see-more-button:hover,
-.see-more-button:focus {
-  background-color: var(--highlight-color);
-  color: var(--text-color-dark, #fff);
   border-color: var(--highlight-color);
 }
 
