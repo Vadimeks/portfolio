@@ -1,7 +1,6 @@
 /* Portfolio section */
 .section-portfolio {
-  padding: 48px 0;
-  width: 100%;
+  margin-bottom: 40px;
 }
 
 .portfolio-container {
@@ -16,8 +15,7 @@
 .portfolio-content {
   margin-bottom: 32px;
   width: 100%;
-  max-width: 900px;
-  text-align: center;
+  max-width: 580px;
 }
 
 .portfolio-title {
@@ -29,6 +27,8 @@
   color: var(--text-color);
   margin-bottom: 16px;
   padding: 0;
+  text-align: left;
+  max-width: 580px;
 }
 
 .portfolio-accent {
@@ -41,10 +41,10 @@
   line-height: 1.5;
   color: var(--text-text-color);
   width: 100%;
-  max-width: 500px;
+  max-width: 580px;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
+  text-align: left;
 }
 
 .accent-link {
@@ -57,6 +57,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  max-width: 580px;
 }
 
 .portfolio-list {
@@ -78,6 +79,80 @@
   border-radius: 30px;
   box-sizing: border-box;
   border: none;
+  /* **ДАДАДЗЕНА: flex-basis: auto; каб Grid мог лепш кіраваць шырынёй** */
+  flex-basis: auto;
+}
+
+.portfolio-item.is-hidden-item {
+  display: none;
+  /* Гэта хавае элемент */
+}
+
+/* Стылі для самой кнопкі-пераключальніка (круглай асновы) */
+.portfolio-toggle-button {
+  display: flex;
+  /* Выкарыстоўваем flexbox, каб адцэнтраваць стрэлку */
+  justify-content: center;
+  /* Цэнтруе стрэлку па гарызанталі */
+  align-items: center;
+  /* Цэнтруе стрэлку па вертыкалі */
+  width: 48px;
+  /* Шырыня кнопкі-круга */
+  height: 48px;
+  /* Вышыня кнопкі-круга */
+  border-radius: 50%;
+  /* Робіць кнопку круглай */
+  border: 1px solid rgba(78, 117, 255, 0.5);
+  /* Рамка кнопкі */
+  background-color: transparent;
+  /* Празрысты фон */
+  cursor: pointer;
+  /* Паказвае, што элемент клікабельны */
+  margin: 40px auto 0;
+  /* Адступ зверху і аўтаматычнае цэнтраванне па гарызанталі */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  /* Плыўны пераход пры навядзенні */
+}
+
+/* Эфекты пры навядзенні/фокусе на кнопку */
+.portfolio-toggle-button:hover,
+.portfolio-toggle-button:focus {
+  background-color: var(--highlight-color);
+  /* Змяняе фон пры навядзенні/фокусе */
+  border-color: var(--highlight-color);
+  /* Змяняе колер рамкі */
+}
+
+/* Стылі для самой стрэлкі (іконкі ўнутры кнопкі) */
+.portfolio-toggle-icon {
+  display: inline-block;
+  width: 0;
+  /* Шырыня трохвугольніка */
+  height: 0;
+  /* Вышыня трохвугольніка */
+  border-left: 8px solid transparent;
+  /* Левая частка трохвугольніка */
+  border-right: 8px solid transparent;
+  /* Правая частка трохвугольніка */
+  border-top: 8px solid var(--highlight-color);
+  /* Ніжняя частка трохвугольніка (накіравана ўніз) */
+  transition: transform 0.3s ease-out, border-top-color 0.3s ease;
+  /* Плыўны пераход для павароту і колеру */
+}
+
+/* Змена колеру стрэлкі пры навядзенні/фокусе на кнопку */
+.portfolio-toggle-button:hover .portfolio-toggle-icon,
+.portfolio-toggle-button:focus .portfolio-toggle-icon {
+  border-top-color: var(--text-color-dark, #fff);
+  /* Змяняе колер стрэлкі на белы (ці іншы) */
+}
+
+/* Паварот стрэлкі, калі кнопка актыўная (г.зн. паказвае ўверх) */
+.portfolio-toggle-button.is-active .portfolio-toggle-icon {
+  transform: rotate(180deg);
+  /* Паварочвае стрэлку на 180 градусаў */
+  border-top-color: var(--text-color-dark, #fff);
+  /* Захоўвае колер стрэлкі пры актыўным стане */
 }
 
 /* Спасылка, якая абгортвае выяву для SimpleLightbox */
@@ -100,9 +175,13 @@
   background-color: var(--card-bg-color, #fff);
   /* Фон карткі, можна задаць у :root */
   display: flex;
+  /* **ЗМЕНА ТУТ: Робім portfolio-card flex-кантэйнерам** */
   flex-direction: column;
+  /* **ЗМЕНА ТУТ: Элементы ўнутры ідуць адзін за адным у слупок** */
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   /* Анімацыя пры навядзенні */
+  height: 100%;
+  /* **ДАДАДЗЕНА: Картка будзе расцягвацца на ўсю вышыню portfolio-item** */
 }
 
 .portfolio-card:hover,
@@ -141,14 +220,14 @@
 
 /* Стылі для блока з інфармацыяй праектa */
 .portfolio-info-block {
-  padding: 16px;
+  padding: 8px;
   /* Унутраны водступ для інфармацыі */
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   flex-grow: 1;
-  /* Каб блок займаў усю даступную вышыню */
+  /* **ЗМЕНА ТУТ: Гэты блок будзе расцягвацца і займаць усю даступную вышыню** */
   justify-content: space-between;
   /* Размяшчэнне змесціва па вертыкалі */
 }
@@ -167,7 +246,10 @@
   line-height: 1.5;
   color: var(--text-text-color);
   margin-bottom: 15px;
+  text-align: left;
   /* Адступ ад кнопак */
+  /* **ДАДАДЗЕНА: flex-grow: 1; каб text-project расцягваўся ўнутры portfolio-info-block** */
+  flex-grow: 1;
 }
 
 /* Стылі для кнопак Live Demo / GitHub */
@@ -275,6 +357,19 @@
   }
 }
 
+/* Desktop (min-width 768px) */
+@media screen and (min-width: 768px) {
+  .portfolio-container {
+    max-width: 1279px;
+  }
+
+  .portfolio-title,
+  .portfolio-text,
+  .portfolio-gallery-wrapper {
+    max-width: 900px;
+  }
+}
+
 /* Desktop (min-width 1280px) */
 @media screen and (min-width: 1280px) {
   .portfolio-container {
@@ -313,6 +408,7 @@
   .portfolio-item {
     width: auto;
   }
+
 }
 
 /* SimpleLightbox styles */
