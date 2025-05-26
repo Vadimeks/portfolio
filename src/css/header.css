@@ -23,7 +23,6 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0 16px;
 }
 
 .header-nav {
@@ -83,12 +82,11 @@
 
 @media only screen and (min-width: 375px) {
   .header-container {
-    max-width: 600px;
-    padding: 0 20px;
+    max-width: 767px;
   }
 
   .header-nav {
-    max-width: 600px;
+    max-width: 580px;
   }
 
   .social-list {
@@ -98,8 +96,7 @@
 
 @media only screen and (min-width: 768px) {
   .header-container {
-    padding: 0 32px;
-    max-width: 900px;
+    max-width: 1279px;
   }
 
   .header-nav {
@@ -131,7 +128,6 @@
 @media only screen and (min-width: 1280px) {
   .header-container {
     max-width: 1280px;
-    padding: 0 100px;
   }
 
   .burger-btn {

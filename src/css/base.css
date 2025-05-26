@@ -42,3 +42,8 @@ body {
 *::after {
   box-sizing: border-box;
 }
+
+section {
+  width: 100%;
+  background-color: var(--background-color);
+}
