@@ -144,27 +144,18 @@
 /* Стылі для карткі праекта */
 .portfolio-card {
   width: 100%;
-  /* height: 100%; */
-  /* ВЫДАЛІЦЬ ГЭТА: Картка будзе адаптавацца па вышыні да змесціва */
-  border-radius: 30px;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* Цень для карткі */
-  background-color: var(--card-bg-color, #fff);
-  /* Фон карткі, можна задаць у :root */
+  background-color: var(--secondary-color);
   display: flex;
-  /* **ЗМЕНА ТУТ: Робім portfolio-card flex-кантэйнерам** */
   flex-direction: column;
-  /* **ЗМЕНА ТУТ: Элементы ўнутры ідуць адзін за адным у слупок** */
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  /* Анімацыя пры навядзенні */
   height: 100%;
-  /* **ДАДАДЗЕНА: Картка будзе расцягвацца на ўсю вышыню portfolio-item** */
 }
 
 .portfolio-card:hover,
 .portfolio-card:focus-within {
-  /* focus-within для даступнасці */
   transform: scale(1.03);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
@@ -173,7 +164,6 @@
   display: block;
   width: 100%;
   height: 200px;
-  /* ЗМЕНА ТУТ: Фіксаваная вышыня для кантэйнера выявы */
   border-radius: 0;
   overflow: hidden;
 }
@@ -182,12 +172,9 @@
   display: block;
   width: 100%;
   height: 100%;
-  /* ЗМЕНА ТУТ: Выява запаўняе ўсю вышыню свайго бацькоўскага элемента */
   border-radius: 0;
   object-fit: cover;
-  /* Забяспечвае, што выява цалкам пакрывае вобласць, абрэзаючы лішняе */
-  border: 1px solid var(--accent-color);
-  /* Рамка вакол выявы */
+  border: 1px solid rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease-in-out;
 }
 
@@ -199,15 +186,12 @@
 /* Стылі для блока з інфармацыяй праектa */
 .portfolio-info-block {
   padding: 8px;
-  /* Унутраны водступ для інфармацыі */
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   flex-grow: 1;
-  /* **ЗМЕНА ТУТ: Гэты блок будзе расцягвацца і займаць усю даступную вышыню** */
   justify-content: space-between;
-  /* Размяшчэнне змесціва па вертыкалі */
 }
 
 .title-project {
@@ -222,11 +206,9 @@
 .text-project {
   font-size: 14px;
   line-height: 1.5;
-  color: var(--text-text-color);
+  color: var(--text-color);
   margin-bottom: 15px;
   text-align: left;
-  /* Адступ ад кнопак */
-  /* **ДАДАДЗЕНА: flex-grow: 1; каб text-project расцягваўся ўнутры portfolio-info-block** */
   flex-grow: 1;
 }
 
@@ -235,11 +217,8 @@
   display: flex;
   gap: 10px;
   margin-top: auto;
-  /* Прыціскае кнопкі да нізу блока */
   justify-content: center;
-  /* Цэнтруем кнопкі */
   width: 100%;
-  /* Займае ўсю шырыню */
 }
 
 .project-button {
@@ -248,7 +227,6 @@
   justify-content: center;
   padding: 10px 15px;
   border: 1px solid var(--highlight-color);
-  /* Колер рамкі для кнопак */
   border-radius: 5px;
   text-decoration: none;
   font-weight: 500;
@@ -264,7 +242,6 @@
 .project-button:focus {
   background-color: var(--highlight-color);
   color: var(--text-color-dark, #fff);
-  /* Зменіце на колер тэксту для кнопкі пры навядзенні */
   border-color: var(--highlight-color);
 }
 
@@ -295,14 +272,11 @@
 
   .portfolio-list {
     grid-template-columns: repeat(2, 1fr);
-    /* 2 калонкі для планшэтаў */
     gap: 24px;
-    /* Адступ паміж элементамі */
   }
 
   .portfolio-item {
     width: auto;
-    /* Аўтаматычная шырыня ў Grid */
   }
 }
 
@@ -325,7 +299,6 @@
   .portfolio-container {
     padding: 0 100px;
     max-width: 1280px;
-    /* Зададзены максімальны памер кантэйнера */
   }
 
   .portfolio-content {

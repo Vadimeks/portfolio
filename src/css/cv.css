@@ -1,4 +1,12 @@
 /* Агульныя стылі для загалоўка CV */
+.cv-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+  height: auto;
+  width: 100%;
+}
+
 .cv-header {
   text-transform: uppercase;
   font-weight: 600;
@@ -186,6 +194,7 @@
 @media only screen and (min-width: 375px) {
   .container.cv-container {
     max-width: 767px;
+    padding: 0 20px;
   }
 
   .cv-eng,
@@ -208,6 +217,7 @@
 @media only screen and (min-width: 768px) {
   .container.cv-container {
     max-width: 1279px;
+    padding: 0 32px;
   }
 
   .cv-eng,
@@ -241,6 +251,7 @@
   .container.cv-container {
     width: 100%;
     max-width: 1280px;
+    padding: 0 100px;
   }
 
   .cv-eng,
