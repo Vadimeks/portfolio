@@ -75,6 +75,11 @@
   margin-bottom: 12px;
 }
 
+/* Апошні параграф у аккардэон-блоку Profile */
+.cv-item p:last-child {
+  margin-bottom: 28px;
+}
+
 /* Стылі для загалоўкаў h4 у элементах CV */
 .cv-item h4 {
   margin-bottom: 12px;
@@ -124,7 +129,6 @@
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   border-top: 8px solid #333;
-  /* Стварае стрэлку ўніз па змаўчанні */
   transition: transform 0.3s ease-out;
 }
 
@@ -136,13 +140,40 @@
 /* Асноўны стыль для спісу CV */
 .cv-list {
   list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
+
+/* Стылі для кожнага элемента CV */
+.cv-item {
+  width: 100%;
+  background-color: var(--white-background);
+  border: 1px solid var(--border-color);
+  padding: 0;
+  border-radius: 8px;
+  /* min-height: 100px; - Гэта можна прыбраць, калі змесціва заўсёды будзе дастаткова */
+}
+
+/* === Стылі для першага элемента CV (дзе імя і кнопкі мовы) === */
+.cv-list .cv-item:first-child {
+  background-image: linear-gradient(rgba(130, 245, 190, 0.7), rgba(130, 245, 190, 0.7)), url('../img/cv/stack.jpg');
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+  /* Выява будзе адаптавацца да памеру блока */
+  background-position: center;
+  padding: 20px;
+}
+
+/* === Медыя-запыты === */
 
 @media only screen and (min-width: 375px) {
   .container.cv-container {
     max-width: 767px;
+    margin: 0 auto;
+    padding: 0 20px;
   }
 }
 
@@ -160,17 +191,19 @@
   .cv-list {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px 20px;
   }
 
   .cv-item {
     flex-basis: calc(50% - 10px);
   }
+
 }
 
 @media only screen and (min-width: 1280px) {
   .container.cv-container {
     width: 100%;
+    max-width: 1280px;
   }
 
   .cv-eng,
