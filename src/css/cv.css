@@ -1,6 +1,4 @@
-/*CV-section styles*/
-
-
+/* Агульныя стылі для загалоўка CV */
 .cv-header {
   text-transform: uppercase;
   font-weight: 600;
@@ -12,15 +10,17 @@
   padding: 0;
 }
 
+/* Стылі для першага радка CV (загаловак і пераключальнік моў) */
 .cv-firstraw {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 12px;
 }
+
 
 /* Стылі для кнопак пераключэння мовы */
 .language-switcher {
-
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -28,11 +28,11 @@
 
 .lang-button {
   padding: 10px 15px;
-  margin-right: 10px;
   border: 1px solid var(--button-color);
   background-color: var(--secondary-color);
   cursor: pointer;
   border-radius: 5px;
+  color: var(--text-color);
 }
 
 .lang-button.active {
@@ -41,7 +41,7 @@
   border-color: var(--button-color);
 }
 
-/**/
+/* Стылі для выдзеленага тэксту */
 .cv-span {
   color: var(--text-color);
   font-weight: 600;
@@ -51,129 +51,211 @@
   background-color: var(--accent-color);
 }
 
+/* Стылі для загалоўка ў першым радку CV */
 .cv-firstraw .cv-item-header {
   max-width: 130px;
   font-weight: 700;
   font-size: 20px;
   margin-bottom: 0;
+  background-color: var(--accent-color);
 }
 
-.cv-item-header {
-  margin-bottom: 12px;
+/* Стылі для загалоўкаў аккардэона */
+.cv-item-header.cv-accordion-header {
+  padding: 8px;
+  margin-bottom: 0;
+  background-color: var(--light-accent);
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+/* Адступы для параграфаў унутры элементаў CV */
 .cv-item p {
   margin-bottom: 12px;
 }
 
-.cv-item p:last-child {
-  margin-bottom: 28px;
-}
-
+/* Стылі для загалоўкаў h4 у элементах CV */
 .cv-item h4 {
-  margin-bottom: 12px;
+  /* margin-bottom: 12px; */
   font-weight: 600;
   font-size: 16px;
+  padding: 8px;
 }
 
+/* Адступы для пунктаў спісаў вопыту */
 .cv-experience-item {
-  margin-bottom: 12px;
+  padding: 8px;
 }
 
 .cv-experience-item:last-child {
-  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
+/* Адступы для пунктаў спісаў адукацыі */
 .cv-relevantedu-item {
-  margin-bottom: 12px;
+  padding: 8px;
 }
 
-.cv-relevantedu-item:last-child {
-  margin-bottom: 20px;
-}
-
-.cv-edu-item h4 {
-  margin-bottom: 20px;
-}
-
-.cv-hardskills-list {
-  margin-bottom: 20px;
-  padding-left: 20px;
-}
-
-.cv-softskills-list {
-  margin-bottom: 20px;
-  padding-left: 20px;
-}
-
+/* Стылі для спісаў навыкаў */
+.cv-hardskills-list,
+.cv-softskills-list,
 .cv-languages-list {
   margin-bottom: 20px;
 }
 
 .cv-languages-item {
-  margin-bottom: 12px;
+  padding: 8px;
 }
 
-/* Стылі для згортваемага змесціва */
+.cv-edu-item h4 {
+  padding-bottom: 20px;
+}
+
+/* Стылі для згортваемага змесціва аккардэона */
 .cv-content {
   overflow: hidden;
   transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
-  max-height: 1000px;
-  /* Дастаткова вялікае значэнне для адкрытага стану */
   opacity: 1;
 }
 
+.cv-content p {
+  padding: 8px;
+}
+
 .cv-content.is-collapsed {
-  /* ЗМЕНЕНА: is-hidden -> is-collapsed */
   max-height: 0;
-  /* Схоўваем змесціва, згортваючы вышыню */
   opacity: 0;
-  /* Робім празрыстым */
 }
 
-/* Стылі для загалоўкаў аккардэона (кнопак) */
-.cv-accordion-header {
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5em 0;
-  border-bottom: 1px solid #eee;
-  margin-bottom: 0.5em;
-}
-
-/* Стылі для стрэлкі */
+/* Стылі для стрэлкі аккардэона */
 .accordion-icon {
   display: inline-block;
   width: 0;
   height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid #333;
-  /* Стварае стрэлку ўніз па змаўчанні */
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #333;
   transition: transform 0.3s ease-out;
 }
 
 /* Паварот стрэлкі, калі раздзел адкрыты */
 .cv-accordion-header.is-active .accordion-icon {
   transform: rotate(180deg);
-  /* Паварочваем на 180 градусаў, каб паказаць уверх */
 }
 
-/* Апошні загаловак у спісе cv-list не павінен мець ніжнюю мяжу, калі ён сам з'яўляецца cv-item */
-.cv-list>.cv-item:last-child>.cv-accordion-header {
-  border-bottom: none;
+/* Асноўны стыль для спісу CV */
+.cv-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-@media only screen and (min-width: 320px) {}
+/* Стылі для кожнага элемента CV */
+.cv-item {
+  width: 100%;
+  padding: 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0;
+}
 
-@media only screen and (min-width: 375px) and (max-width: 767px) {
-  .cv-container {
-    max-width: 620px;
+.cv-item:last-child {
+  padding-bottom: 20px;
+}
 
+/* === Стылі для першага элемента CV (дзе імя і кнопкі мовы) === */
+.cv-list .cv-item:first-child {
+  background-image: linear-gradient(rgba(130, 245, 190, 0.7), rgba(130, 245, 190, 0.7)), url('../img/cv/stack.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 8px;
+}
+
+.cv-item-header.cv-accordion-header.is-active {
+  margin-bottom: 12px;
+}
+
+/* === Медыя-запыты === */
+
+@media only screen and (min-width: 375px) {
+  .container.cv-container {
+    max-width: 767px;
+  }
+
+  .cv-eng,
+  .cv-ua {
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  .cv-firstraw .cv-item-header {
+    max-width: 190px;
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 0;
+    background-color: var(--accent-color);
+    border-radius: 12px;
+    padding: 8px;
   }
 }
 
-@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 768px) {
+  .container.cv-container {
+    max-width: 1279px;
+  }
 
-@media only screen and (min-width: 1280px) {}
+  .cv-eng,
+  .cv-ua {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .cv-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px 20px;
+  }
+
+  .cv-item {
+    flex-basis: calc(50% - 10px);
+  }
+
+  .cv-firstraw .cv-item-header {
+    max-width: 190px;
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 0;
+    background-color: var(--accent-color);
+    border-radius: 12px;
+    padding: 8px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .container.cv-container {
+    width: 100%;
+    max-width: 1280px;
+  }
+
+  .cv-eng,
+  .cv-ua {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .cv-firstraw .cv-item-header {
+    max-width: 260px;
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 0;
+    background-color: var(--accent-color);
+    border-radius: 12px;
+    padding: 8px;
+  }
+}
