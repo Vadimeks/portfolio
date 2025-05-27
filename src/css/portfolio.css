@@ -96,9 +96,9 @@
   width: 100%;
   /* max-width: 360px; */
   height: 16px;
-  border: none;
+  border: 1px solid var(--highlight-color);
   border-radius: 12px;
-  background-color: var(--button-color);
+  background-color: var(--light-accent);
   cursor: pointer;
   margin-top: 8px;
   transition: background-color 0.3s ease, border-color 0.3s ease;
@@ -117,7 +117,7 @@
   height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-top: 8px solid var(--secondary-color);
+  border-top: 8px solid var(--primary-color);
   transition: transform 0.3s ease-out, border-top-color 0.3s ease;
 
 }
@@ -125,13 +125,13 @@
 /* Змена колеру стрэлкі пры навядзенні/фокусе на кнопку */
 .portfolio-toggle-button:hover .portfolio-toggle-icon,
 .portfolio-toggle-button:focus .portfolio-toggle-icon {
-  border-top-color: var(--secondary-color);
+  border-top-color: var(--primary-color);
 }
 
 /* Паварот стрэлкі, калі кнопка актыўная (г.зн. паказвае ўверх) */
 .portfolio-toggle-button.is-active .portfolio-toggle-icon {
   transform: rotate(180deg);
-  border-top-color: var(--secondary-color);
+  border-top-color: var(--primary-color);
 }
 
 /* Спасылка, якая абгортвае выяву для SimpleLightbox */
@@ -139,7 +139,6 @@
   display: block;
   text-decoration: none;
   line-height: 0;
-  /* Выдаляем лішні прабел пад выявай */
 }
 
 /* Стылі для карткі праекта */
