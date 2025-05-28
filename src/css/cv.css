@@ -173,9 +173,6 @@
   margin-bottom: 0;
 }
 
-.cv-item:last-child {
-  padding-bottom: 20px;
-}
 
 /* === Стылі для першага элемента CV (дзе імя і кнопкі мовы) === */
 .cv-list .cv-item:first-child {
