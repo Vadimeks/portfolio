@@ -1,25 +1,19 @@
-# devdreamers-projects-01
-🥦 Organic Vegetables – Adaptive Web Project
-Organic Vegetables is a modern web project designed to present organic vegetables through an adaptive web interface, ensuring a seamless experience for users on different devices. This is the first team project developed as part of our HTML & CSS course.
+🚀 My Portfolio Website This is my personal portfolio website, a dynamic and
+responsive platform I developed to showcase my skills, projects, and
+professional journey. Designed with a user-first approach, it provides a
+seamless and engaging experience across all devices, from mobile phones to
+desktops. It serves as a comprehensive hub for potential employers and
+collaborators to explore my capabilities.
 
-🚀 Project Features
-User-friendly interface for ordering fresh organic vegetables.
-Fully responsive design, adaptable to all screen sizes (starting from 320px).
-Interactive product cards with a flip effect to reveal descriptions.
-"How it Works" section – a step-by-step guide on placing orders.
-"Reviews" section – customer testimonials to build trust.
-Contact modal window for easy user feedback.
-"Your Order" section – an intuitive system for placing orders.
-
-🔧 Tech Stack
-Front-end: HTML, CSS, JavaScript
-Tools: VSCode, Trello, Figma, Git/GitHub
-
-👥 Team DevDreamers
-Team Lead+Developer: Vadzim Simanau
-Scrum Master+Developer: Beniamin Mishkur
-
-Developers:
-Iryna Ponikarchyk, Kamila Rudenko, Liubov Shaklanova, Dmytro Ponomarenko,
-Mykola Marynevych, Mykhailo Sapizhak, Dmytro Hunko, Ihor Maistrov,
-Liliyana Toyunda
+✨ Key Sections & Highlights: Header & Hero: A compelling introduction to my
+professional identity, designed to immediately capture attention and guide
+visitors through the site. Portfolio: A dedicated section where I present my key
+web development projects, including detailed descriptions and links to live
+demos or repositories. CV: An easily accessible and downloadable version of my
+Curriculum Vitae, outlining my education, work experience, and technical
+proficiencies. About: A personal space where I share my passions beyond coding,
+including my active lifestyle, running pursuits, and creative hobbies, offering
+a glimpse into my personality and diverse interests. Footer: Essential contact
+information and navigation links, ensuring easy communication and accessibility.
+🔧 Tech Stack: Front-end: HTML, CSS, JavaScript, Vite Tools: VSCode, Figma,
+Git/GitHub
