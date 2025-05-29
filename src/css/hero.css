@@ -14,7 +14,7 @@
   justify-content: center;
 }
 
-.hero-text {
+.hero-description {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,19 +31,42 @@
   margin-bottom: 30px;
 }
 
+.hero-header {
+  background-color: var(--light-accent);
+  margin-bottom: 12px;
+  padding: 8px 0;
+  font-size: 20px;
+}
+
 .hero-accent {
   color: var(--highlight-color);
+}
+
+.hero-span {
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  background-color: var(--accent-color);
 }
 
 .hero-descr-list {
   margin-bottom: 30px;
 }
 
-.hero-descr {
+.hero-descr-item {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.43;
   color: var(--text-color);
+  padding-left: 8px;
+  padding-bottom: 12px;
+}
+
+.hero-descr-item:last-child {
+  padding: 8px 0;
+  background-color: var(--light-accent);
 }
 
 .hero-btn {
@@ -72,6 +95,9 @@
 
 /* ---- HERO FOR SMALL PHONES ---- */
 @media only screen and (min-width: 320px) {
+  .hero-span {
+    font-size: 28px;
+  }
 
   .hero-text {
     max-width: 340px;
@@ -104,6 +130,14 @@
 
   }
 
+  .hero-header {
+    font-size: 24px;
+  }
+
+  .hero-span {
+    font-size: 36px;
+  }
+
   .hero-descr-list {
     width: 100%;
   }
@@ -118,6 +152,7 @@
   .hero-container {
     padding-top: 160px;
     padding-bottom: 80px;
+
   }
 
   .hero-text {
@@ -133,14 +168,27 @@
     max-width: 900px;
   }
 
+  .hero-header {
+    font-size: 28px;
+  }
+
+  .hero-span {
+    font-size: 48px;
+  }
+
   .hero-descr-list {
     margin-bottom: 0;
   }
 
-  .hero-descr {
+  .hero-description {
+    max-width: 900px;
+  }
+
+  .hero-descr-item {
     font-size: 14px;
     line-height: 1.5;
     font-weight: 700;
+    padding-bottom: 8px;
   }
 
   .hero-btn {
@@ -177,6 +225,19 @@
     margin-bottom: 100px;
   }
 
+  .hero-header {
+    max-width: 1080px;
+    font-size: 32px;
+  }
+
+  .hero-span {
+    font-size: 68px;
+  }
+
+  .hero-description {
+    max-width: 1080px;
+  }
+
   .hero-descr-list {
     margin-bottom: 0;
   }
@@ -185,6 +246,11 @@
     font-size: 16px;
     line-height: 1.7;
     font-weight: 700;
+  }
+
+  .hero-descr-item {
+    padding-bottom: 20px;
+    font-size: 18px;
   }
 
   .hero-btn {

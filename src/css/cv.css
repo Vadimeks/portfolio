@@ -59,6 +59,10 @@
   background-color: var(--accent-color);
 }
 
+.cv-accent {
+  color: var(--highlight-color);
+}
+
 /* Стылі для загалоўка ў першым радку CV */
 .cv-firstraw .cv-item-header {
   max-width: 130px;
@@ -202,6 +206,7 @@
 
   .cv-header {
     font-size: 28px;
+    max-width: 340px;
   }
 
   .cv-firstraw .cv-item-header {
@@ -212,6 +217,10 @@
     background-color: var(--accent-color);
     border-radius: 12px;
     padding: 8px;
+  }
+
+  .cv-accent {
+    font-size: 26px;
   }
 }
 
@@ -239,6 +248,7 @@
 
   .cv-header {
     font-size: 36px;
+    max-width: 430px;
   }
 
   .cv-firstraw .cv-item-header {
@@ -249,6 +259,11 @@
     background-color: var(--accent-color);
     border-radius: 12px;
     padding: 8px;
+  }
+
+  .cv-accent {
+    color: var(--highlight-color);
+    font-size: 30px;
   }
 }
 
@@ -267,7 +282,7 @@
 
   .cv-header {
     font-size: 68px;
-    max-width: 900px;
+    max-width: 800px;
   }
 
   .cv-firstraw .cv-item-header {
@@ -278,5 +293,10 @@
     background-color: var(--accent-color);
     border-radius: 12px;
     padding: 8px;
+  }
+
+  .cv-accent {
+    color: var(--highlight-color);
+    font-size: 60px;
   }
 }
