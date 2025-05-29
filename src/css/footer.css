@@ -1,4 +1,8 @@
 /* Section-footer  */
+.section-footer {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
 
 .footer-container {
   max-width: 374px;
@@ -71,12 +75,13 @@
   line-height: 1;
   letter-spacing: -0.01em;
   text-transform: uppercase;
-  color: var(--highlight-color);
+  color: var(--text-color);
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .footer-address {
   font-style: normal;
+  gap: 12px;
 }
 
 .footer-contacts-list {
@@ -157,6 +162,13 @@
   background-color: transparent;
   outline: 2px solid var(--highlight-color);
   outline-offset: 2px;
+}
+
+.footer-title {
+  text-transform: uppercase;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--highlight-color)
 }
 
 /* --- Медыя-запыты --- */
