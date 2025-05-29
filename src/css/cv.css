@@ -200,6 +200,10 @@
     margin: 0 auto;
   }
 
+  .cv-header {
+    font-size: 28px;
+  }
+
   .cv-firstraw .cv-item-header {
     max-width: 190px;
     font-weight: 700;
@@ -233,6 +237,10 @@
     flex-basis: calc(50% - 10px);
   }
 
+  .cv-header {
+    font-size: 36px;
+  }
+
   .cv-firstraw .cv-item-header {
     max-width: 190px;
     font-weight: 700;
@@ -255,6 +263,11 @@
   .cv-ua {
     max-width: 1280px;
     margin: 0 auto;
+  }
+
+  .cv-header {
+    font-size: 68px;
+    max-width: 900px;
   }
 
   .cv-firstraw .cv-item-header {

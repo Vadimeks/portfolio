@@ -4,10 +4,19 @@
 }
 
 .about-container {
+  max-width: 374px;
+}
+
+.about-content {
+  max-width: 340px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 24px;
   width: 100%;
+  margin: 0 auto;
+  padding: 12px 0;
 }
 
 .about-gallery {
@@ -16,8 +25,7 @@
   width: 100%;
   margin: 0 auto;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding: 16px 8px;
   border-radius: 12px;
 }
 
@@ -76,22 +84,68 @@
   padding: 16px 8px;
 }
 
+.about-header {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--text-color);
+  margin-bottom: 16px;
+  padding: 0;
+}
+
+.about-accent {
+  color: var(--highlight-color);
+}
+
+.about-span {
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  background-color: var(--accent-color);
+}
+
+.about-item {
+  padding-bottom: 12px;
+}
+
+.about-item:last-child {
+  padding-bottom: 0;
+}
+
 /* --- Медыя-запыты --- */
 @media screen and (min-width: 375px) {
   .about-container {
-    flex-direction: column;
-    align-items: flex-start;
+    max-width: 767px;
+  }
+
+  .about-content {
     max-width: 580px;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+    margin: 0 auto;
   }
 }
 
 /* Планшэтная версія (min-width: 768px) */
 @media screen and (min-width: 768px) {
   .about-container {
-    flex-direction: row;
-    align-items: flex-start;
+    max-width: 1279px;
+  }
+
+  .about-content {
     max-width: 900px;
-    padding: 0;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+    margin: 0 auto;
   }
 
   .about-gallery {
@@ -104,14 +158,29 @@
     flex-basis: 50%;
     margin: 0;
   }
+
+  .about-header {
+    font-size: 36px;
+  }
 }
 
 /* Дэсктопная версія (min-width: 1280px) */
 @media screen and (min-width: 1280px) {
   .about-container {
-    flex-direction: row;
-    align-items: flex-start;
+    max-width: 1280px;
+  }
+
+  .about-content {
     max-width: 1080px;
-    padding: 0;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .about-header {
+    font-size: 68px;
   }
 }
