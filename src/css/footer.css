@@ -7,10 +7,30 @@
 .footer-logo-contact-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 24px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
   margin-bottom: 20px;
+}
+
+.footer-text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.43;
+}
+
+.footer-one {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
+.footer-two {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
 }
 
 .footer-text-wrapper {
@@ -23,10 +43,12 @@
   padding: 8px;
 }
 
-.footer-text {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.43;
+.footer-address {
+  padding: 0 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
 }
 
 .nav-wrapper {
@@ -34,6 +56,7 @@
   flex-direction: column;
   gap: 40px;
   padding: 0 8px;
+
 }
 
 .footer-nav-list {
@@ -48,7 +71,7 @@
   line-height: 1;
   letter-spacing: -0.01em;
   text-transform: uppercase;
-  color: var(--text-color);
+  color: var(--highlight-color);
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
@@ -111,8 +134,9 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 1.42857;
-  color: #d4bfc4;
+  color: var(--highlight-color);
   transition: color 0.3s ease-in-out, transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  padding-bottom: 12px;
 }
 
 /* Анімацыя для лагатыпа, меню, адрасу і палітык */
@@ -138,51 +162,61 @@
 /* --- Медыя-запыты --- */
 @media only screen and (min-width: 375px) {
   .footer-container {
-    max-width: 375px;
-    padding: 0 20px;
+    max-width: 767px;
   }
 
   .footer-logo-contact-wrapper {
-    padding: 20px;
+    max-width: 580px;
+    margin: 0 auto;
   }
 
-  .footer-text-wrapper {
-    padding: 12px;
-  }
 }
 
 @media only screen and (min-width: 768px) {
-  .section-footer {
-    padding-top: 32px;
-    padding-bottom: 32px;
-  }
-
   .footer-container {
-    max-width: 704px;
+    max-width: 1279px;
   }
 
   .footer-logo-contact-wrapper {
     flex-direction: row;
     gap: 24px;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 32px;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-bottom: 24px;
+  }
+
+  .footer-one,
+  .footer-two {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 50%;
+    gap: 24px;
+    padding-bottom: 24px;
+  }
+
+  .footer-two {
+    position: relative;
+    justify-content: flex-start;
   }
 
   .footer-text-wrapper {
-    gap: 24px;
-    max-width: 265px;
+    gap: 12px;
   }
 
   .footer-text {
     font-size: 16px;
     line-height: 1.25;
-    color: var(--text-color-on-accent);
+    color: var(--text-color);
   }
 
   .nav-wrapper {
-    flex-direction: row;
-    gap: 64px;
+    flex-direction: column;
+    gap: 40px;
+
   }
 
   .footer-nav-list {
@@ -199,12 +233,17 @@
   }
 
   .footer-privacy-wrapper {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
     margin-top: 64px;
     flex-direction: row;
     justify-content: space-between;
     max-width: 704px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 8px 12px 8px;
   }
 
   .footer-privacy-link,
@@ -214,57 +253,23 @@
   }
 
   .footer-logo {
-    width: 216px;
-    height: 20px;
+    width: 40px;
+    height: 32px;
   }
 }
 
 @media only screen and (min-width: 1280px) {
-  .section-footer {
-    padding-top: 52px;
-    padding-bottom: 52px;
-  }
-
   .footer-container {
-    max-width: 1080px;
-    padding: 0 0;
+    max-width: 1280px;
   }
 
   .footer-logo-contact-wrapper {
-    gap: 100px;
-    justify-content: space-between;
-  }
-
-  .footer-text-wrapper {
-    flex-basis: 30%;
-    max-width: none;
-  }
-
-  .nav-wrapper {
     flex-direction: row;
-    gap: 121px;
-    flex-basis: 60%;
-    justify-content: space-between;
-  }
-
-  .footer-privacy-wrapper {
-    margin-top: 124px;
+    gap: 24px;
+    justify-content: center;
+    align-items: stretch;
     max-width: 1080px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .footer-nav-link:hover,
-  .footer-address-link:hover,
-  .footer-privacy-link:hover {
-    color: var(--highlight-color);
-    background-color: transparent;
-  }
-
-  .footer-nav-link:focus,
-  .footer-address-link:focus,
-  .footer-privacy-link:focus {
-    color: var(--highlight-color);
-    background-color: transparent;
+    margin: 0 auto;
+    margin-bottom: 20px;
   }
 }
