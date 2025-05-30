@@ -15,6 +15,7 @@
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+  z-index: 1001;
 }
 
 .modal-menu {
