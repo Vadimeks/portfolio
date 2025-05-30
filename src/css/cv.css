@@ -114,7 +114,14 @@
 
 /* Стылі для спісаў навыкаў */
 .cv-hardskills-list,
-.cv-softskills-list,
+.cv-softskills-list {
+  margin-bottom: 20px;
+  list-style-type: disc;
+  /* Кружочкі */
+  padding-left: 20px;
+  /* Адступ для маркераў */
+}
+
 .cv-languages-list {
   margin-bottom: 20px;
 }
