@@ -13,9 +13,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
   <script type="module" crossorigin src="/portfolio/index.js"></script>
-  <link rel="modulepreload" crossorigin href="/portfolio/assets/vendor-g6-w1428.js">
+  <link rel="modulepreload" crossorigin href="/portfolio/assets/vendor-BPeK3Tls.js">
   <link rel="stylesheet" crossorigin href="/portfolio/assets/vendor-AL2zCFOW.css">
-  <link rel="stylesheet" crossorigin href="/portfolio/assets/index-CMXslaC0.css">
+  <link rel="stylesheet" crossorigin href="/portfolio/assets/index-RQqeRwkU.css">
 </head>
 
 <body>
@@ -91,14 +91,15 @@
 
     <nav class="menu-nav">
       <ul class="btn-list">
+
         <li>
-          <button class="btn-list-item list-info-btn" type="button" data-scroll="#portfolio">Portfolio</button>
+          <button class="btn-list-item list-info-btn" type="button" data-scroll="#cv">CV</button>
         </li>
         <li>
-          <button class="btn-list-item" type="button" data-scroll="#cv">CV</button>
+          <button class="btn-list-item" type="button" data-scroll="#portfolio">Projects</button>
         </li>
         <li>
-          <button class="btn-list-item" type="button" data-scroll="#about">About me</button>
+          <button class="btn-list-item" type="button" data-scroll="#about-section">About me</button>
         </li>
         <li>
           <button class="btn-list-item" type="button" data-scroll="#contacts">Contacts</button>
@@ -163,15 +164,15 @@
         <use href="/portfolio/img/sprite.svg#icon-close"></use>
       </svg>
     </button>
-    <p class="order-form-title">
+    <h3 class="order-form-title">
       Contact me for opportunities or collaborations. Fill out the form below.
-    </p>
-    <form class="form-modal" onsubmit="handleSubmit(event)" oninput="validateInputs()">
+    </h3>
+    <form class="modal-form">
       <input class="modal-input modal-input-name" name="user-name" type="text" id="user-name" placeholder="Full Name"
         pattern="^[a-zA-Z\s]{3,}$" title="Name should only contain letters and spaces and be at least 3 characters long"
         required>
       <input class="modal-input modal-input-email" type="email" name="email"
-        pattern="([A-z0-9_.-]+)@([A-z0-9_.-]+)\.([A-z]{2,8})" placeholder="Email" required>
+        pattern="([A-Za-z0-9_\-\.]+)+@([A-Za-z0-9_\-\.]+)+\.([A-Za-z]{2,8})" placeholder="Email" required>
       <textarea name="form-textarea" class="modal-textarea" id="user-comment" placeholder="Comment"></textarea>
       <button class="modal-form-btn" type="submit" disabled>Send</button>
     </form>
@@ -387,7 +388,7 @@
     </div>
 
     <div class="cv-ua is-hidden" data-lang="ua">
-      <h2 class="cv-header">CV <span class="portfolio-accent">Full Stack JS Developer</span> (trainee/junior)</h2>
+      <h2 class="cv-header">CV <span class="portfolio-accent">Full Stack JavaScript Developer</span></h2>
       <ul class="cv-list">
         <li class="cv-item">
           <div class="cv-firstraw">
@@ -404,18 +405,110 @@
             <span class="accordion-icon"></span>
           </h3>
           <div class="cv-content" id="ua-profile-content">
-            <p><span class="cv-span">Веб-розробник-початківець (Frontend, Full Stack)</span> з 5 місяцями практичного
+            <p><span class="cv-span">Веб-розробник-початківець (Frontend, Full Stack JavaScript)</span> з 5 місяцями
+              практичного
               досвіду в <span class="cv-span">HTML,
                 CSS, JavaScript (ES6+), Git
                 та Vite</span>, орієнтований на створення адаптивних та оптимізованих інтерфейсів. </p>
-            <p>Попереду вивчення <span class="cv-span">Node.js,
-                React, Vue, and Angular (в GOIT)
+            <p>Попереду вивчення <span class="cv-span">Node.js, TypeScript,
+                React, Vue, and Angular (в GOIT school)
               </span>, з метою розширення компетенцій до повного Full Stack. </p>
             <p><span class="cv-span">Маю досвід управління командою
                 та налаштування робочих процесів</span>, що забезпечує ефективну та відповідальну роботу в колективі.
             </p>
             <p><span class="cv-span">Зацікавлений у вирішенні складних завдань та побудові повнофункціональних
                 веб-продуктів.</span></p>
+          </div>
+        </li>
+        <li class="cv-item">
+          <h3 class="cv-item-header cv-accordion-header" data-target="ua-skills-content">
+            Навички
+            <span class="accordion-icon"></span>
+          </h3>
+          <div class="cv-content is-collapsed" id="ua-skills-content">
+            <div class="cv-skills">
+              <div class="cv-hardskills">
+                <h4>Hard Skills (Технічні навички)</h4>
+                <ol class="cv-hardskills-list">
+                  <li class="cv-hardskills-item">HTML5, CSS3 (включаючи адаптивний/адаптований дизайн, Flexbox, Grid)
+                  </li>
+                  <li class="cv-hardskills-item">JavaScript (ES6+)</li>
+                  <li class="cv-hardskills-item">Git / GitHub (контроль версій, командна робота)</li>
+                  <li class="cv-hardskills-item">Vite (збірка проектів, конфігурація)</li>
+                  <li class="cv-hardskills-item">Стандарти Web </li>
+                  <li class="cv-hardskills-item">Google Chrome DevTools</li>
+                  <li class="cv-hardskills-item">Кросбраузерна сумісність</li>
+                  <li class="cv-hardskills-item">Штучний інтелект (Основи)</li>
+                  <li class="cv-hardskills-item">VSCode, Trello, Figma</li>
+                  <li class="cv-hardskills-item">В процесі вивчення: Node.js, TypeScript, React, Vue, Angular</li>
+                </ol>
+              </div>
+              <div class="cv-softskills">
+                <h4>Soft Skills (Особистісні та міжособистісні навички)</h4>
+                <ol class="cv-softskills-list">
+                  <li class="cv-softskills-item">Лідерство (Leadership)</li>
+                  <li class="cv-softskills-item">Адаптивність (Adaptability)</li>
+                  <li class="cv-softskills-item">Управління / Організаційні навички (Project & Organizational
+                    Management)</li>
+                  <li class="cv-softskills-item">Вирішення проблем (Problem-solving)</li>
+                  <li class="cv-softskills-item">Дисципліна та самоорганізація (Discipline & Self-organization)</li>
+                  <li class="cv-softskills-item">Планування та стратегічне мислення (Planning & Strategic Thinking)</li>
+                  <li class="cv-softskills-item">Комунікативні навички (Communication Skills)</li>
+                  <li class="cv-softskills-item">Критичне мислення (Critical Thinking)</li>
+                  <li class="cv-softskills-item">Швидке навчання / Здатність до навчання (Rapid Learning / Coachability)
+                  </li>
+                  <li class="cv-softskills-item">Стресостійкість (Stress Resistance)</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="cv-item">
+          <h3 class="cv-item-header cv-accordion-header" data-target="ua-education-content">
+            Освіта
+            <span class="accordion-icon"></span>
+          </h3>
+          <div class="cv-content is-collapsed" id="ua-education-content">
+            <ul class="cv-edu-list">
+              <li class="cv-edu-item">
+                <h4>Мови</h4>
+                <ul class="cv-languages-list">
+                  <li class="cv-languages-item"><span class="cv-span">Англійська:</span> Pre-Intermediate – можу
+                    розмовляти, писати, розуміти, але не чітко і з помилкамі</li>
+                  <li class="cv-languages-item"><span class="cv-span">Українська, Білоруська:</span> Fluent - майже
+                    вільно
+
+                  </li>
+                  <li class="cv-languages-item"><span class="cv-span">Польська:</span> A2 – закінчив
+                    рівень А1 та розпочав А2, базовая комунікація, добре розуміння</li>
+                </ul>
+              </li>
+              <li class="cv-edu-item">
+                <h4>Курс Full Stack JavaScript Developer GOIT, онлайн-навчання Грудень 2024 р. – Теперішній час</h4>
+                <ul class="cv-relevantedu-list">
+                  <li class="cv-relevantedu-item">
+                    <span class="cv-span">Пройдені модулі:</span> HTML/CSS, JavaScript (ES6+).
+                  </li>
+                  <li class="cv-relevantedu-item">
+                    <span class="cv-span">Освоєні навички:</span> Git, Адаптивний дизайн, Mobile First, Кросбраузерна
+                    сумісність, Збірка/бандлінг
+                    проектів (Vite), Code
+                    Review, Командна робота.
+                  </li>
+                  <li class="cv-relevantedu-item"><span class="cv-span">Фокус на</span> створенні адаптивних
+                    веб-інтерфейсів,
+                    оптимізації та командній
+                    роботі.</li>
+                  <li class="cv-relevantedu-item"><span class="cv-span">Попереду:</span> Node.js, React, Vue, Angular
+                  </li>
+                </ul>
+              </li>
+
+              <li class="cv-edu-item">
+                <h4>Менеджер-економіст Технічний університет Закінчив у 2007 р.</h4>
+              </li>
+            </ul>
           </div>
         </li>
         <li class="cv-item">
@@ -452,94 +545,6 @@
                 обставини.
               </li>
             </ul>
-          </div>
-        </li>
-        <li class="cv-item">
-          <h3 class="cv-item-header cv-accordion-header" data-target="ua-education-content">
-            Освіта
-            <span class="accordion-icon"></span>
-          </h3>
-          <div class="cv-content is-collapsed" id="ua-education-content">
-            <ul class="cv-edu-list">
-              <li class="cv-edu-item">
-                <h4>Курс Full Stack JavaScript Developer GOIT, онлайн-навчання Грудень 2024 р. – Теперішній час</h4>
-                <ul class="cv-relevantedu-list">
-                  <li class="cv-relevantedu-item">
-                    <span class="cv-span">Пройдені модулі:</span> HTML/CSS, JavaScript (ES6+).
-                  </li>
-                  <li class="cv-relevantedu-item">
-                    <span class="cv-span">Освоєні навички:</span> Git, Адаптивний дизайн, Mobile First, Кросбраузерна
-                    сумісність, Збірка/бандлінг
-                    проектів (Vite), Code
-                    Review, Командна робота.
-                  </li>
-                  <li class="cv-relevantedu-item"><span class="cv-span">Фокус на</span> створенні адаптивних
-                    веб-інтерфейсів,
-                    оптимізації та командній
-                    роботі.</li>
-                  <li class="cv-relevantedu-item"><span class="cv-span">Попереду:</span> Node.js, React, Vue, Angular
-                  </li>
-                </ul>
-              </li>
-              <li class="cv-edu-item">
-                <h4>Мови</h4>
-                <ul class="cv-languages-list">
-                  <li class="cv-languages-item"><span class="cv-span">Англійська:</span> Pre-Intermediate – можу
-                    розмовляти, писати, розуміти, але не чітко і з помилкамі</li>
-                  <li class="cv-languages-item"><span class="cv-span">Українська, Білоруська:</span> майже вільно
-                    (Fluent)
-                  </li>
-                  <li class="cv-languages-item"><span class="cv-span">Польська:</span> базовий (елементарний) – закінчив
-                    рівень А1 та розпочаў А2, базовая комунікація, добре розуміння</li>
-                </ul>
-              </li>
-              <li class="cv-edu-item">
-                <h4>Менеджер-економіст Технічний університет Закінчив у 2007 р.</h4>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="cv-item">
-          <h3 class="cv-item-header cv-accordion-header" data-target="ua-skills-content">
-            Навички
-            <span class="accordion-icon"></span>
-          </h3>
-          <div class="cv-content is-collapsed" id="ua-skills-content">
-            <div class="cv-skills">
-              <div class="cv-hardskills">
-                <h4>Hard Skills (Технічні навички)</h4>
-                <ol class="cv-hardskills-list">
-                  <li class="cv-hardskills-item">HTML5, CSS3 (включаючи адаптивний/адаптований дизайн, Flexbox, Grid)
-                  </li>
-                  <li class="cv-hardskills-item">JavaScript (ES6+)</li>
-                  <li class="cv-hardskills-item">Git / GitHub (контроль версій, командна робота)</li>
-                  <li class="cv-hardskills-item">Vite (збірка проектів, конфігурація)</li>
-                  <li class="cv-hardskills-item">Web Development Fundamentals</li>
-                  <li class="cv-hardskills-item">Google Chrome DevTools</li>
-                  <li class="cv-hardskills-item">Кросбраузерна сумісність</li>
-                  <li class="cv-hardskills-item">Штучний інтелект (Основи)</li>
-                  <li class="cv-hardskills-item">VSCode, Trello, Figma</li>
-                  <li class="cv-hardskills-item">В процесі вивчення: Node.js, React, Vue, Angular</li>
-                </ol>
-              </div>
-              <div class="cv-softskills">
-                <h4>Soft Skills (Особистісні та міжособистісні навички)</h4>
-                <ol class="cv-softskills-list">
-                  <li class="cv-softskills-item">Лідерство (Leadership)</li>
-                  <li class="cv-softskills-item">Адаптивність (Adaptability)</li>
-                  <li class="cv-softskills-item">Управління проектами / Організаційні навички (Project Management /
-                    Organizational Skills)</li>
-                  <li class="cv-softskills-item">Вирішення проблем (Problem-solving)</li>
-                  <li class="cv-softskills-item">Дисципліна та самоорганізація (Discipline & Self-organization)</li>
-                  <li class="cv-softskills-item">Планування та стратегічне мислення (Planning & Strategic Thinking)</li>
-                  <li class="cv-softskills-item">Комунікативні навички (Communication Skills)</li>
-                  <li class="cv-softskills-item">Критичне мислення (Critical Thinking)</li>
-                  <li class="cv-softskills-item">Швидке навчання / Здатність до навчання (Rapid Learning / Coachability)
-                  </li>
-                  <li class="cv-softskills-item">Стресостійкість (Stress Resistance)</li>
-                </ol>
-              </div>
-            </div>
           </div>
         </li>
         <li class="cv-item">
@@ -782,7 +787,6 @@
 
     </div>
 </footer>
-
 </body>
 
 
