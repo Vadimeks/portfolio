@@ -1,4 +1,6 @@
 import emailjs from '@emailjs/browser';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 document.addEventListener('DOMContentLoaded', () => {
   emailjs.init('4BnxjGWY1aTaotznr');
 
@@ -76,23 +78,13 @@ document.addEventListener('DOMContentLoaded', () => {
             ownerEmailResponse.text
           );
 
-          // --- 2. Адпраўка Email-пацверджання таму, хто запоўніў форму ---
-          // Гэты крок неабавязковы, але рэкамендуецца для пацверджання карыстальніку.
-          // Калі ты не хочаш адпраўляць пацверджанне карыстальніку, ты можаш выдаліць гэты блок 'await emailjs.send(...)'
-          const userConfirmationResponse = await emailjs.send(
-            'service_exkn3na',
-            'template_liq63t9',
-            templateParams // Тыя ж параметры, бо ў шаблоне пацверджання ёсць {{user_name}} і {{email}}
-          );
-          console.log(
-            'User confirmation email SUCCESS!',
-            userConfirmationResponse.status,
-            userConfirmationResponse.text
-          );
-
-          alert(
-            'Ваша паведамленне паспяхова адпраўлена! Мы звяжамся з вамі хутка.'
-          ); // Паведамленне карыстальніку
+          iziToast.success({
+            title: 'Success!',
+            message: 'Your message successfully sent! I will contact you soon.',
+            position: 'topRight',
+            timeout: 5000,
+            color: 'green',
+          });
 
           modalForm.reset(); // Ачышчаем форму пасля адпраўкі
           // Робім кнопку адпраўкі зноў неактыўнай, бо форма ачышчана
@@ -105,9 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
           closeModal(); // Закрываем мадальнае вакно
         } catch (error) {
           console.error('FAILED to send email(s):', error);
-          alert(
-            'Адбылася памылка пры адпраўцы паведамлення. Калі ласка, паспрабуйце пазней.'
-          ); // Паведамленне карыстальніку аб памылцы
+          alert('Something went wrong. Please try later.'); // Паведамленне карыстальніку аб памылцы
         }
       });
     }
