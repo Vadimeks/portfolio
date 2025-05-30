@@ -1,48 +1,39 @@
+import emailjs from '@emailjs/browser';
 document.addEventListener('DOMContentLoaded', () => {
-  // Скрыпт для мадальнага вакна
-  const modal = document.querySelector('[data-modal]'); // Гэта .backdrop з data-modal
+  emailjs.init('4BnxjGWY1aTaotznr');
 
-  // Пераканайцеся, што мадальнае вакно знойдзена
+  const modal = document.querySelector('[data-modal]');
+
   if (modal) {
-    const openBtns = document.querySelectorAll('[data-modal-open]'); // Кнопка 'Write me'
-    const closeBtns = document.querySelectorAll('[data-modal-close]'); // Кнопка закрыцця мадальнага вакна
-    const backdrop = document.querySelector('.backdrop'); // Сам backdrop (ужо знойдзены як modal)
+    const openBtns = document.querySelectorAll('[data-modal-open]');
+    const closeBtns = document.querySelectorAll('[data-modal-close]');
 
     const modalNameInput = document.querySelector('.modal-input-name');
     const modalEmailInput = document.querySelector('.modal-input-email');
     const modalSendButton = document.querySelector('.modal-form-btn');
-    // Важна: Цяпер шукаем '.modal-form', таму што мы змянілі клас у HTML
     const modalForm = document.querySelector('.modal-form');
 
     const toggleModal = () => modal.classList.toggle('is-open');
 
-    // Адкрыццё мадальнага вакна
     openBtns.forEach(btn => btn.addEventListener('click', toggleModal));
-    // Закрыццё мадальнага вакна праз кнопку
     closeBtns.forEach(btn => btn.addEventListener('click', toggleModal));
 
-    // Закрыццё мадальнага вакна пры кліку па backdrop
-    // 'modal' тут і ёсць '.backdrop', таму выкарыстоўваем 'modal'
     modal.addEventListener('click', e => {
-      if (e.target === modal) toggleModal(); // Калі клікнулі менавіта па backdrop, а не па яго ўнутраных элементах
+      if (e.target === modal) toggleModal();
     });
 
-    // Закрыццё мадальнага вакна пры націсканні Escape
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && modal.classList.contains('is-open')) {
         toggleModal();
       }
     });
 
-    // ----- Логіка валідацыі формы ў мадальным акне -----
-    // Праверка на існаванне інпутаў і кнопкі перад даданнем слухачоў
     if (modalNameInput && modalEmailInput && modalSendButton) {
       modalNameInput.addEventListener('input', validateModalInputs);
       modalEmailInput.addEventListener('input', validateModalInputs);
     }
 
     function validateModalInputs() {
-      // Гэтая праверка на ўсялякі выпадак, калі кнопка чамусьці не знойдзена
       if (!modalSendButton) {
         console.warn(
           'Modal send button not found for validation. Validation will not enable/disable button.'
@@ -61,15 +52,63 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // ----- Апрацоўка адпраўкі формы ў мадальным акне -----
-    // Праверка на існаванне формы перад даданнем слухача
     if (modalForm) {
-      modalForm.addEventListener('submit', event => {
-        event.preventDefault(); // Прадухіляем перазагрузку старонкі
-        closeModal(); // Закрываем мадальнае акно
-        setTimeout(() => {
-          window.location.href = '/'; // Перанакіроўваем на галоўную старонку
-        }, 1000); // Затрымка ў 1 секунду
+      modalForm.addEventListener('submit', async event => {
+        event.preventDefault();
+
+        const formData = new FormData(modalForm);
+        const templateParams = {
+          user_name: formData.get('user-name'), // Супадае з name="user-name" у HTML і {{user_name}} у шаблоне EmailJS
+          email: formData.get('email'), // Супадае з name="email" у HTML і {{email}} у шаблоне EmailJS
+          form_textarea: formData.get('form-textarea'), // Супадае з name="form-textarea" у HTML і {{form_textarea}} у шаблоне EmailJS
+        };
+
+        try {
+          // --- 1. Адпраўка Email на твой адрас (як уладальніка сайта) ---
+          const ownerEmailResponse = await emailjs.send(
+            'service_exkn3na',
+            'template_liq63t9',
+            templateParams
+          );
+          console.log(
+            'Email to owner SUCCESS!',
+            ownerEmailResponse.status,
+            ownerEmailResponse.text
+          );
+
+          // --- 2. Адпраўка Email-пацверджання таму, хто запоўніў форму ---
+          // Гэты крок неабавязковы, але рэкамендуецца для пацверджання карыстальніку.
+          // Калі ты не хочаш адпраўляць пацверджанне карыстальніку, ты можаш выдаліць гэты блок 'await emailjs.send(...)'
+          const userConfirmationResponse = await emailjs.send(
+            'service_exkn3na',
+            'template_liq63t9',
+            templateParams // Тыя ж параметры, бо ў шаблоне пацверджання ёсць {{user_name}} і {{email}}
+          );
+          console.log(
+            'User confirmation email SUCCESS!',
+            userConfirmationResponse.status,
+            userConfirmationResponse.text
+          );
+
+          alert(
+            'Ваша паведамленне паспяхова адпраўлена! Мы звяжамся з вамі хутка.'
+          ); // Паведамленне карыстальніку
+
+          modalForm.reset(); // Ачышчаем форму пасля адпраўкі
+          // Робім кнопку адпраўкі зноў неактыўнай, бо форма ачышчана
+          if (modalSendButton) {
+            // Праверка, каб пазбегнуць памылак, калі кнопка не знойдзена
+            modalSendButton.setAttribute('disabled', 'true');
+            modalSendButton.classList.remove('active');
+          }
+
+          closeModal(); // Закрываем мадальнае вакно
+        } catch (error) {
+          console.error('FAILED to send email(s):', error);
+          alert(
+            'Адбылася памылка пры адпраўцы паведамлення. Калі ласка, паспрабуйце пазней.'
+          ); // Паведамленне карыстальніку аб памылцы
+        }
       });
     }
 
