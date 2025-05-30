@@ -26,7 +26,7 @@
 .footer-one {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 24px;
 }
 
@@ -40,7 +40,7 @@
 .footer-text-wrapper {
   display: flex;
   gap: 12px;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: var(--accent-color);
   align-items: flex-start;
   border-radius: 12px;
@@ -53,6 +53,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 24px;
+  margin-bottom: 40px;
 }
 
 .nav-wrapper {
