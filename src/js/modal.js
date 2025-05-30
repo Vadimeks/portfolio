@@ -1,4 +1,6 @@
 import emailjs from '@emailjs/browser';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 document.addEventListener('DOMContentLoaded', () => {
   emailjs.init('4BnxjGWY1aTaotznr');
 
@@ -90,9 +92,13 @@ document.addEventListener('DOMContentLoaded', () => {
             userConfirmationResponse.text
           );
 
-          alert(
-            'Ваша паведамленне паспяхова адпраўлена! Мы звяжамся з вамі хутка.'
-          ); // Паведамленне карыстальніку
+          iziToast.success({
+            title: 'Success!',
+            message: 'Your message successfully sent! I will contact you soon.',
+            position: 'topRight',
+            timeout: 7000,
+            color: 'green',
+          });
 
           modalForm.reset(); // Ачышчаем форму пасля адпраўкі
           // Робім кнопку адпраўкі зноў неактыўнай, бо форма ачышчана
@@ -105,9 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
           closeModal(); // Закрываем мадальнае вакно
         } catch (error) {
           console.error('FAILED to send email(s):', error);
-          alert(
-            'Адбылася памылка пры адпраўцы паведамлення. Калі ласка, паспрабуйце пазней.'
-          ); // Паведамленне карыстальніку аб памылцы
+          alert('Something went wrong. Please try later.'); // Паведамленне карыстальніку аб памылцы
         }
       });
     }
