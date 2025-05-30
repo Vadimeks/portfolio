@@ -1,39 +1,48 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Скрыпт для мадальнага вакна
-  const modal = document.querySelector("[data-modal]");
+import emailjs from '@emailjs/browser';
+document.addEventListener('DOMContentLoaded', () => {
+  emailjs.init('4BnxjGWY1aTaotznr');
+
+  const modal = document.querySelector('[data-modal]');
+
   if (modal) {
-    const openBtns = document.querySelectorAll("[data-modal-open]");
-    const closeBtns = document.querySelectorAll("[data-modal-close]");
-    const backdrop = document.querySelector(".backdrop");
-    const modalNameInput = document.querySelector(".modal-input-name");
-    const modalEmailInput = document.querySelector(".modal-input-email");
-    const modalSendButton = document.querySelector(".modal-form-btn");
+    const openBtns = document.querySelectorAll('[data-modal-open]');
+    const closeBtns = document.querySelectorAll('[data-modal-close]');
 
-    const toggleModal = () => modal.classList.toggle("is-open");
+    const modalNameInput = document.querySelector('.modal-input-name');
+    const modalEmailInput = document.querySelector('.modal-input-email');
+    const modalSendButton = document.querySelector('.modal-form-btn');
+    const modalForm = document.querySelector('.modal-form');
 
-    openBtns.forEach(btn => btn.addEventListener("click", toggleModal));
-    closeBtns.forEach(btn => btn.addEventListener("click", toggleModal));
+    const toggleModal = () => modal.classList.toggle('is-open');
 
-    backdrop?.addEventListener("click", e => {
-      if (e.target === backdrop) toggleModal();
+    openBtns.forEach(btn => btn.addEventListener('click', toggleModal));
+    closeBtns.forEach(btn => btn.addEventListener('click', toggleModal));
+
+    modal.addEventListener('click', e => {
+      if (e.target === modal) toggleModal();
     });
 
-    document.addEventListener("keydown", e => {
-      if (e.key === "Escape" && modal.classList.contains("is-open")) {
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) {
         toggleModal();
       }
     });
 
-    // Дадаем праверку на існаванне інпутаў
-    if (modalNameInput && modalEmailInput) {
-      modalNameInput.addEventListener("input", validateModalInputs);
-      modalEmailInput.addEventListener("input", validateModalInputs);
+    if (modalNameInput && modalEmailInput && modalSendButton) {
+      modalNameInput.addEventListener('input', validateModalInputs);
+      modalEmailInput.addEventListener('input', validateModalInputs);
     }
 
     function validateModalInputs() {
+      if (!modalSendButton) {
+        console.warn(
+          'Modal send button not found for validation. Validation will not enable/disable button.'
+        );
+        return;
+      }
       const isModalNameValid = modalNameInput.checkValidity();
       const isModalEmailValid = modalEmailInput.checkValidity();
-      
+
       if (isModalNameValid && isModalEmailValid) {
         modalSendButton.removeAttribute('disabled');
         modalSendButton.classList.add('active');
@@ -43,44 +52,73 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
+    if (modalForm) {
+      modalForm.addEventListener('submit', async event => {
+        event.preventDefault();
+
+        const formData = new FormData(modalForm);
+        const templateParams = {
+          user_name: formData.get('user-name'), // Супадае з name="user-name" у HTML і {{user_name}} у шаблоне EmailJS
+          email: formData.get('email'), // Супадае з name="email" у HTML і {{email}} у шаблоне EmailJS
+          form_textarea: formData.get('form-textarea'), // Супадае з name="form-textarea" у HTML і {{form_textarea}} у шаблоне EmailJS
+        };
+
+        try {
+          // --- 1. Адпраўка Email на твой адрас (як уладальніка сайта) ---
+          const ownerEmailResponse = await emailjs.send(
+            'service_exkn3na',
+            'template_liq63t9',
+            templateParams
+          );
+          console.log(
+            'Email to owner SUCCESS!',
+            ownerEmailResponse.status,
+            ownerEmailResponse.text
+          );
+
+          // --- 2. Адпраўка Email-пацверджання таму, хто запоўніў форму ---
+          // Гэты крок неабавязковы, але рэкамендуецца для пацверджання карыстальніку.
+          // Калі ты не хочаш адпраўляць пацверджанне карыстальніку, ты можаш выдаліць гэты блок 'await emailjs.send(...)'
+          const userConfirmationResponse = await emailjs.send(
+            'service_exkn3na',
+            'template_liq63t9',
+            templateParams // Тыя ж параметры, бо ў шаблоне пацверджання ёсць {{user_name}} і {{email}}
+          );
+          console.log(
+            'User confirmation email SUCCESS!',
+            userConfirmationResponse.status,
+            userConfirmationResponse.text
+          );
+
+          alert(
+            'Ваша паведамленне паспяхова адпраўлена! Мы звяжамся з вамі хутка.'
+          ); // Паведамленне карыстальніку
+
+          modalForm.reset(); // Ачышчаем форму пасля адпраўкі
+          // Робім кнопку адпраўкі зноў неактыўнай, бо форма ачышчана
+          if (modalSendButton) {
+            // Праверка, каб пазбегнуць памылак, калі кнопка не знойдзена
+            modalSendButton.setAttribute('disabled', 'true');
+            modalSendButton.classList.remove('active');
+          }
+
+          closeModal(); // Закрываем мадальнае вакно
+        } catch (error) {
+          console.error('FAILED to send email(s):', error);
+          alert(
+            'Адбылася памылка пры адпраўцы паведамлення. Калі ласка, паспрабуйце пазней.'
+          ); // Паведамленне карыстальніку аб памылцы
+        }
+      });
+    }
+
+    // Дапаможная функцыя для закрыцця мадальнага вакна (калі яна патрэбна асобна)
     function closeModal() {
-      document.querySelector("[data-modal]").classList.remove('is-open');
+      modal.classList.remove('is-open');
     }
-
-    document.querySelector('.modal-form').addEventListener('submit', (event) => {
-      event.preventDefault();
-      closeModal();
-      setTimeout(() => {
-        window.location.href = "/"; // Redirect to the main page
-      }, 1000); // Затрымка ў 1000 мілісекунд (1 секунда)
-    });
+  } else {
+    console.error(
+      'Modal element with data-modal not found. Modal functionality will not work.'
+    );
   }
-
-  // Скрыпт для формы на старонцы
-  const nameInput = document.querySelector(".input-name");
-  const emailInput = document.querySelector(".input-email");
-  const submitButton = document.querySelector(".form-btn");
-
-  nameInput.addEventListener("input", validateFormInputs);
-  emailInput.addEventListener("input", validateFormInputs);
-
-  function validateFormInputs() {
-    const isNameValid = nameInput.checkValidity();
-    const isEmailValid = emailInput.checkValidity();
-    
-    if (isNameValid && isEmailValid) {
-      submitButton.removeAttribute('disabled');
-      submitButton.classList.add('active');
-    } else {
-      submitButton.setAttribute('disabled', 'true');
-      submitButton.classList.remove('active');
-    }
-  }
-
-  document.querySelector('.order-form').addEventListener('submit', (event) => {
-    event.preventDefault();
-    setTimeout(() => {
-      window.location.href = "/"; // Redirect to the main page
-    }, 1000); // Затрымка ў 1000 мілісекунд (1 секунда)
-  });
 });
