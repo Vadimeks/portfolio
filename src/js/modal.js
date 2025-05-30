@@ -78,25 +78,11 @@ document.addEventListener('DOMContentLoaded', () => {
             ownerEmailResponse.text
           );
 
-          // --- 2. Адпраўка Email-пацверджання таму, хто запоўніў форму ---
-          // Гэты крок неабавязковы, але рэкамендуецца для пацверджання карыстальніку.
-          // Калі ты не хочаш адпраўляць пацверджанне карыстальніку, ты можаш выдаліць гэты блок 'await emailjs.send(...)'
-          const userConfirmationResponse = await emailjs.send(
-            'service_exkn3na',
-            'template_liq63t9',
-            templateParams // Тыя ж параметры, бо ў шаблоне пацверджання ёсць {{user_name}} і {{email}}
-          );
-          console.log(
-            'User confirmation email SUCCESS!',
-            userConfirmationResponse.status,
-            userConfirmationResponse.text
-          );
-
           iziToast.success({
             title: 'Success!',
             message: 'Your message successfully sent! I will contact you soon.',
             position: 'topRight',
-            timeout: 7000,
+            timeout: 5000,
             color: 'green',
           });
 
