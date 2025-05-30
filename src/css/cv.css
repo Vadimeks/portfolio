@@ -1,11 +1,13 @@
 /* Агульныя стылі для загалоўка CV */
+.section-cv {
+  padding: 20px 0;
+}
+
 .cv-container {
   display: flex;
   flex-direction: column;
-  padding: 0 16px;
   height: auto;
   width: 100%;
-  margin-bottom: 40px;
 }
 
 .cv-header {
@@ -214,7 +216,6 @@
 
   .cv-header {
     font-size: 28px;
-    max-width: 340px;
   }
 
   .cv-firstraw .cv-item-header {
@@ -228,7 +229,7 @@
   }
 
   .cv-accent {
-    font-size: 26px;
+    font-size: 28px;
   }
 }
 
@@ -256,7 +257,6 @@
 
   .cv-header {
     font-size: 36px;
-    max-width: 430px;
   }
 
   .cv-firstraw .cv-item-header {
@@ -271,7 +271,7 @@
 
   .cv-accent {
     color: var(--highlight-color);
-    font-size: 30px;
+    font-size: 36px;
   }
 }
 
@@ -305,6 +305,6 @@
 
   .cv-accent {
     color: var(--highlight-color);
-    font-size: 60px;
+    font-size: 68px;
   }
 }

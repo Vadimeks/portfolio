@@ -1,18 +1,18 @@
 /* Section-footer  */
 .section-footer {
-  margin-top: 40px;
-  margin-bottom: 20px;
+  padding: 20px 0;
 }
 
 .footer-container {
   max-width: 374px;
+
 }
 
 .footer-logo-contact-wrapper {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
   margin-bottom: 20px;
 }
