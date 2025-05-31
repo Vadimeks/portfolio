@@ -44,6 +44,39 @@
   height: 32px;
 }
 
+/* Стылі для кнопак пераключэння мовы */
+.logo-language-block {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.language-switcher {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.lang-button {
+  width: 32px;
+  height: 16px;
+  border: 1px solid var(--button-color);
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 5px;
+  color: var(--text-color);
+  font-size: 10px;
+}
+
+.lang-button.active {
+  background-color: var(--button-color);
+  color: var(--primary-color);
+  border-color: var(--button-color);
+}
+
 .nav-list,
 .header-btn {
   display: none;
@@ -123,6 +156,11 @@
     display: none;
   }
 
+  .lang-button {
+    width: 40px;
+    height: 20px;
+    font-size: 14px;
+  }
 }
 
 @media only screen and (min-width: 1280px) {

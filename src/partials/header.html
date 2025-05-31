@@ -1,11 +1,19 @@
 <header class="header-section">
-  <ul class="container header-container">
+  <div class="container header-container">
     <nav class="header-nav">
-      <a class="header-logo" href="./index.html">
-        <svg class="hed-logo-icon">
-          <use href="/img/sprite.svg#icon-logo"></use>
-        </svg>
-      </a>
+      <div class="logo-language-block">
+        <a class="header-logo" href="./index.html">
+          <svg class="hed-logo-icon">
+            <use href="/img/sprite.svg#icon-logo"></use>
+          </svg>
+        </a>
+        <div class="language-switcher">
+
+          <button class="lang-button active" data-lang="eng">Eng</button>
+          <button class="lang-button" data-lang="ua">Ua</button>
+        </div>
+      </div>
+
       <ul class="nav-list">
         <li class="nav-item">
           <a class="nav-link" href="#portfolio">Projects</a>
@@ -58,7 +66,7 @@
       </button>
 
     </nav>
-    </div>
-    <load src="/partials/mobile-menu.html" />
+  </div>
+  <load src="/partials/mobile-menu.html" />
 
 </header>
