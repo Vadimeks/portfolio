@@ -31,29 +31,21 @@
   margin-bottom: 30px;
 }
 
+.hero-accent {
+  color: var(--highlight-color);
+}
+
+.hero-descr-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .hero-header {
   background-color: var(--light-accent);
   padding: 8px 0;
   font-size: 20px;
   width: 100%;
-  margin-bottom: 12px;
-}
-
-.hero-accent {
-  color: var(--highlight-color);
-}
-
-.hero-span {
-  color: var(--text-color);
-  font-weight: 600;
-  font-size: 28px;
-  line-height: 1.11;
-  letter-spacing: 0.02em;
-  background-color: var(--accent-color);
-}
-
-.hero-descr-list {
-  margin-bottom: 16px;
 }
 
 .hero-descr-item {
@@ -65,14 +57,32 @@
 }
 
 .hero-descr-item:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hero-last-item {
   padding: 8px 0;
   background-color: var(--light-accent);
-  margin-top: 12px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+
+.hero-span {
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.43;
+  letter-spacing: 0.02em;
+  background-color: var(--accent-color);
 }
 
 .hero-btn {
   width: 100%;
-  height: 40px;
+  height: auto;
+  min-height: 40px;
   border-radius: 12px;
   display: block;
   background: var(--button-color);
@@ -91,36 +101,17 @@
 .hero-btn:hover,
 .hero-btn:focus {
   background-color: var(--highlight-color);
-  color: var(--button-text-color);
+  color: var(--text-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ---- HERO FOR SMALL PHONES ---- */
-@media only screen and (min-width: 320px) {
-  .hero-span {
-    font-size: 28px;
-  }
-
-  .hero-text {
-    max-width: 340px;
-  }
-
-  .hero-descr-list {
-    margin-bottom: 16px;
-  }
-
-  .hero-btn {
-    width: 100%;
-    max-width: 320px;
-    height: 40px;
-    border-radius: 12px;
-    padding: 0;
-  }
+.hero-text {
+  width: 100%;
 }
 
 @media only screen and (min-width: 375px) {
 
   .hero-text {
-    width: 100%;
     max-width: 580px;
   }
 
@@ -132,16 +123,25 @@
   }
 
   .hero-header {
-    font-size: 24px;
+    font-size: 22px;
   }
 
-  .hero-span {
-    font-size: 36px;
+  .hero-btn {
+    max-width: 374px;
+    flex-basis: 50%;
   }
 
-  .hero-descr-list {
-    width: 100%;
+  .hero-descr-item:last-child {
+    flex-direction: row;
+    gap: 8px;
+    justify-content: space-between;
+    background-color: var(--light-accent);
   }
+
+  .hero-last-item {
+    background-color: transparent;
+  }
+
 }
 
 /* ---- HERO FOR TABLETS ----*/
@@ -153,53 +153,51 @@
   .hero-container {
     padding-top: 140px;
     padding-bottom: 60px;
-
   }
 
   .hero-text {
-    width: 100%;
-    height: auto;
     max-width: 900px;
-    position: relative;
+    width: 100%;
+    margin: 0 auto;
   }
+
 
   .hero-title {
-    font-size: 48px;
-    margin-bottom: 80px;
+    font-size: 36px;
     max-width: 900px;
-  }
+    margin-bottom: 40px;
 
-  .hero-header {
-    font-size: 28px;
-    margin-bottom: 0;
-  }
-
-  .hero-span {
-    font-size: 48px;
-  }
-
-  .hero-descr-list {
-    margin-bottom: 0;
   }
 
   .hero-description {
     max-width: 900px;
+    width: 100%;
   }
 
-  .hero-descr-item {
-    font-size: 14px;
-    line-height: 1.5;
-    font-weight: 700;
-    padding-bottom: 8px;
+  .hero-descr-list {
+    width: 100%;
+  }
+
+  .hero-header {
+    font-size: 24px;
   }
 
   .hero-btn {
-    height: 40px;
-    border-radius: 12px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
+    max-width: 374px;
+    flex-basis: 50%;
   }
+
+  .hero-descr-item:last-child {
+    flex-direction: row;
+    gap: 8px;
+    justify-content: space-between;
+    background-color: var(--light-accent);
+  }
+
+  .hero-last-item {
+    background-color: transparent;
+  }
+
 }
 
 /* ---- HERO FOR PC's ---- */
@@ -230,7 +228,7 @@
   }
 
   .hero-span {
-    font-size: 68px;
+    font-size: 22px;
   }
 
   .hero-description {
@@ -238,26 +236,21 @@
   }
 
   .hero-descr-list {
-    margin-bottom: 0;
+    gap: 24px;
+  }
+
+  .hero-descr-item {
+    font-size: 22px;
   }
 
   .hero-descr {
-    font-size: 16px;
+    font-size: 22px;
     line-height: 1.7;
     font-weight: 700;
   }
 
-  .hero-descr-item {
-    padding-bottom: 20px;
-    font-size: 18px;
-  }
-
-  .hero-btn {
-    height: 60px;
-    border-radius: 12px;
-    position: absolute;
-    right: 0;
-    bottom: 20%;
+  .hero-last-item {
+    font-size: 28px;
   }
 
 }
