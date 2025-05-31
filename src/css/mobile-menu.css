@@ -45,6 +45,10 @@
   right: 20px;
 }
 
+.menu-close-icon:focus {
+  transform: scale(1.05);
+}
+
 .menu-close-icon {
   width: 16px;
   height: 16px;
@@ -81,8 +85,9 @@
   transition: transform 0.2s ease-in-out;
 }
 
-.btn-list-item:hover {
-  transform: scale(1.1);
+.btn-list-item:focus {
+  transform: scale(1.05);
+  background-color: var(--highlight-color);
 }
 
 .list-info-btn {
@@ -118,6 +123,11 @@
   margin-bottom: 40px;
 }
 
+.social-link-mob:hover .social-icon,
+.social-link-mob:focus .social-icon {
+  fill: var(--highlight-color);
+  transform: scale(1.2);
+}
 
 @media only screen and (min-width: 768px) {
   .menu-backdrop {
@@ -150,4 +160,5 @@
   .menu-backdrop {
     display: none;
   }
+
 }

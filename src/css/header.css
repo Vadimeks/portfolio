@@ -44,6 +44,39 @@
   height: 32px;
 }
 
+/* Стылі для кнопак пераключэння мовы */
+.logo-language-block {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.language-switcher {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.lang-button {
+  width: 32px;
+  height: 16px;
+  border: 1px solid var(--button-color);
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 5px;
+  color: var(--text-color);
+  font-size: 10px;
+}
+
+.lang-button.active {
+  background-color: var(--button-color);
+  color: var(--primary-color);
+  border-color: var(--button-color);
+}
+
 .nav-list,
 .header-btn {
   display: none;
@@ -123,6 +156,11 @@
     display: none;
   }
 
+  .lang-button {
+    width: 40px;
+    height: 20px;
+    font-size: 14px;
+  }
 }
 
 @media only screen and (min-width: 1280px) {
@@ -181,22 +219,29 @@
   .header-section.fixed {
     background: rgba(0, 168, 107, 0.5);
   }
-}
 
-.nav-list .nav-link {
-  transition: transform 0.3s ease, color 0.3s ease;
-  background-color: var(--button-color);
-}
+  .social-link:hover .social-icon,
+  .social-link:focus .social-icon {
+    fill: var(--highlight-color);
+    transform: scale(1.2);
+  }
 
-.nav-list .nav-link:hover {
-  transform: scale(1.05);
-  background-color: var(--highlight-color);
-  color: var(--button-text-color);
-  border: none;
-}
 
-.nav-list .nav-link:focus {
-  background-color: var(--highlight-color);
-  color: var(--button-text-color);
-  border: none;
+  .nav-list .nav-link {
+    transition: transform 0.3s ease, color 0.3s ease;
+    background-color: var(--button-color);
+  }
+
+  .nav-list .nav-link:hover {
+    transform: scale(1.05);
+    background-color: var(--highlight-color);
+    color: var(--button-text-color);
+    border: none;
+  }
+
+  .nav-list .nav-link:focus {
+    background-color: var(--highlight-color);
+    color: var(--button-text-color);
+    border: none;
+  }
 }
