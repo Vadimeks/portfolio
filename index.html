@@ -15,19 +15,27 @@
   <script type="module" crossorigin src="/portfolio/index.js"></script>
   <link rel="modulepreload" crossorigin href="/portfolio/assets/vendor-6zVkmLQt.js">
   <link rel="stylesheet" crossorigin href="/portfolio/assets/vendor-CX4EDM7x.css">
-  <link rel="stylesheet" crossorigin href="/portfolio/assets/index-zlCHG0Ro.css">
+  <link rel="stylesheet" crossorigin href="/portfolio/assets/index-CazaeLr-.css">
 </head>
 
 <body>
 
   <header class="header-section">
-  <ul class="container header-container">
-    <nav class="header-nav">
-      <a class="header-logo" href="./index.html">
-        <svg class="hed-logo-icon">
-          <use href="/portfolio/img/sprite.svg#icon-logo"></use>
-        </svg>
-      </a>
+  <div class="container header-container">
+    <nav class="header-nav" data-lang="eng">
+      <div class="logo-language-block">
+        <a class="header-logo" href="./index.html">
+          <svg class="hed-logo-icon">
+            <use href="/portfolio/img/sprite.svg#icon-logo"></use>
+          </svg>
+        </a>
+        <div class="language-switcher">
+
+          <button class="lang-button active" data-lang="eng">Eng</button>
+          <button class="lang-button" data-lang="ua">Ua</button>
+        </div>
+      </div>
+
       <ul class="nav-list">
         <li class="nav-item">
           <a class="nav-link" href="#portfolio">Projects</a>
@@ -49,7 +57,7 @@
           <a href="https://www.linkedin.com/in/вадим-cімонов-669920360/" target="_blank" class="social-link"
             title="LinkedIn">
             <svg class="social-icon" width="32" height="32">
-              <use xlink:href="/portfolio/img/sprite.svg#icon-linkedin"></use>
+              <use href="/portfolio/img/sprite.svg#icon-linkedin"></use>
             </svg>
             <span class="visually-hidden">LinkedIn</span>
           </a>
@@ -57,7 +65,7 @@
         <li class="social-item">
           <a href="https://t.me/Running_is_freedom" target="_blank" class="social-link" title="Telegram">
             <svg class="social-icon" width="32" height="32">
-              <use xlink:href="/portfolio/img/sprite.svg#icon-telegram"></use>
+              <use href="/portfolio/img/sprite.svg#icon-telegram"></use>
             </svg>
             <span class="visually-hidden">Telegram</span>
           </a>
@@ -65,7 +73,7 @@
         <li class="social-item">
           <a href="https://github.com/Vadimeks" target="_blank" class="social-link" title="GitHub">
             <svg class="social-icon" width="32" height="32">
-              <use xlink:href="/portfolio/img/sprite.svg#icon-github"></use>
+              <use href="/portfolio/img/sprite.svg#icon-github"></use>
             </svg>
             <span class="visually-hidden">GitHub</span>
           </a>
@@ -80,9 +88,71 @@
       </button>
 
     </nav>
-    </div>
-    <div class="menu-backdrop" data-menu>
-  <div class="mobile-menu">
+    <nav class="header-nav is-hidden" data-lang="ua">
+      <div class="logo-language-block">
+        <a class="header-logo" href="./index.html">
+          <svg class="hed-logo-icon">
+            <use href="/portfolio/img/sprite.svg#icon-logo"></use>
+          </svg>
+        </a>
+        <div class="language-switcher">
+
+          <button class="lang-button active" data-lang="eng">Eng</button>
+          <button class="lang-button" data-lang="ua">Ua</button>
+        </div>
+      </div>
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a class="nav-link" href="#portfolio">Проєкти</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#cv">Резюме</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about-section">Про мене</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#contacts">Контакти</a>
+        </li>
+      </ul>
+      <ul class="social-list">
+        <li class="social-item">
+          <a href="https://www.linkedin.com/in/вадим-cімонов-669920360/" target="_blank" class="social-link"
+            title="LinkedIn">
+            <svg class="social-icon" width="32" height="32">
+              <use href="/portfolio/img/sprite.svg#icon-linkedin"></use>
+            </svg>
+            <span class="visually-hidden">LinkedIn</span>
+          </a>
+        </li>
+        <li class="social-item">
+          <a href="https://t.me/Running_is_freedom" target="_blank" class="social-link" title="Telegram">
+            <svg class="social-icon" width="32" height="32">
+              <use href="/portfolio/img/sprite.svg#icon-telegram"></use>
+            </svg>
+            <span class="visually-hidden">Telegram</span>
+          </a>
+        </li>
+        <li class="social-item">
+          <a href="https://github.com/Vadimeks" target="_blank" class="social-link" title="GitHub">
+            <svg class="social-icon" width="32" height="32">
+              <use href="/portfolio/img/sprite.svg#icon-github"></use>
+            </svg>
+            <span class="visually-hidden">GitHub</span>
+          </a>
+        </li>
+      </ul>
+      <button class="burger-btn" type="button" data-menu-open aria-label="Open mobile menu">
+        <svg class="burger-icon" aria-hidden="true">
+          <use href="/portfolio/img/sprite.svg#icon-burger"></use>
+        </svg>
+      </button>
+
+    </nav>
+  </div>
+  <div class="menu-backdrop" data-menu>
+  <div class="mobile-menu" data-lang="eng">
     <button type="button" class="menu-close-btn" data-menu-close>
       <svg class="menu-close-icon">
         <use href="/portfolio/img/sprite.svg#icon-close"></use>
@@ -110,18 +180,62 @@
       <li class="social-item-mob">
         <a href="https://www.linkedin.com/in/вадим-cімонов-669920360/" target="_blank" class="social-link-mob">
           <svg class="social-icon" width="32" height="32">
-            <use xlink:href="/portfolio/img/sprite.svg#icon-linkedin"></use>
+            <use href="/portfolio/img/sprite.svg#icon-linkedin"></use>
           </svg>
           <span class="visually-hidden">LinkedIn</span></a>
       </li>
       <li class="social-item-mob"><a href="https://t.me/Running_is_freedom" target="_blank" class="social-link-mob">
           <svg class="social-icon" width="32" height="32">
-            <use xlink:href="/portfolio/img/sprite.svg#icon-telegram"></use>
+            <use href="/portfolio/img/sprite.svg#icon-telegram"></use>
           </svg>
           <span class="visually-hidden">Telegram</span></a></li>
       <li class="social-item-mob"><a href="https://github.com/Vadimeks" target="_blank" class="social-link-mob">
           <svg class="social-icon" width="32" height="32">
-            <use xlink:href="/portfolio/img/sprite.svg#icon-github"></use>
+            <use href="/portfolio/img/sprite.svg#icon-github"></use>
+          </svg>
+          <span class="visually-hidden">Telegram</span></a></li>
+    </ul>
+  </div>
+  <div class="mobile-menu is-hidden" data-lang="ua">
+    <button type="button" class="menu-close-btn" data-menu-close>
+      <svg class="menu-close-icon">
+        <use href="/portfolio/img/sprite.svg#icon-close"></use>
+      </svg>
+    </button>
+
+    <nav class="menu-nav">
+      <ul class="btn-list">
+
+        <li>
+          <button class="btn-list-item list-info-btn" type="button" data-scroll="#cv">Резюме</button>
+        </li>
+        <li>
+          <button class="btn-list-item" type="button" data-scroll="#portfolio">Проєкти</button>
+        </li>
+        <li>
+          <button class="btn-list-item" type="button" data-scroll="#about-section">Про мене</button>
+        </li>
+        <li>
+          <button class="btn-list-item" type="button" data-scroll="#contacts">Контакти</button>
+        </li>
+      </ul>
+    </nav>
+    <ul class="social-list-mob">
+      <li class="social-item-mob">
+        <a href="https://www.linkedin.com/in/вадим-cімонов-669920360/" target="_blank" class="social-link-mob">
+          <svg class="social-icon" width="32" height="32">
+            <use href="/portfolio/img/sprite.svg#icon-linkedin"></use>
+          </svg>
+          <span class="visually-hidden">LinkedIn</span></a>
+      </li>
+      <li class="social-item-mob"><a href="https://t.me/Running_is_freedom" target="_blank" class="social-link-mob">
+          <svg class="social-icon" width="32" height="32">
+            <use href="/portfolio/img/sprite.svg#icon-telegram"></use>
+          </svg>
+          <span class="visually-hidden">Telegram</span></a></li>
+      <li class="social-item-mob"><a href="https://github.com/Vadimeks" target="_blank" class="social-link-mob">
+          <svg class="social-icon" width="32" height="32">
+            <use href="/portfolio/img/sprite.svg#icon-github"></use>
           </svg>
           <span class="visually-hidden">Telegram</span></a></li>
     </ul>
@@ -136,7 +250,7 @@
     <section class="section-hero">
   <div class="container hero-container">
 
-    <div class="hero-text">
+    <div class="hero-text" data-lang="eng">
       <h1 class="hero-title">Looking for <span class="hero-accent">FullStack JavaScript
           Developer?</span></h1>
       <div class="hero-description">
@@ -154,7 +268,25 @@
         <button class="hero-btn" type="button" data-modal-open aria-label="Open write me modal">Write me</button>
       </div>
     </div>
-
+    <div class="hero-text is-hidden" data-lang="ua">
+      <h1 class="hero-title">Шукаєте <span class="hero-accent">FullStack JavaScript</span>
+        розробника?</h1>
+      <div class="hero-description">
+        <ul class="hero-descr-list">
+          <li hero-descr-item>
+            <h3 class="hero-header">Відкрийте для себе того, хто:</h3>
+          </li>
+          <li class=hero-descr-item>Відданий постійному самовдосконаленню та розвитку навичок</li>
+          <li class=hero-descr-item>Здатний працювати як самостійно, так і в команді, не боїться брати на себе
+            відповідальність
+          </li>
+          <li class=hero-descr-item>Здатний сприяти підвищенню ефективності та створенню цінності в командних проєктах
+          </li>
+          <li class=hero-descr-item>Просто перегляньте цей сайт...</li>
+        </ul>
+        <button class="hero-btn" type="button" data-modal-open aria-label="Open write me modal">Напишіть мені</button>
+      </div>
+    </div>
 
   </div>
   <div class="backdrop" data-modal>
@@ -188,10 +320,7 @@
         <li class="cv-item">
           <div class="cv-firstraw">
             <h3 class="cv-item-header">My name is Vadzim Simanau</h3>
-            <div class="language-switcher">
-              <button class="lang-button active" data-lang="eng">English</button>
-              <button class="lang-button" data-lang="ua">Українська</button>
-            </div>
+
           </div>
         </li>
         <li class="cv-item">
@@ -393,10 +522,6 @@
         <li class="cv-item">
           <div class="cv-firstraw">
             <h3 class="cv-item-header">Мене звати Вадим Сімонов</h3>
-            <div class="language-switcher">
-              <button class="lang-button active" data-lang="eng">English</button>
-              <button class="lang-button" data-lang="ua">Українська</button>
-            </div>
           </div>
         </li>
         <li class="cv-item">
