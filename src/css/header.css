@@ -219,22 +219,29 @@
   .header-section.fixed {
     background: rgba(0, 168, 107, 0.5);
   }
-}
 
-.nav-list .nav-link {
-  transition: transform 0.3s ease, color 0.3s ease;
-  background-color: var(--button-color);
-}
+  .social-link:hover .social-icon,
+  .social-link:focus .social-icon {
+    fill: var(--highlight-color);
+    transform: scale(1.2);
+  }
 
-.nav-list .nav-link:hover {
-  transform: scale(1.05);
-  background-color: var(--highlight-color);
-  color: var(--button-text-color);
-  border: none;
-}
 
-.nav-list .nav-link:focus {
-  background-color: var(--highlight-color);
-  color: var(--button-text-color);
-  border: none;
+  .nav-list .nav-link {
+    transition: transform 0.3s ease, color 0.3s ease;
+    background-color: var(--button-color);
+  }
+
+  .nav-list .nav-link:hover {
+    transform: scale(1.05);
+    background-color: var(--highlight-color);
+    color: var(--button-text-color);
+    border: none;
+  }
+
+  .nav-list .nav-link:focus {
+    background-color: var(--highlight-color);
+    color: var(--button-text-color);
+    border: none;
+  }
 }
