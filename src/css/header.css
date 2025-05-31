@@ -64,11 +64,12 @@
   width: 32px;
   height: 16px;
   border: 1px solid var(--button-color);
-  background-color: transparent;
+  background-color: var(--light-accent);
   cursor: pointer;
   border-radius: 5px;
   color: var(--text-color);
   font-size: 10px;
+  font-weight: 700;
 }
 
 .lang-button.active {
