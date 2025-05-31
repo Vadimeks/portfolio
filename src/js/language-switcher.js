@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const langButtons = document.querySelectorAll('.lang-button');
+
   const langSections = document.querySelectorAll('[data-lang]:not(button)');
+  console.log('Элементы langSections пры DOMContentLoaded:', langSections); // ТУТ ПРАВЕРЦЕ
   // Функцыя для пераключэння мовы
   function switchLanguage(lang) {
     langSections.forEach(section => {
