@@ -24,9 +24,8 @@
 /* Стылі для першага радка CV (загаловак і пераключальнік моў) */
 .cv-firstraw {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
+  flex-direction: column;
+  gap: 8px;
 }
 
 
@@ -46,11 +45,20 @@
 
 /* Стылі для загалоўка ў першым радку CV */
 .cv-firstraw .cv-item-header {
-  max-width: 130px;
   font-weight: 700;
   font-size: 20px;
-  margin-bottom: 0;
-  background-color: var(--accent-color);
+}
+
+.cv-link {
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid var(--highlight-color);
+  border-radius: 8px;
+  padding: 6px 4px;
+  background-color: var(--light-accent);
+  max-width: 180px;
+
 }
 
 /* Стылі для загалоўкаў аккардэона */
@@ -97,9 +105,7 @@
 .cv-softskills-list {
   margin-bottom: 20px;
   list-style-type: disc;
-  /* Кружочкі */
   padding-left: 20px;
-  /* Адступ для маркераў */
 }
 
 .cv-languages-list {
@@ -168,7 +174,7 @@
 
 /* === Стылі для першага элемента CV (дзе імя і кнопкі мовы) === */
 .cv-list .cv-item:first-child {
-  background-image: linear-gradient(rgba(130, 245, 190, 0.7), rgba(130, 245, 190, 0.7)), url('../img/cv/stack.jpg');
+  background-image: linear-gradient(rgba(130, 245, 190, 0.85), rgba(130, 245, 190, 0.85)), url('../img/cv/stack.jpg');
   background-size: cover;
   background-position: center;
   padding: 8px;
@@ -183,7 +189,6 @@
 @media only screen and (min-width: 375px) {
   .container.cv-container {
     max-width: 767px;
-    padding: 0 20px;
   }
 
   .cv-eng,
@@ -197,13 +202,9 @@
   }
 
   .cv-firstraw .cv-item-header {
-    max-width: 190px;
     font-weight: 700;
     font-size: 22px;
-    margin-bottom: 0;
-    background-color: var(--accent-color);
-    border-radius: 12px;
-    padding: 8px;
+
   }
 
   .cv-accent {
