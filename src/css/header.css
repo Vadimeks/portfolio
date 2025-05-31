@@ -205,11 +205,10 @@
     gap: 20px;
   }
 
-
-
   .burger-btn:hover,
   .burger-btn:focus {
     background-color: var(--highlight-color);
+    transition: fill 0.3s ease-in-out, transform 0.3s ease-in-out;
   }
 
   .header-section {
@@ -223,7 +222,8 @@
   .social-link:hover .social-icon,
   .social-link:focus .social-icon {
     fill: var(--highlight-color);
-    transform: scale(1.2);
+    transform: scale(1.1);
+    transition: fill 0.3s ease-in-out, transform 0.3s ease-in-out;
   }
 
 
@@ -232,16 +232,13 @@
     background-color: var(--button-color);
   }
 
-  .nav-list .nav-link:hover {
-    transform: scale(1.05);
+  .nav-list .nav-link:hover,
+  .nav-list .nav-link:focus {
+    transform: scale(1.1);
     background-color: var(--highlight-color);
     color: var(--button-text-color);
     border: none;
+    transition: fill 0.3s ease-in-out, transform 0.3s ease-in-out;
   }
 
-  .nav-list .nav-link:focus {
-    background-color: var(--highlight-color);
-    color: var(--button-text-color);
-    border: none;
-  }
 }
