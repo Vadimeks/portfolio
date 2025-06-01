@@ -80,7 +80,6 @@
 
 /* Стылі для загалоўкаў h4 у элементах CV */
 .cv-item h4 {
-  /* margin-bottom: 12px; */
   font-weight: 600;
   font-size: 16px;
   padding: 8px;
@@ -171,7 +170,6 @@
   margin-bottom: 0;
 }
 
-
 /* === Стылі для першага элемента CV (дзе імя і кнопкі мовы) === */
 .cv-list .cv-item:first-child {
   background-image: linear-gradient(rgba(130, 245, 190, 0.85), rgba(130, 245, 190, 0.85)), url('../img/cv/stack.jpg');
@@ -183,6 +181,8 @@
 .cv-item-header.cv-accordion-header.is-active {
   margin-bottom: 12px;
 }
+
+
 
 /* === Медыя-запыты === */
 
