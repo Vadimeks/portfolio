@@ -21,6 +21,7 @@
     "basiclightbox": "^5.0.4",
     "izitoast": "^1.4.0",
     "simplelightbox": "^2.14.3",
+    "typed.js": "^2.1.0",
     "vite-plugin-full-reload": "^1.2.0",
     "vite-plugin-html-inject": "^1.1.2"
   }
