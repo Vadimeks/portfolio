@@ -5,6 +5,8 @@ import FullReload from 'vite-plugin-full-reload';
 import SortCss from 'postcss-sort-media-queries';
 
 export default defineConfig(({ command }) => {
+  // Знайдзі ўсе html-файлы
+  const htmlInputs = glob.sync('./src/*.html');
   return {
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
@@ -14,7 +16,7 @@ export default defineConfig(({ command }) => {
     build: {
       sourcemap: true,
       rollupOptions: {
-        input: glob.sync('./src/*.html'),
+        input: htmlInputs.length ? htmlInputs : './src/index.html', // fallback на адзін html
         output: {
           manualChunks(id) {
             if (id.includes('node_modules')) {
