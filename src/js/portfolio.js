@@ -22,7 +22,7 @@ const projects = [
     imageUrlDesktopRetina: getImageUrl('project-4-min.webp'),
     largeImageUrl: getImageUrl('project-4-min.webp'),
     description:
-      'ArtistsHub is a dynamic web platform created to help users discover music and explore detailed information about artists and bands through a sleek and adaptive interface. This is a first team project developed during our JavaScript course.',
+      'ArtistsHub is a dynamic web platform created to help users discover music and explore detailed information about artists and bands through a sleek and adaptive interface. This is a first team project developed during our JavaScript course. [HTML5, CSS3, JavaScript, GitHub, Vite, Trello, Figma, Swiper, Css-star-rating, Axios]',
     liveDemoUrl: 'https://vadimeks.github.io/script-ninjas-project/',
     githubUrl: 'https://github.com/Vadimeks/script-ninjas-project',
   },
@@ -37,7 +37,7 @@ const projects = [
     imageUrlDesktopRetina: getImageUrl('project-1-min.jpg'),
     largeImageUrl: getImageUrl('project-1-min.jpg'),
     description:
-      'This is a modern web project designed to present organic vegetables through an adaptive web interface, ensuring a seamless experience for users on different devices. The first team project developed as part of our HTML & CSS course.',
+      'This is a modern web project designed to present organic vegetables through an adaptive web interface, ensuring a seamless experience for users on different devices. The first team project developed as part of our HTML & CSS course. [HTML5, CSS3, JS, GitHub, Vite, Trello, Figma]',
     liveDemoUrl: 'https://vadimeks.github.io/devdreamers-project-01/',
     githubUrl: 'https://github.com/vadimeks/devdreamers-project-01',
   },
@@ -52,7 +52,7 @@ const projects = [
     imageUrlDesktopRetina: getImageUrl('project-3-min.jpg'),
     largeImageUrl: getImageUrl('project-3-min.jpg'),
     description:
-      "This is my own project, which I did completely independently in parallel with my studies - for showcasing my work, as well as for reinforcing the skills I've acquired.",
+      "This is my own project, which I did completely independently in parallel with my studies - for showcasing my work, as well as for reinforcing the skills I've acquired.[HTML5, CSS3, JavaScript, GitHub, Vite, Izitoast, Simplelightbox, Emailjs]",
     liveDemoUrl: 'https://vadimeks.github.io/portfolio/',
     githubUrl: 'https://github.com/vadimeks/portfolio',
   },
@@ -67,7 +67,7 @@ const projects = [
     imageUrlDesktopRetina: getImageUrl('project-5-min.webp'),
     largeImageUrl: getImageUrl('project-5-min.webp'),
     description:
-      'This website serves as a dynamic and engaging presentation for "Fading Storm Puzzle: Rush Game," a mobile puzzle game that blends classic block-matching with fast-paced challenges. Its designed to showcase the games features, unique gameplay mechanics, various game modes, and player testimonials.',
+      'This website serves as a dynamic and engaging presentation for "Fading Storm Puzzle: Rush Game," a mobile puzzle game that blends classic block-matching with fast-paced challenges. Its designed to showcase the games features, unique gameplay mechanics, various game modes, and player testimonials.[HTML5, CSS3, JavaScript, Swiper.js, iziToast, LocalStorage]',
     liveDemoUrl: 'https://vadimeks.github.io/stp-9500/',
     githubUrl: 'https://github.com/Vadimeks/stp-9500',
   },
@@ -82,7 +82,7 @@ const projects = [
     imageUrlDesktopRetina: getImageUrl('project-2-min.jpg'),
     largeImageUrl: getImageUrl('project-2-min.jpg'),
     description:
-      'This is a project completed based on homework assignments during the HTML/CSS block for the Web Studio, which focuses on education and application development.',
+      'This is a project completed based on homework assignments during the HTML/CSS block for the Web Studio, which focuses on education and application development.[HTML5, CSS3, JavaScript, GitHub, Figma]',
     liveDemoUrl: 'https://vadimeks.github.io/goit-markup-hw-06/',
     githubUrl: 'https://github.com/vadimeks/goit-markup-hw-06',
   },
@@ -98,7 +98,7 @@ const projects = [
     imageUrlDesktopRetina: getImageUrl('project-ex-min.webp'),
     largeImageUrl: getImageUrl('project-ex-min.webp'),
     description:
-      'Any website or web application for products or services — built with adaptive design and best practices using HTML, CSS, JavaScript, React, Next.js, and Node.js. Just get in touch!',
+      'Any website or web application for products or services — built with adaptive design and best practices using HTML, CSS, JavaScript, React, Next.js, and Node.js. Just get in touch! ',
     liveDemoUrl: 'https://vadimeks.github.io/portfolio/',
     githubUrl: 'https://github.com/Vadimeks',
   },
@@ -123,7 +123,9 @@ function createProjectCard(project) {
       <div class="portfolio-card">
         <a class="portfolio-image-link" href="${
           project.largeImageUrl
-        }" data-caption="${project.title}: ${project.description}">
+        }" data-caption="${project.title}: ${project.description} ${
+    project.stack
+  }">
           <picture class="portfolio-pic">
             <source media="(min-width: 1280px)"
                     srcset="${project.imageUrlDesktop} 1x, ${
