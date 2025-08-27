@@ -1,4 +1,3 @@
-/* Portfolio section */
 .section-portfolio {
   padding: 20px 0;
 }
@@ -8,7 +7,6 @@
   flex-direction: column;
   align-items: center;
   padding: 0 16px;
-  height: auto;
   width: 100%;
 }
 
@@ -51,7 +49,6 @@
   color: var(--highlight-color);
 }
 
-/* Новы абгортачны дыў для галерэі і кнопкі */
 .portfolio-gallery-wrapper {
   display: flex;
   flex-direction: column;
@@ -62,11 +59,8 @@
 
 .portfolio-list {
   display: grid;
-  /* Выкарыстоўваем Grid для сеткі */
   grid-template-columns: 1fr;
-  /* Па змаўчанні: 1 калонка на мабільных */
   gap: 20px;
-  /* Адступ паміж элементамі */
   padding: 0;
   margin: 0;
   list-style: none;
@@ -75,26 +69,21 @@
 
 .portfolio-item {
   width: 100%;
-  /* Карткі займаюць усю даступную шырыню калонкі */
   border-radius: 30px;
   box-sizing: border-box;
   border: none;
-  /* **ДАДАДЗЕНА: flex-basis: auto; каб Grid мог лепш кіраваць шырынёй** */
   flex-basis: auto;
 }
 
 .portfolio-item.is-hidden-item {
   display: none;
-  /* Гэта хавае элемент */
 }
 
-/* Стылі для самой кнопкі-пераключальніка (круглай асновы) */
 .portfolio-toggle-button {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  /* max-width: 360px; */
   height: 16px;
   border: 1px solid var(--highlight-color);
   border-radius: 12px;
@@ -104,13 +93,11 @@
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-/* Эфекты пры навядзенні/фокусе на кнопку */
 .portfolio-toggle-button:hover,
 .portfolio-toggle-button:focus {
   background-color: var(--highlight-color);
 }
 
-/* Стылі для самой стрэлкі (іконкі ўнутры кнопкі) */
 .portfolio-toggle-icon {
   display: inline-block;
   width: 0;
@@ -119,29 +106,24 @@
   border-right: 8px solid transparent;
   border-top: 8px solid var(--primary-color);
   transition: transform 0.3s ease-out, border-top-color 0.3s ease;
-
 }
 
-/* Змена колеру стрэлкі пры навядзенні/фокусе на кнопку */
 .portfolio-toggle-button:hover .portfolio-toggle-icon,
 .portfolio-toggle-button:focus .portfolio-toggle-icon {
   border-top-color: var(--primary-color);
 }
 
-/* Паварот стрэлкі, калі кнопка актыўная (г.зн. паказвае ўверх) */
 .portfolio-toggle-button.is-active .portfolio-toggle-icon {
   transform: rotate(180deg);
   border-top-color: var(--primary-color);
 }
 
-/* Спасылка, якая абгортвае выяву для SimpleLightbox */
 .portfolio-image-link {
   display: block;
   text-decoration: none;
   line-height: 0;
 }
 
-/* Стылі для карткі праекта */
 .portfolio-card {
   width: 100%;
   border-radius: 12px;
@@ -183,7 +165,6 @@
   transform: scale(1.02);
 }
 
-/* Стылі для блока з інфармацыяй праектa */
 .portfolio-info-block {
   padding: 8px;
   display: flex;
@@ -212,7 +193,6 @@
   flex-grow: 1;
 }
 
-/* Стылі для кнопак Live Demo / GitHub */
 .project-links {
   display: flex;
   gap: 10px;
@@ -245,7 +225,6 @@
   border-color: var(--highlight-color);
 }
 
-/* Клас для хавання элементаў */
 .is-hidden {
   display: none;
 }
@@ -254,6 +233,7 @@
 @media screen and (min-width: 768px) {
   .portfolio-container {
     padding: 0 32px;
+    max-width: 1279px;
   }
 
   .portfolio-content {
@@ -277,13 +257,6 @@
 
   .portfolio-item {
     width: auto;
-  }
-}
-
-/* Desktop (min-width 768px) */
-@media screen and (min-width: 768px) {
-  .portfolio-container {
-    max-width: 1279px;
   }
 
   .portfolio-content,
@@ -372,8 +345,6 @@
 
 .sl-prev,
 .sl-next {
-  top: auto !important;
-  bottom: auto !important;
   height: 48px !important;
   width: 48px !important;
   background-color: rgba(0, 0, 0, 0.3) !important;
