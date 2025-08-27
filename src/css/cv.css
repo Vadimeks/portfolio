@@ -25,7 +25,6 @@
   flex-direction: column;
   gap: 8px;
   align-items: baseline;
-
   flex-wrap: wrap;
 }
 
@@ -58,7 +57,6 @@
   display: inline-block;
 }
 
-/* Стылі для загалоўкаў аккардэона */
 .cv-item-header.cv-accordion-header {
   padding: 8px;
   margin-bottom: 0;
@@ -70,19 +68,16 @@
   align-items: center;
 }
 
-/* Адступы для параграфаў унутры элементаў CV */
 .cv-item p {
   margin-bottom: 12px;
 }
 
-/* Стылі для загалоўкаў h4 у элементах CV */
 .cv-item h4 {
   font-weight: 600;
   font-size: 16px;
   padding: 8px;
 }
 
-/* Адступы для пунктаў спісаў вопыту */
 .cv-experience-item {
   padding: 8px;
 }
@@ -91,12 +86,10 @@
   padding-bottom: 20px;
 }
 
-/* Адступы для пунктаў спісаў адукацыі */
 .cv-relevantedu-item {
   padding: 8px;
 }
 
-/* Стылі для спісаў навыкаў */
 .cv-hardskills-list,
 .cv-softskills-list {
   margin-bottom: 20px;
@@ -116,7 +109,6 @@
   padding-bottom: 20px;
 }
 
-/* Стылі для згортваемага змесціва аккардэона */
 .cv-content {
   overflow: hidden;
   transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
@@ -132,7 +124,6 @@
   opacity: 0;
 }
 
-/* Стылі для стрэлкі аккардэона */
 .accordion-icon {
   display: inline-block;
   width: 0;
@@ -143,12 +134,10 @@
   transition: transform 0.3s ease-out;
 }
 
-/* Паварот стрэлкі, калі раздзел адкрыты */
 .cv-accordion-header.is-active .accordion-icon {
   transform: rotate(180deg);
 }
 
-/* Асноўны стыль для спісу CV */
 .cv-list {
   list-style: none;
   padding: 0;
@@ -158,7 +147,6 @@
   gap: 20px;
 }
 
-/* Стылі для кожнага элемента CV */
 .cv-item {
   width: 100%;
   padding: 0;
@@ -167,7 +155,6 @@
   margin-bottom: 0;
 }
 
-/* === Стылі для першага элемента CV (дзе імя і кнопкі мовы) === */
 .cv-list .cv-item:first-child {
   background-image: linear-gradient(rgba(130, 245, 190, 0.85), rgba(130, 245, 190, 0.85)), url('../img/cv/stack.jpg');
   background-size: cover;
@@ -182,62 +169,35 @@
   margin-bottom: 12px;
 }
 
-/* Стылізацыя курсора Typed.js */
-
 .typed-text-wrapper {
   display: inline-flex;
-  /* Робім яго inline, каб сядзеў побач з h3 */
   align-items: baseline;
-  /* Выраўноўваем змесціва (тэкст і курсор) па базавай лініі */
-
-  /* ***** КЛЮЧАВЫЯ ЗМЕНЫ ***** */
   flex-grow: 0;
-  /* Гэтая абгортка НЕ ПАВІННА расцягвацца, каб выклікаць перанос тэксту */
   flex-shrink: 1;
-  /* Дазваляем ёй сціскацца, але не празмерна */
   flex-basis: auto;
-  /* Дазваляем ёй займаць мінімальную прастору, не прымушаючы яе да пэўнай шырыні */
   min-width: 0;
-  /* Абавязкова для flex-элементаў, каб яны маглі сціскацца */
-
   flex-wrap: nowrap;
-  /* ***НАЙВАЖНЕЙШЕ: Прымушаем тэкст і курсор заставацца ў АДНЫМ РАДКУ ўнутры гэтай абгорткі *** */
   overflow: hidden;
-  /* Хаваем усё, што выходзіць за межы гэтага wrapper */
   text-overflow: ellipsis;
-  /* Дадаем шматкроп'е, калі тэкст абрэзаны */
 }
 
-/* Сам тэкставы элемент Typed.js */
 .typed-text-element {
-  /* Ён унутры inline-flex, таму будзе паводзіць сябе як flex-элемент */
   display: inline;
-  /* Па змаўчанні inline */
   vertical-align: baseline;
-  /* Для выраўноўвання з курсорам */
-  white-space: nowrap;
-  /* ***Прымушаем сам тэкст быць у адным радку*** */
+  /* white-space: nowrap; */
   flex-shrink: 0;
-  /* Забараняем тэксту сціскацца */
   flex-grow: 0;
-  /* Забараняем тэксту расцягвацца */
-  ;
 }
 
-/* Курсор Typed.js */
 .typed-cursor {
   display: inline-block;
-  /* Абавязкова, каб ён працаваў як асобны блок, але ў лініі */
   font-size: 1em;
   animation: blink 0.7s infinite;
   margin-left: 2px;
   vertical-align: baseline;
   white-space: nowrap;
-  /* Курсор сам не павінен пераносіцца */
   flex-shrink: 0;
-  /* Забараняем курсору сціскацца */
   flex-grow: 0;
-  /* Забараняем курсору расцягвацца */
 }
 
 @keyframes blink {
@@ -254,8 +214,6 @@
   }
 }
 
-
-/* === Медыя-запыты === */
 
 @media only screen and (min-width: 375px) {
   .container.cv-container {
