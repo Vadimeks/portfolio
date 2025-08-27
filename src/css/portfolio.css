@@ -229,7 +229,6 @@
   display: none;
 }
 
-/* Tablet (min-width 768px) */
 @media screen and (min-width: 768px) {
   .portfolio-container {
     padding: 0 32px;
@@ -267,7 +266,6 @@
   }
 }
 
-/* Desktop (min-width 1280px) */
 @media screen and (min-width: 1280px) {
   .portfolio-container {
     padding: 0 100px;
@@ -309,7 +307,6 @@
 
 }
 
-/* SimpleLightbox styles */
 .sl-overlay {
   background: rgba(46, 47, 66, 0.8) !important;
 }
@@ -356,4 +353,8 @@
   color: rgba(255, 255, 255, 0.8) !important;
   opacity: 0.8;
   transition: opacity 0.3s ease;
+}
+
+.is-hidden {
+  display: none !important;
 }

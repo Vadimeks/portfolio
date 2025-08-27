@@ -144,7 +144,6 @@
 
 }
 
-/* ---- HERO FOR TABLETS ----*/
 @media only screen and (min-width: 768px) {
   .section-hero {
     max-width: 1279px;
@@ -200,7 +199,6 @@
 
 }
 
-/* ---- HERO FOR PC's ---- */
 @media only screen and (min-width: 1280px) {
   .section-hero {
     max-width: 1280px;

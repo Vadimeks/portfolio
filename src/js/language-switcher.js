@@ -1,4 +1,3 @@
-// src/js/language-switcher.js
 import { showTypedTextByLang } from './typed-text.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -24,6 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     localStorage.setItem('selectedLang', lang);
     showTypedTextByLang(lang);
+
+    // Dispatch custom event for language change (needed for portfolio, etc.)
+    document.dispatchEvent(
+      new CustomEvent('languageChanged', { detail: lang })
+    );
   }
 
   const savedLang = localStorage.getItem('selectedLang');

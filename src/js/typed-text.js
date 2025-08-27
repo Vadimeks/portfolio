@@ -7,53 +7,66 @@ export function startTypedMultiline(elementId, strings, options = {}) {
   let currentLine = 0;
   let cycleTimeoutId;
 
-  // Убяраем loop у options, каб Typed не запускаў луп для кожнага радка!
   const typedOptions = { ...options, loop: false };
 
   function typeNextLine() {
     if (currentLine >= strings.length) {
-      // Луп для ўсяго блока, а не для радка
       if (options.loop) {
-        cycleTimeoutId = setTimeout(() => {
-          parent.textContent = '';
-          currentLine = 0;
-          typeNextLine();
-        }, options.loopDelay ?? 2000);
+        cycleTimeoutId = setTimeout(
+          function () {
+            parent.textContent = '';
+            currentLine = 0;
+            typeNextLine();
+          },
+          options.loopDelay ? options.loopDelay : 2000
+        );
       }
       return;
     }
 
-    const lineSpan = document.createElement('div');
+    var lineSpan = document.createElement('div');
     lineSpan.className = 'typed-multiline-line';
+
     parent.appendChild(lineSpan);
 
     new Typed(lineSpan, {
       ...typedOptions,
       strings: [strings[currentLine]],
       showCursor: currentLine === strings.length - 1,
-      onComplete: () => {
-        currentLine++;
+      onComplete: function () {
+        currentLine = currentLine + 1;
         typeNextLine();
       },
     });
   }
 
-  if (cycleTimeoutId) clearTimeout(cycleTimeoutId);
+  if (cycleTimeoutId) {
+    clearTimeout(cycleTimeoutId);
+  }
   parent.textContent = '';
   typeNextLine();
 }
 
 export function showTypedTextByLang(lang) {
-  const baseOptions = {
+  var baseOptions = {
     typeSpeed: 50,
     backSpeed: 25,
     backDelay: 1500,
     startDelay: 500,
-    loop: true, // Цыкл для ўсяго блока
-    loopDelay: 2000, // Затрымка перад паўторным стартам
+    loop: true, 
+    loopDelay: 2000, 
     showCursor: true,
     cursorChar: '|',
   };
+
+  var engNode = document.getElementById('typed-text-eng');
+  if (engNode) {
+    engNode.textContent = '';
+  }
+  var uaNode = document.getElementById('typed-text-ua');
+  if (uaNode) {
+    uaNode.textContent = '';
+  }
 
   if (lang === 'eng') {
     startTypedMultiline(

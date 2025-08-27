@@ -60,13 +60,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const formData = new FormData(modalForm);
         const templateParams = {
-          user_name: formData.get('user-name'), // Супадае з name="user-name" у HTML і {{user_name}} у шаблоне EmailJS
-          email: formData.get('email'), // Супадае з name="email" у HTML і {{email}} у шаблоне EmailJS
-          form_textarea: formData.get('form-textarea'), // Супадае з name="form-textarea" у HTML і {{form_textarea}} у шаблоне EmailJS
+          user_name: formData.get('user-name'),
+          email: formData.get('email'),
+          form_textarea: formData.get('form-textarea'),
         };
 
         try {
-          // --- 1. Адпраўка Email на твой адрас (як уладальніка сайта) ---
           const ownerEmailResponse = await emailjs.send(
             'service_exkn3na',
             'template_liq63t9',
@@ -86,23 +85,20 @@ document.addEventListener('DOMContentLoaded', () => {
             color: 'green',
           });
 
-          modalForm.reset(); // Ачышчаем форму пасля адпраўкі
-          // Робім кнопку адпраўкі зноў неактыўнай, бо форма ачышчана
+          modalForm.reset();
           if (modalSendButton) {
-            // Праверка, каб пазбегнуць памылак, калі кнопка не знойдзена
             modalSendButton.setAttribute('disabled', 'true');
             modalSendButton.classList.remove('active');
           }
 
-          closeModal(); // Закрываем мадальнае вакно
+          closeModal();
         } catch (error) {
           console.error('FAILED to send email(s):', error);
-          alert('Something went wrong. Please try later.'); // Паведамленне карыстальніку аб памылцы
+          alert('Something went wrong. Please try later.');
         }
       });
     }
 
-    // Дапаможная функцыя для закрыцця мадальнага вакна (калі яна патрэбна асобна)
     function closeModal() {
       modal.classList.remove('is-open');
     }
