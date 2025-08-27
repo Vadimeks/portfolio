@@ -145,7 +145,6 @@
   padding-bottom: 12px;
 }
 
-/* Анімацыя для лагатыпа, меню, адрасу і палітык */
 .footer-logo:hover,
 .footer-nav-link:hover,
 .footer-address-link:hover,
@@ -172,7 +171,6 @@
   color: var(--highlight-color)
 }
 
-/* --- Медыя-запыты --- */
 @media only screen and (min-width: 375px) {
   .footer-container {
     max-width: 767px;
@@ -285,4 +283,8 @@
     margin: 0 auto;
     margin-bottom: 20px;
   }
+}
+
+.is-hidden {
+  display: none !important;
 }

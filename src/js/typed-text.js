@@ -1,39 +1,73 @@
 import Typed from 'typed.js';
 
 export function startTypedMultiline(elementId, strings, options = {}) {
-  let currentLine = 0;
   const parent = document.getElementById(elementId);
   if (!parent) return;
+
+  let currentLine = 0;
+  let cycleTimeoutId;
+
+  const typedOptions = { ...options, loop: false };
 
   function typeNextLine() {
     if (currentLine >= strings.length) {
       if (options.loop) {
-        currentLine = 0;
-        parent.textContent = '';
-        typeNextLine();
+        cycleTimeoutId = setTimeout(
+          function () {
+            parent.textContent = '';
+            currentLine = 0;
+            typeNextLine();
+          },
+          options.loopDelay ? options.loopDelay : 2000
+        );
       }
       return;
     }
-    const lineSpan = document.createElement('div');
+
+    var lineSpan = document.createElement('div');
     lineSpan.className = 'typed-multiline-line';
+
     parent.appendChild(lineSpan);
 
     new Typed(lineSpan, {
-      ...options,
+      ...typedOptions,
       strings: [strings[currentLine]],
       showCursor: currentLine === strings.length - 1,
-      onComplete: () => {
-        currentLine++;
+      onComplete: function () {
+        currentLine = currentLine + 1;
         typeNextLine();
       },
     });
   }
 
+  if (cycleTimeoutId) {
+    clearTimeout(cycleTimeoutId);
+  }
   parent.textContent = '';
   typeNextLine();
 }
 
 export function showTypedTextByLang(lang) {
+  var baseOptions = {
+    typeSpeed: 50,
+    backSpeed: 25,
+    backDelay: 1500,
+    startDelay: 500,
+    loop: true, 
+    loopDelay: 2000, 
+    showCursor: true,
+    cursorChar: '|',
+  };
+
+  var engNode = document.getElementById('typed-text-eng');
+  if (engNode) {
+    engNode.textContent = '';
+  }
+  var uaNode = document.getElementById('typed-text-ua');
+  if (uaNode) {
+    uaNode.textContent = '';
+  }
+
   if (lang === 'eng') {
     startTypedMultiline(
       'typed-text-eng',
@@ -47,15 +81,7 @@ export function showTypedTextByLang(lang) {
         '________________________________________________',
         '↓ Watch my CV ↓',
       ],
-      {
-        typeSpeed: 50,
-        backSpeed: 25,
-        backDelay: 1500,
-        startDelay: 500,
-        loop: false,
-        showCursor: true,
-        cursorChar: '|',
-      }
+      baseOptions
     );
   } else if (lang === 'ua') {
     startTypedMultiline(
@@ -70,15 +96,7 @@ export function showTypedTextByLang(lang) {
         '________________________________________________',
         '↓ Подивіться резюме. ↓',
       ],
-      {
-        typeSpeed: 50,
-        backSpeed: 25,
-        backDelay: 1500,
-        startDelay: 500,
-        loop: false,
-        showCursor: true,
-        cursorChar: '|',
-      }
+      baseOptions
     );
   }
 }
