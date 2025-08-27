@@ -14,7 +14,7 @@
     "postcss-sort-media-queries": "^5.2.0",
     "vite": "^6.2.5"
   },
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "Vadzim Simanau <simanauv@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
