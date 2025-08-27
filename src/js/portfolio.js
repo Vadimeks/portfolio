@@ -11,6 +11,7 @@ function getImageUrl(name) {
 }
 
 // English projects
+
 const projectsEn = [
   {
     title: '🎵 ArtistsHub - Music Discovery Platform',
@@ -223,10 +224,7 @@ function createProjectCard(project) {
   return `
     <li class="portfolio-item">
       <div class="portfolio-card">
-        <a class="portfolio-image-link" href="${project.largeImageUrl}"
-          data-caption="<strong>${project.title}</strong><br>${
-    project.description
-  }">
+        <a class="portfolio-image-link" href="${project.largeImageUrl}">
           <picture class="portfolio-pic">
             <source media="(min-width: 1280px)" srcset="${
               project.imageUrlDesktop
@@ -239,7 +237,7 @@ function createProjectCard(project) {
             } 1x, ${project.imageUrlRetina} 2x">
             <img class="content-image" src="${project.imageUrl}" alt="${
     project.title
-  }" loading="lazy">
+  }" data-caption="${project.title}<br>${project.description}" loading="lazy">
           </picture>
         </a>
         <div class="portfolio-info-block">
@@ -282,6 +280,7 @@ function initializeLightbox() {
     '.portfolio-list a.portfolio-image-link',
     {
       captionsData: 'data-caption',
+      captionType: 'html',
       captionDelay: 250,
     }
   );
